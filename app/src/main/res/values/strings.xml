@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Shubh Calendar</string>
+    <string name="shubh_calendar">Shubh Calendar</string>
+    <string name="register_with_your_phone_number">Register With Your Phone Number</string>
+    <string name="enter_your_phone_number">Enter your phone number</string>
+    <string name="get_otp">GET OTP</string>
+    <string name="an_sms_with_a_code_was_sent_to_you_please_type_it_below">An sms with a code was sent to you,Please type it below</string>
+    <string name="didn_t_get_an_sms_click_here_to_resend">Didn\'t get an sms?,Click here to resend</string>
+    <string name="enter_your_full_name">Enter your full name</string>
+    <string name="wrong_mobile_number_click_here">Wrong Mobile Number? Click here</string>
+    <string name="login_with_mobile">Or Login with mobile</string>
+</resources>
