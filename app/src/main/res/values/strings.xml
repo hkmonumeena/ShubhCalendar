@@ -9,4 +9,5 @@
     <string name="enter_your_full_name">Enter your full name</string>
     <string name="wrong_mobile_number_click_here">Wrong Mobile Number? Click here</string>
     <string name="login_with_mobile">Or Login with mobile</string>
+    <string name="next">Next</string>
 </resources>

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.GetHoroscopeActivity">
+    <ImageView
+        android:id="@+id/imgTopHeader"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="-10dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/imgtopheader" />
+
+
+    <ImageView
+        android:id="@+id/icMenu"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:padding="8dp"
+        android:src="@drawable/ic_menu"
+        app:tint="@color/white" />
+
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="55dp"
+        android:layout_toStartOf="@+id/cardViewProfile"
+        android:padding="12dp"
+        android:src="@drawable/icalarm"
+        app:tint="@color/white" />
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardViewProfile"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/icMenu"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="8dp">
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="0dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/icdummy_user" />
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/imgTopHeader">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get Your Horoscope"
+        android:id="@+id/textViewGetHoroscope"
+        android:textColor="@color/black"
+        android:fontFamily="@font/josefinsans_bold2"
+        android:textSize="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"/>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/textViewGetHoroscope"
+        android:id="@+id/cardViewName"
+        android:layout_marginTop="50dp"
+        app:cardCornerRadius="8dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        app:cardBackgroundColor="#ffede5"
+        app:cardElevation="8dp">
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:hint="What is your name?"
+            android:background="@null"
+            android:textSize="14dp"
+            android:fontFamily="@font/josefinsans_bold2"
+            android:layout_marginStart="5dp"
+            android:layout_gravity="center_vertical"/>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/cardViewName"
+        android:id="@+id/cardViewDateOfBirth"
+        android:layout_marginTop="30dp"
+        app:cardCornerRadius="8dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        app:cardBackgroundColor="#ffede5"
+        app:cardElevation="8dp">
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:hint="What is your date of birth?"
+            android:background="@null"
+            android:textSize="14dp"
+            android:fontFamily="@font/josefinsans_bold2"
+            android:layout_marginStart="5dp"
+            android:layout_gravity="center_vertical"/>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/cardViewDateOfBirth"
+        android:id="@+id/cardViewArrow"
+        android:layout_centerHorizontal="true"
+        app:cardBackgroundColor="@color/black"
+        app:cardCornerRadius="25dp"
+        android:layout_marginTop="50dp">
+
+
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/abc_vector_test"
+            android:layout_gravity="center"
+            android:rotation="180"
+
+            app:tint="@color/white" />
+
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textColor="@color/black"
+    android:text="@string/next"
+    android:layout_below="@+id/cardViewArrow"
+    android:layout_centerHorizontal="true"
+    android:fontFamily="@font/josefinsans_bold2"
+    android:textSize="16dp"
+    android:layout_marginTop="16dp"/>
+
+
+</RelativeLayout>
+
+
+
+
+
+
+
+    <ImageView
+        android:id="@+id/imgBottomHeader"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="-10dp"
+        android:rotation="180"
+        android:scaleType="fitXY"
+        android:src="@drawable/imgtopheader" />
+
+</RelativeLayout>

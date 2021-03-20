@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.RashiActivity">
+
+
+    <ImageView
+        android:id="@+id/imgTopHeader"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="-10dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/imgtopheader" />
+
+
+    <ImageView
+        android:id="@+id/icMenu"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:padding="8dp"
+        android:src="@drawable/ic_menu"
+        app:tint="@color/white" />
+
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="55dp"
+        android:layout_toStartOf="@+id/cardViewProfile"
+        android:padding="12dp"
+        android:src="@drawable/icalarm"
+        app:tint="@color/white" />
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardViewProfile"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/icMenu"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="8dp">
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="0dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/icdummy_user" />
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/imgTopHeader">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:id="@+id/rl2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <ImageView
+                    android:id="@+id/rashiIcon"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="16dp"
+                    android:src="@drawable/ic_capricorn" />
+
+
+                <TextView
+                    android:id="@+id/rashiTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_toRightOf="@id/rashiIcon"
+                    android:fontFamily="@font/josefinsans_bold2"
+                    android:text="Capricorn"
+                    android:textColor="@color/black"
+                    android:textSize="18dp" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rashiTitle"
+                    android:layout_marginStart="16dp"
+                    android:layout_toRightOf="@id/rashiIcon"
+                    android:fontFamily="@font/josefinsans_semibold"
+                    android:text="Dec 22 -Jan 19"
+                    android:textColor="@color/black"
+                    android:textSize="14dp" />
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginEnd="10dp"
+                    app:cardBackgroundColor="#ff9350"
+                    app:cardCornerRadius="15dp">
+
+                    <RelativeLayout
+                        android:id="@+id/rlRashiHeader"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginEnd="16dp"
+                            android:fontFamily="@font/josefinsans_bold2"
+                            android:gravity="center_vertical"
+                            android:text="Change"
+                            android:textColor="@color/white" />
+
+
+                        <ImageView
+                            android:layout_width="35dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginEnd="16dp"
+                            android:rotation="180"
+                            android:src="@drawable/abc_vector_test"
+                            android:tint="@color/white" />
+
+
+                    </RelativeLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+            </RelativeLayout>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardViewTodaysHoroscope"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_below="@+id/rl2"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="24dp"
+                app:cardBackgroundColor="#ffede5"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@null"
+                    android:fontFamily="@font/josefinsans_bold2"
+                    android:hint="Today's Horoscope"
+                    android:textColor="@color/black"
+                    android:textSize="14dp" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="180dp">
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardViewWeekly"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginEnd="24dp"
+                    app:cardBackgroundColor="#ffede5"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="8dp">
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@null"
+                            android:fontFamily="@font/josefinsans_bold2"
+                            android:hint="Weeklys Horoscope"
+                            android:textColor="@color/black"
+                            android:textSize="14dp" />
+
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="16dp"
+                            app:cardBackgroundColor="@color/teal_700"
+                            app:cardCornerRadius="21dp">
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/icfestivs" />
+
+
+                        </com.google.android.material.card.MaterialCardView>
+
+
+                    </RelativeLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</RelativeLayout>
