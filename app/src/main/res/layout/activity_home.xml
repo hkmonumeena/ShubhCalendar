@@ -1,320 +1,262 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.HomeActivity">
+    android:fitsSystemWindows="true"
+    tools:context=".activities.HomeActivity"
+    tools:openDrawer="end">
 
-    <ImageView
-        android:id="@+id/imgTopHeader"
+    <RelativeLayout
+        android:visibility="visible"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_marginTop="-10dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/imgtopheader" />
-
-
-    <ImageView
-        android:id="@+id/icMenu"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:padding="8dp"
-        android:src="@drawable/ic_menu"
-        app:tint="@color/white" />
-
-
-    <ImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="55dp"
-        android:layout_toStartOf="@+id/cardViewProfile"
-        android:padding="12dp"
-        android:src="@drawable/icalarm"
-        app:tint="@color/white" />
-
-
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardViewProfile"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_below="@+id/icMenu"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        app:cardCornerRadius="25dp"
-        app:cardElevation="8dp">
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/imgTopHeader"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="-10dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/imgtopheader" />
 
 
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="0dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/icdummy_user" />
+            android:id="@+id/icMenu"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:padding="8dp"
+            android:src="@drawable/ic_menu"
+            app:tint="@color/white" />
 
 
-    </com.google.android.material.card.MaterialCardView>
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="55dp"
+            android:layout_toStartOf="@+id/card"
+            android:padding="12dp"
+            android:src="@drawable/icalarm"
+            app:tint="@color/white" />
 
-
-    <RelativeLayout
-        android:id="@+id/rlCalendarView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/imgTopHeader">
 
         <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
-            android:layout_height="90dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="5dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="10dp">
+            android:id="@+id/card"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/icMenu"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            app:cardCornerRadius="25dp"
+            app:cardElevation="8dp">
 
-            <LinearLayout
+
+            <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:orientation="vertical">
-
-
-                <TextView
-                    android:id="@+id/textViewDateYear"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="5dp"
-                    android:text="March 2021"
-                    android:textColor="@color/black"
-                    android:textSize="14dp" />
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:orientation="horizontal"
-                    android:weightSum="7">
-
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Sun"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="16dp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Mon"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="16dp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Tue"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="16dp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Thu"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="16dp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Fri"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="16dp"
-                        android:textStyle="bold" />
-
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Sat"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="16dp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Sun"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="16dp"
-                        android:textStyle="bold" />
-
-
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:orientation="horizontal"
-                    android:weightSum="7">
-
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="01"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="16dp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="02"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="16dp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="03"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="16dp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="04"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="16dp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="05"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="16dp" />
-
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="06"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="16dp" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="07"
-                        android:textAlignment="center"
-                        android:textColor="@color/black"
-                        android:textSize="16dp" />
-
-
-                </LinearLayout>
-
-
-            </LinearLayout>
+                android:layout_height="match_parent"
+                android:padding="0dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/icdummy_user" />
 
 
         </com.google.android.material.card.MaterialCardView>
 
 
-    </RelativeLayout>
-
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_below="@+id/rlCalendarView"
-        android:layout_height="match_parent">
-
-
-
-
-
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:orientation="vertical">
-
-        <LinearLayout
+        <RelativeLayout
+            android:id="@+id/rlCalendarView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="2">
-
+            android:layout_below="@+id/imgTopHeader">
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:layout_margin="16dp"
-                android:layout_weight="1"
-                app:cardElevation="8dp"
-                app:cardCornerRadius="5dp"
-                app:cardBackgroundColor="#fe513a">
+                android:layout_height="90dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="5dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="10dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
                     android:orientation="vertical">
 
 
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="80dp"
-                        android:layout_marginTop="10dp"
-                        android:padding="4dp"
-                        android:src="@drawable/ic_cal2"
-                        app:tint="@color/white" />
-
                     <TextView
+                        android:id="@+id/textViewDateYear"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:text="March 2021"
+                        android:textColor="@color/black"
+                        android:textSize="14dp" />
+
+
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
-                        android:text="Calendar"
-                        android:textAlignment="center"
-                        android:textColor="@color/white" />
+                        android:orientation="horizontal"
+                        android:weightSum="7">
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Sun"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Mon"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Tue"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Thu"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Fri"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Sat"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Sun"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal"
+                        android:weightSum="7">
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="01"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="16dp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="02"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="16dp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="03"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="16dp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="04"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="16dp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="05"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="16dp" />
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="06"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="16dp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="07"
+                            android:textAlignment="center"
+                            android:textColor="@color/black"
+                            android:textSize="16dp" />
+
+
+                    </LinearLayout>
 
 
                 </LinearLayout>
@@ -323,228 +265,611 @@
             </com.google.android.material.card.MaterialCardView>
 
 
-            <com.google.android.material.card.MaterialCardView
+        </RelativeLayout>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_below="@+id/rlCalendarView"
+            android:layout_height="match_parent">
+
+
+
+
+
+
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:layout_margin="16dp"
-                android:layout_weight="1"
-                app:cardElevation="8dp"
-                app:cardCornerRadius="5dp"
-                app:cardBackgroundColor="#fd813b">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:layout_margin="16dp"
+                        android:layout_weight="1"
+                        app:cardElevation="8dp"
+                        app:cardCornerRadius="5dp"
+                        app:cardBackgroundColor="#fe513a">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="80dp"
+                                android:layout_marginTop="10dp"
+                                android:padding="4dp"
+                                android:src="@drawable/ic_cal2"
+                                app:tint="@color/white" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:text="Calendar"
+                                android:textAlignment="center"
+                                android:textColor="@color/white" />
+
+
+                        </LinearLayout>
+
+
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:layout_margin="16dp"
+                        android:layout_weight="1"
+                        app:cardElevation="8dp"
+                        app:cardCornerRadius="5dp"
+                        app:cardBackgroundColor="#fd813b">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="80dp"
+                                android:layout_marginTop="10dp"
+                                android:padding="4dp"
+                                android:src="@drawable/ic_swastik"
+                                app:tint="@color/white" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:text="Panchang/Muhurat"
+                                android:textAlignment="center"
+                                android:textColor="@color/white" />
+
+
+                        </LinearLayout>
+
+
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                </LinearLayout>
 
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:layout_margin="16dp"
+                        android:layout_weight="1"
+                        app:cardElevation="8dp"
+                        app:cardCornerRadius="5dp"
+                        app:cardBackgroundColor="#f8a232">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="80dp"
+                                android:layout_marginTop="10dp"
+                                android:padding="4dp"
+                                android:src="@drawable/icnamaskr"
+                                app:tint="@color/white" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:text="Pooja,Mantra,Artis,Katha"
+                                android:textAlignment="center"
+                                android:textColor="@color/white" />
+
+
+                        </LinearLayout>
+
+
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:layout_margin="16dp"
+                        app:cardElevation="8dp"
+                        app:cardCornerRadius="5dp"
+                        android:layout_weight="1"
+                        android:id="@+id/cardViewGetHoroscope"
+                        app:cardBackgroundColor="#993fee">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="80dp"
+                                android:layout_marginTop="10dp"
+                                android:padding="4dp"
+                                android:src="@drawable/ichoroscope"
+                                app:tint="@color/white" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:text="Horoscope"
+                                android:textAlignment="center"
+                                android:textColor="@color/white" />
+
+
+                        </LinearLayout>
+
+
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                </LinearLayout>
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:layout_margin="16dp"
+                        android:layout_weight="1"
+                        app:cardElevation="8dp"
+                        app:cardCornerRadius="5dp"
+                        app:cardBackgroundColor="#00c13f">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="80dp"
+                                android:layout_marginTop="10dp"
+                                android:padding="4dp"
+                                android:src="@drawable/icholidays"
+                                app:tint="@color/white" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:text="Holidays"
+                                android:textAlignment="center"
+                                android:textColor="@color/white" />
+
+
+                        </LinearLayout>
+
+
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:layout_margin="16dp"
+                        android:layout_weight="1"
+                        app:cardElevation="8dp"
+                        app:cardCornerRadius="5dp"
+                        app:cardBackgroundColor="#ff1e42">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="80dp"
+                                android:layout_marginTop="10dp"
+                                android:padding="6dp"
+                                android:src="@drawable/icfestivs"
+                                app:tint="@color/white" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:text="Festivals"
+                                android:textAlignment="center"
+                                android:textColor="@color/white" />
+
+
+                        </LinearLayout>
+
+
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                </LinearLayout>
+
+
+
+
+
+
+
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+
+
+
+
+
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="right">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="35dp"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/rl"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@drawable/bk">
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="40dp"
+                    android:text="Menu"
+                    android:id="@+id/txMenu"
+                    android:layout_marginTop="15dp"
+                    android:textColor="@color/blue"
+                    android:textSize="15dp" />
+
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:padding="8dp"
+                    android:id="@+id/ivCross"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="15dp"
+                    android:src="@drawable/wrong"
+                   />
+
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardViewProfile"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/ivCross"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="10dp"
+                    app:cardCornerRadius="25dp"
+                    app:cardElevation="8dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
 
                     <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:padding="0dp"
+                        android:id="@+id/ivUser"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/icdummy_user" />
+
+
+                    </RelativeLayout>
+                </com.google.android.material.card.MaterialCardView>
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="40dp"
+                    android:text="Name"
+                    android:layout_below="@+id/txMenu"
+                    android:layout_toRightOf="@+id/cardViewProfile"
+                    android:layout_marginTop="25dp"
+                    android:textColor="@color/black"
+                    android:textSize="15dp" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/rl"
+                android:background="@color/purple_200"
+                android:orientation="vertical">
+
+
+                <RelativeLayout
+                    android:id="@+id/rlHome"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:paddingLeft="10dp">
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:src="@drawable/home"
+                        app:tint="@color/white" />
+
+                    <TextView
+
                         android:layout_width="match_parent"
-                        android:layout_height="80dp"
-                        android:layout_marginTop="10dp"
-                        android:padding="4dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:paddingLeft="60dp"
+                        android:text="@string/home"
+                        android:textColor="@color/white"
+                        android:textSize="15dp" />
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlCalendar"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:paddingLeft="10dp">
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:src="@drawable/ic_calendar"
+                        app:tint="@color/white" />
+
+                    <TextView
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:paddingLeft="60dp"
+                        android:text="@string/calendar"
+                        android:textColor="@color/white"
+                        android:textSize="15dp" />
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlPanchang"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:paddingLeft="10dp">
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
                         android:src="@drawable/ic_swastik"
                         app:tint="@color/white" />
 
                     <TextView
+
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:text="Panchang/Muhurat"
-                        android:textAlignment="center"
-                        android:textColor="@color/white" />
+                        android:layout_centerVertical="true"
+                        android:paddingLeft="60dp"
+                        android:text="@string/panchang_muharat"
+                        android:textColor="@color/white"
+                        android:textSize="15dp" />
 
 
-                </LinearLayout>
+                </RelativeLayout>
 
+                <RelativeLayout
+                    android:id="@+id/rlPooja"
 
-            </com.google.android.material.card.MaterialCardView>
-
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="2">
-
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:layout_margin="16dp"
-                android:layout_weight="1"
-                app:cardElevation="8dp"
-                app:cardCornerRadius="5dp"
-                app:cardBackgroundColor="#f8a232">
-
-                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
+                    android:layout_height="50dp"
+                    android:paddingLeft="10dp">
 
                     <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="80dp"
-                        android:layout_marginTop="10dp"
-                        android:padding="4dp"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
                         android:src="@drawable/icnamaskr"
                         app:tint="@color/white" />
 
                     <TextView
+
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:text="Pooja,Mantra,Artis,Katha"
-                        android:textAlignment="center"
-                        android:textColor="@color/white" />
+                        android:layout_centerVertical="true"
+                        android:paddingLeft="60dp"
+                        android:text="@string/pooja_artis_mantras_kathas"
+                        android:textColor="@color/white"
+                        android:textSize="15dp" />
 
 
-                </LinearLayout>
+                </RelativeLayout>
 
+                <RelativeLayout
+                    android:id="@+id/rlHoroscope"
 
-            </com.google.android.material.card.MaterialCardView>
-
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:layout_margin="16dp"
-                app:cardElevation="8dp"
-                app:cardCornerRadius="5dp"
-                android:layout_weight="1"
-                android:id="@+id/cardViewGetHoroscope"
-                app:cardBackgroundColor="#993fee">
-
-
-                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:layout_height="50dp"
+                    android:paddingLeft="10dp">
 
                     <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="80dp"
-                        android:layout_marginTop="10dp"
-                        android:padding="4dp"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
                         android:src="@drawable/ichoroscope"
                         app:tint="@color/white" />
 
                     <TextView
+
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:text="Horoscope"
-                        android:textAlignment="center"
-                        android:textColor="@color/white" />
+                        android:layout_centerVertical="true"
+                        android:paddingLeft="60dp"
+                        android:text="@string/horoscope"
+                        android:textColor="@color/white"
+                        android:textSize="15dp" />
 
 
-                </LinearLayout>
+                </RelativeLayout>
 
+                <RelativeLayout
+                    android:id="@+id/rlHoliday"
 
-            </com.google.android.material.card.MaterialCardView>
-
-
-        </LinearLayout>
-
-
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="2">
-
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:layout_margin="16dp"
-                android:layout_weight="1"
-                app:cardElevation="8dp"
-                app:cardCornerRadius="5dp"
-                app:cardBackgroundColor="#00c13f">
-
-                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
+                    android:layout_height="50dp"
+                    android:paddingLeft="10dp">
 
                     <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="80dp"
-                        android:layout_marginTop="10dp"
-                        android:padding="4dp"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
                         android:src="@drawable/icholidays"
                         app:tint="@color/white" />
 
                     <TextView
+
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:text="Holidays"
-                        android:textAlignment="center"
-                        android:textColor="@color/white" />
+                        android:layout_centerVertical="true"
+                        android:paddingLeft="60dp"
+                        android:text="@string/holiday"
+                        android:textColor="@color/white"
+                        android:textSize="15dp" />
 
 
-                </LinearLayout>
+                </RelativeLayout>
 
+                <RelativeLayout
+                    android:id="@+id/rlFestival"
 
-            </com.google.android.material.card.MaterialCardView>
-
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:layout_margin="16dp"
-                android:layout_weight="1"
-                app:cardElevation="8dp"
-                app:cardCornerRadius="5dp"
-                app:cardBackgroundColor="#ff1e42">
-
-
-                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:layout_height="50dp"
+                    android:paddingLeft="10dp">
 
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="80dp"
-                        android:layout_marginTop="10dp"
-                        android:padding="6dp"
-                        android:src="@drawable/icfestivs"
-                        app:tint="@color/white" />
 
                     <TextView
+
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:text="Festivals"
-                        android:textAlignment="center"
-                        android:textColor="@color/white" />
+                        android:layout_centerVertical="true"
+                        android:paddingLeft="60dp"
+                        android:id="@+id/txt"
+                        android:text="Language"
+                        android:textColor="@color/white"
+                        android:textSize="15dp" />
 
 
-                </LinearLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlLogout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_gravity="right"
+                    android:paddingLeft="10dp">
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:src="@drawable/logout"
+                        app:tint="@color/white" />
 
 
-            </com.google.android.material.card.MaterialCardView>
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="15dp"
+                        android:paddingLeft="45dp"
+                        android:text="@string/logout"
+                        android:textColor="@color/white"
+                        android:textSize="15dp" />
 
 
-        </LinearLayout>
+                </RelativeLayout>
 
 
-
-
-
-
-
-    </LinearLayout>
-    </ScrollView>
-
-</RelativeLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </com.google.android.material.navigation.NavigationView>
+</androidx.drawerlayout.widget.DrawerLayout>

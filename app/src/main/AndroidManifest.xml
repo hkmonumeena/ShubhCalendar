@@ -13,13 +13,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ShubhCalendar">
+        <activity android:name=".activities.LanguageActivity"></activity>
         <activity android:name=".activities.RashiActivity" />
         <activity android:name=".activities.GetHoroscopeActivity" />
-        <activity android:name=".activities.HomeActivity"/>
+        <activity android:name=".activities.HomeActivity">
+
+        </activity>
         <activity android:name=".activities.RegisterMobileActivity" />
-        <activity android:name=".activities.SplashActivity" >
+        <activity android:name=".activities.SplashActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

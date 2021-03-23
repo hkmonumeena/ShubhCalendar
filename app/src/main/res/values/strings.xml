@@ -10,4 +10,13 @@
     <string name="wrong_mobile_number_click_here">Wrong Mobile Number? Click here</string>
     <string name="login_with_mobile">Or Login with mobile</string>
     <string name="next">Next</string>
+    <string name="home">Home</string>
+    <string name="calendar">Calendar</string>
+    <string name="panchang_muharat">Panchang/Muharat</string>
+    <string name="pooja_artis_mantras_kathas">Pooja-Artis,Mantras,Kathas</string>
+    <string name="horoscope">Horoscope</string>
+    <string name="holiday">Holiday</string>
+    <string name="festivals">Festivals</string>
+    <string name="logout">Logout</string>
+    <string name="select_your_language">Select Your Language</string>
 </resources>
