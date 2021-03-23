@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/imgtopheader">
+
+                <RelativeLayout
+                    android:id="@+id/rel_backbtn"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/back_shape">
+
+                    <ImageView
+                        android:id="@+id/backbtn"
+                        android:layout_width="30dp"
+                        android:layout_height="25dp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/ic_baseline_arrow_back_24" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/rel_backbtn"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Festivals"
+                        android:textColor="#FE8226"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/icMenu"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_baseline_menu_24"
+                    app:tint="@color/white" />
+
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="55dp"
+                    android:layout_toStartOf="@+id/cardViewProfile"
+                    android:padding="12dp"
+                    android:src="@drawable/notification"
+                    app:tint="@color/white" />
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardViewProfile"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/icMenu"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    app:cardCornerRadius="25dp"
+                    app:cardElevation="8dp">
+
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="0dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ellipse_6670_ek1" />
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="4">
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardViewbackbtn"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="20sp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="25dp"
+                    app:cardElevation="8dp">
+
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+
+                        android:src="@drawable/backbtn" />
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@+id/cardViewbackbtn"
+                    android:text="January,2021"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="20dp"
+                    android:layout_toLeftOf="@+id/cardViewforwordbtn"
+                    android:src="@drawable/search" />
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardViewforwordbtn"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="5dp"
+                    app:cardCornerRadius="25dp"
+                    app:cardElevation="8dp">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/forverdbtn" />
+
+
+                </com.google.android.material.card.MaterialCardView>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardViewcolor"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20sp"
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="#F4E6F0"
+                    app:cardCornerRadius="25dp"
+                    app:cardElevation="8dp">
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:id="@+id/txt_newyear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@+id/cardViewcolor"
+                    android:text="New Year"
+                    android:textColor="#265F72" />
+
+                <TextView
+                    android:id="@+id/txt_religion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_newyear"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@+id/cardViewcolor"
+                    android:text="Religion: Christian"
+                    android:textColor="#265F72" />
+
+                <ImageView
+                    android:id="@+id/lock"
+                    android:visibility="gone"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_below="@+id/txt_newyear"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@+id/txt_religion"
+                    android:padding="0dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/lock_open" />
+
+
+                <TextView
+                    android:id="@+id/txt_moreinfo"
+                    android:layout_width="100dp"
+                    android:layout_height="20sp"
+                    android:layout_below="@+id/txt_newyear"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toLeftOf="@+id/number"
+                    android:layout_toRightOf="@+id/lock"
+                    android:background="@drawable/moreshape"
+                    android:gravity="center"
+                    android:text="More Info"
+                    android:textColor="#fff"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/number"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="20sp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#FFF8F4"
+                    app:cardCornerRadius="25dp"
+                    app:cardElevation="8dp">
+
+
+                    <TextView
+
+                        android:layout_width="30dp"
+                        android:layout_height="20sp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_toRightOf="@+id/cardViewcolor"
+                        android:gravity="center"
+                        android:text="1"
+                        android:textColor="#FF6C43"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/black" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardViewcolor2"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20sp"
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="#FFF5E5"
+                    app:cardCornerRadius="25dp"
+                    app:cardElevation="8dp">
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:id="@+id/txt_lohri"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@+id/cardViewcolor2"
+                    android:text="Lohri"
+                    android:textColor="#265F72" />
+
+                <TextView
+                    android:id="@+id/txt_sikh"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_lohri"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@+id/cardViewcolor2"
+                    android:text="Religion: Sikh"
+                    android:textColor="#265F72" />
+
+                <ImageView
+                    android:id="@+id/lock1"
+                    android:visibility="gone"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_below="@+id/txt_lohri"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@+id/txt_sikh"
+                    android:padding="0dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/lock_open" />
+
+
+                <TextView
+                    android:id="@+id/txt_moreinfo1"
+                    android:layout_width="100dp"
+                    android:layout_height="20sp"
+                    android:layout_below="@+id/txt_lohri"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toLeftOf="@+id/number1"
+                    android:layout_toRightOf="@+id/lock1"
+                    android:background="@drawable/moreshape"
+                    android:gravity="center"
+                    android:text="More Info"
+                    android:textColor="#fff"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/number1"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="20sp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#FFF8F4"
+                    app:cardCornerRadius="25dp"
+                    app:cardElevation="8dp">
+
+                    <TextView
+
+                        android:layout_width="30dp"
+                        android:layout_height="20sp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_toRightOf="@+id/cardViewcolor"
+                        android:gravity="center"
+                        android:text="13"
+                        android:textColor="#FF6C43"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/black" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardViewcolor3"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20sp"
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="#FCF4FF"
+                    app:cardCornerRadius="25dp"
+                    app:cardElevation="8dp">
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:id="@+id/txt_sankranti"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@+id/cardViewcolor3"
+                    android:text="Makarsakranti"
+                    android:textColor="#265F72" />
+
+                <TextView
+                    android:id="@+id/txt_hindu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_sankranti"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@+id/cardViewcolor3"
+                    android:text="Religion: Hindu"
+                    android:textColor="#265F72" />
+
+                <ImageView
+                    android:id="@+id/lock3"
+                    android:visibility="gone"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_below="@+id/txt_sankranti"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@+id/txt_hindu"
+                    android:padding="0dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/lock_open" />
+
+
+                <TextView
+                    android:id="@+id/txt_moreinfo2"
+                    android:layout_width="100dp"
+                    android:layout_height="20sp"
+                    android:layout_below="@+id/txt_hindu"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toLeftOf="@+id/number4"
+                    android:layout_toRightOf="@+id/lock3"
+                    android:background="@drawable/moreshape"
+                    android:gravity="center"
+                    android:text="More Info"
+                    android:textColor="#fff"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/number4"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="20sp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#FFF8F4"
+                    app:cardCornerRadius="25dp"
+                    app:cardElevation="8dp">
+
+                    <TextView
+
+                        android:layout_width="30dp"
+                        android:layout_height="20sp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_toRightOf="@+id/cardViewcolor"
+                        android:gravity="center"
+                        android:text="13"
+                        android:textColor="#FF6C43"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/black" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.ProfileActivity">
+
+
+    <RelativeLayout
+        android:id="@+id/rlHeader"
+        android:layout_width="match_parent"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_height="80dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="@font/josefinsans_bold2"
+            android:text="MY PROFILE"
+            android:textColor="@color/black" />
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardViewClose"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="16dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="30dp"
+            app:cardElevation="10dp">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:padding="8dp"
+                android:src="@drawable/ic_close"
+                app:tint="@color/teal_700" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </RelativeLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rlProfilePhoto"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_below="@id/rlHeader">
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardViewPhotoSelect"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="8dp"
+            android:translationZ="10dp"
+            app:cardBackgroundColor="#75F58629"
+            app:cardCornerRadius="30dp"
+            app:cardElevation="11dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.612"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.55">
+
+
+
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:padding="5dp"
+                android:src="@drawable/ic_camera"
+                app:tint="@color/white" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardViewProfile"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="50dp"
+            app:cardElevation="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rlProfilePhoto"
+        android:textColor="@color/black"
+        android:fontFamily="@font/josefinsans_bold2"
+        android:text="Anil Kapoor"
+        android:id="@+id/textViewName"
+        android:textSize="18dp"
+        android:layout_centerHorizontal="true"/>
+
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        app:cardBackgroundColor="#FFFDF9F7"
+        android:layout_marginTop="10dp"
+        android:id="@+id/cardViewFieldFirst"
+        android:layout_below="@+id/textViewName">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name"
+                android:id="@+id/noTextViewID"
+                android:textSize="12dp"
+                android:fontFamily="@font/josefinsans_bold2"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Anil Kapoor"
+                android:textSize="16dp"
+                android:id="@+id/textViewName2"
+                android:textColor="@color/black"
+                android:layout_below="@+id/noTextViewID"
+                android:fontFamily="@font/josefinsans_semibold"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"/>
+
+
+          <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Edit"
+              android:textColor="@color/teal_700"
+              android:fontFamily="@font/josefinsans_bold2"
+              android:layout_alignParentRight="true"
+           android:layout_marginEnd="16dp"
+                android:layout_marginTop="10dp"/>
+
+
+
+        </RelativeLayout>
+
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        app:cardBackgroundColor="#FFFDF9F7"
+        android:layout_marginTop="10dp"
+        android:id="@+id/cardViewFieldSeconds"
+        android:layout_below="@+id/cardViewFieldFirst">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email"
+                android:id="@+id/noTextViewID2"
+                android:textSize="12dp"
+                android:fontFamily="@font/josefinsans_bold2"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="anilkapoor@gmail.com"
+                android:textSize="16dp"
+                android:id="@+id/textViewEmail"
+                android:textColor="@color/black"
+                android:layout_below="@+id/noTextViewID2"
+                android:fontFamily="@font/josefinsans_semibold"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Edit"
+                android:textColor="@color/teal_700"
+                android:fontFamily="@font/josefinsans_bold2"
+                android:layout_alignParentRight="true"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="10dp"/>
+
+
+
+        </RelativeLayout>
+
+
+
+    </com.google.android.material.card.MaterialCardView>
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:id="@+id/rlHelp"
+        android:layout_below="@+id/cardViewFieldSeconds">
+        
+        
+        
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/icHelp"
+            android:layout_centerVertical="true"
+            android:padding="4dp"
+            android:src="@drawable/ic_help"
+            android:layout_marginStart="16dp"
+            app:tint="@color/teal_700" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Help"
+            android:fontFamily="@font/josefinsans_bold2"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="16dp"
+            android:textSize="16dp"
+            android:src="@drawable/ic_help"
+            android:layout_toEndOf="@+id/icHelp"/>
+        
+        
+        
+        
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:id="@+id/rlLogout"
+        android:layout_below="@+id/rlHelp">
+
+
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/icLogut"
+            android:layout_centerVertical="true"
+            android:padding="4dp"
+            app:tint="@color/teal_700"
+            android:src="@drawable/ic_logout"
+            android:layout_marginStart="16dp"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Logout"
+            android:fontFamily="@font/josefinsans_bold2"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="16dp"
+            android:textSize="16dp"
+            android:layout_toEndOf="@+id/icLogut"/>
+
+
+
+
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:id="@+id/rlShare"
+        android:layout_below="@+id/rlLogout">
+
+
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/icShare"
+            android:layout_centerVertical="true"
+            android:padding="4dp"
+            app:tint="@color/teal_700"
+            android:src="@drawable/icfestivs"
+            android:layout_marginStart="16dp"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Share"
+            android:fontFamily="@font/josefinsans_bold2"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="16dp"
+            android:textSize="16dp"
+            android:layout_toEndOf="@+id/icShare"/>
+
+
+
+
+    </RelativeLayout>
+
+
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        app:cardBackgroundColor="#FFFDF9F7"
+        android:layout_marginTop="10dp"
+        android:id="@+id/cardViewNotification"
+        android:layout_below="@+id/rlShare">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Notification"
+                android:id="@+id/noTextViewID3"
+                android:textSize="12dp"
+                android:fontFamily="@font/josefinsans_bold2"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enabled"
+                android:textSize="16dp"
+                android:id="@+id/textViewEnabled"
+                android:textColor="@color/black"
+                android:layout_below="@+id/noTextViewID3"
+                android:fontFamily="@font/josefinsans_semibold"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"/>
+
+
+           <com.google.android.material.switchmaterial.SwitchMaterial
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_alignParentRight="true"
+               android:layout_centerVertical="true"
+               android:layout_marginEnd="16dp"/>
+
+
+
+        </RelativeLayout>
+
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+
+
+
+
+</RelativeLayout>
