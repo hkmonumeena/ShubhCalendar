@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:fillViewport="true"
+    android:layout_height="match_parent"
+    tools:context=".activities.PickPlanActivity">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/imgtopheader">
+
+        <RelativeLayout
+            android:id="@+id/rel_backbtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/back_shape">
+
+            <ImageView
+                android:id="@+id/backbtn"
+                android:layout_width="30dp"
+                android:layout_height="25dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_baseline_arrow_back_24" />
+
+        </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:id="@+id/rl_nav"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/back_shape">
+
+
+            <ImageView
+                android:id="@+id/icMenu"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:padding="8dp"
+                android:src="@drawable/ic_baseline_menu_24"
+                app:tint="@color/white" />
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="55dp"
+            android:layout_toStartOf="@+id/cardViewProfile"
+            android:padding="12dp"
+            android:src="@drawable/notification"
+            app:tint="@color/white" />
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardViewProfile"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/rl_nav"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            app:cardCornerRadius="25dp"
+            app:cardElevation="8dp">
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="0dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ellipse_6670_ek1" />
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rel_backbtn"
+       >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pick Your Plan"
+            android:textColor="#FE8226"
+            android:layout_centerHorizontal="true"
+            android:textSize="30sp"
+            android:fontFamily="@font/josefinsans_regular"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="30dp"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="25dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FCF9F7"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="80dp"
+                android:layout_height="5px"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/gradient_back" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="5dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/round_border_orange"
+                android:padding="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:text="Buy Now Our Premier product"
+                    android:textColor="#265F72" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="13sp"
+                    android:text="Remove Ads ,puja ,Artis ,Kathas"
+                    android:textColor="@color/purple_500" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="13sp"
+                    android:text="All information about festival"
+                    android:textColor="@color/purple_500" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:textSize="25sp"
+                    android:layout_marginLeft="20dp"
+                    android:text="$0.30"
+                    android:layout_marginTop="-20dp"
+                    android:textColor="@color/purple_500" />
+
+
+            </LinearLayout>
+
+
+               <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:elevation="5dp"
+                   android:layout_marginTop="25dp"
+                   android:layout_marginLeft="20dp"
+                   android:layout_marginRight="20dp"
+                   android:gravity="center"
+                android:background="@drawable/round_border_orange"
+                android:padding="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:layout_gravity="center"
+                    android:text="Continue with ads"
+                    android:textColor="#265F72" />
+
+               </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="5dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/round_border_orange"
+            android:padding="10dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:id="@+id/iv_visa"
+                android:layout_marginLeft="20dp"
+                android:src="@drawable/visa"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Visa card *98"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/iv_visa"
+                android:textColor="#265F72"/>
+
+            <Spinner
+                android:layout_toRightOf="@+id/iv_visa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+
+        </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                android:textSize="11sp"
+                android:text="Terms &amp; conditions"
+                android:textColor="#A9000000" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"
+                android:textSize="13sp"
+                android:gravity="center"
+                android:text="Continue with payment"
+                android:drawableTint="@color/purple_500"
+                android:drawablePadding="20dp"
+                android:drawableRight="@drawable/ic_baseline_arrow_forward_24"
+                android:textColor="@color/purple_500" />
+
+        </LinearLayout>
+
+
+
+
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>
+</ScrollView>

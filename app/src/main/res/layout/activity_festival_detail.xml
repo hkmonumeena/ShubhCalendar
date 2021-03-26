@@ -1,0 +1,645 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:fillViewport="true"
+    android:layout_height="match_parent"
+    tools:context=".activities.FestivalDetailActivity">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/imgtopheader">
+
+        <RelativeLayout
+            android:id="@+id/rel_backbtn"
+            android:layout_width="40dp"
+            android:visibility="gone"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/back_shape">
+
+            <ImageView
+                android:id="@+id/backbtn"
+                android:layout_width="30dp"
+                android:layout_height="25dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_baseline_arrow_back_24" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_below="@+id/rel_backbtn"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="25dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Holidays"
+                android:visibility="gone"
+                android:textColor="#FE8226"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_nav"
+            android:layout_width="40dp"
+            android:visibility="gone"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/back_shape">
+
+
+            <ImageView
+                android:id="@+id/icMenu"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:visibility="gone"
+                android:padding="8dp"
+                android:src="@drawable/ic_baseline_menu_24"
+                app:tint="@color/white" />
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:visibility="gone"
+            android:layout_marginTop="55dp"
+            android:layout_toStartOf="@+id/cardViewProfile"
+            android:padding="12dp"
+            android:src="@drawable/notification"
+            app:tint="@color/white" />
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardViewProfile"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:visibility="gone"
+            android:layout_below="@+id/rl_nav"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            app:cardCornerRadius="25dp"
+            app:cardElevation="8dp">
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="0dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ellipse_6670_ek1" />
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </RelativeLayout>
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/material_festival"
+        android:layout_marginTop="-100dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_below="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="20dp"
+        android:background="#fff"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="8dp">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/ivProf"
+                        android:layout_width="96dp"
+                        android:layout_height="96dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/ellipse_6670_ek1" />
+
+                    <TextView
+                        android:id="@+id/tv_fest"
+                        android:layout_toRightOf="@+id/ivProf"
+                        android:layout_width="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:layout_height="wrap_content"
+                        android:text="DIWALI"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/josefinsans_regular"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/number"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_toRightOf="@+id/tv_fest"
+                        android:layout_marginTop="10dp"
+                        android:backgroundTint="#FFF8F4"
+                        app:cardCornerRadius="25dp"
+                        app:cardElevation="8dp">
+
+                        <TextView
+                            android:layout_width="30dp"
+                            android:layout_height="20sp"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:text="1"
+                            android:textColor="#FF6C43"
+                            android:textSize="17sp"
+                            android:textStyle="bold" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:id="@+id/tv_month"
+                        android:layout_toRightOf="@+id/tv_fest"
+                        android:layout_width="wrap_content"
+                        android:layout_below="@+id/number"
+                        android:layout_height="wrap_content"
+                        android:text="NOV 2021"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="20dp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/josefinsans_regular"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_day"
+                        android:layout_toRightOf="@+id/tv_fest"
+                        android:layout_width="wrap_content"
+                        android:layout_below="@+id/tv_month"
+                        android:layout_height="wrap_content"
+                        android:text="Friday"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="25dp"
+                        android:textColor="@color/purple_500"
+                        android:fontFamily="@font/josefinsans_regular"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:backgroundTint="#FFF8F4"
+                        app:cardCornerRadius="25dp"
+                        app:cardElevation="8dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:src="@drawable/ic_baseline_close_24"
+                            android:layout_gravity="center" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_height="wrap_content">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="15dp"
+                        android:background="@drawable/round_border_orange"
+                        android:layout_height="wrap_content"
+                        android:elevation="5dp"
+                        android:padding="20dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="1"
+                            android:layout_marginTop="15dp"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="10sp"
+                                android:fontFamily="@font/josefinsans_regular"
+                                android:textStyle="bold"
+                                android:layout_weight="0.20"
+                                android:text="Also called pooja"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="10sp"
+                                android:fontFamily="@font/josefinsans_regular"
+                                android:layout_weight="0.80"
+                                android:text="Festival of lights"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="1"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="13sp"
+                                android:fontFamily="@font/josefinsans_regular"
+                                android:textStyle="bold"
+                                android:layout_weight="0.30"
+                                android:text="Significance"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="13sp"
+                                android:fontFamily="@font/josefinsans_regular"
+                                android:layout_weight="0.70"
+                                android:text="Panchang upto 09:59 shashthi"/>
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="1"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="13sp"
+                                android:fontFamily="@font/josefinsans_regular"
+                                android:textStyle="bold"
+                                android:layout_weight="0.30"
+                                android:text="Key Rituals"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="13sp"
+                                android:fontFamily="@font/josefinsans_regular"
+                                android:layout_weight="0.70"
+                                android:text="Panchang upto 09:59 shashthi"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="1"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="13sp"
+                                android:fontFamily="@font/josefinsans_regular"
+                                android:textStyle="bold"
+                                android:layout_weight="0.30"
+                                android:text="Tithi"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="13sp"
+                                android:fontFamily="@font/josefinsans_regular"
+                                android:layout_weight="0.70"
+                                android:text="Panchang upto 09:59 shashthi"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/txt_moreinfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:paddingLeft="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:elevation="5dp"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:paddingRight="20dp"
+                        android:background="@drawable/gradient_back_text"
+                        android:gravity="center"
+                        android:text="About"
+                        android:textColor="#fff"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_height="wrap_content">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="15dp"
+                        android:background="@drawable/round_border_orange"
+                        android:layout_height="wrap_content"
+                        android:elevation="5dp"
+                        android:padding="20dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="1"
+                            android:layout_marginTop="15dp"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="13sp"
+                                android:fontFamily="@font/josefinsans_regular"
+                                android:textStyle="bold"
+                                android:layout_weight="0.30"
+                                android:text="Significance"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="13sp"
+                                android:fontFamily="@font/josefinsans_regular"
+                                android:layout_weight="0.70"
+                                android:text="Panchang upto 09:59 shashthi"/>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:paddingLeft="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:elevation="5dp"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:paddingRight="20dp"
+                        android:background="@drawable/gradient_back_text"
+                        android:gravity="center"
+                        android:text="Hindu Calender Date : "
+                        android:textColor="#fff"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_height="wrap_content">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="15dp"
+                        android:background="@drawable/round_border_orange"
+                        android:layout_height="wrap_content"
+                        android:elevation="5dp"
+                        android:padding="20dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="1"
+                            android:layout_marginTop="15dp"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="13sp"
+                                android:fontFamily="@font/josefinsans_regular"
+                                android:textStyle="bold"
+                                android:layout_weight="0.30"
+                                android:text="Significance"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="13sp"
+                                android:fontFamily="@font/josefinsans_regular"
+                                android:layout_weight="0.70"
+                                android:text="Panchang upto 09:59 shashthi"/>
+
+                        </LinearLayout>
+
+
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:paddingLeft="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:elevation="5dp"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:paddingRight="20dp"
+                        android:background="@drawable/gradient_back_text"
+                        android:gravity="center"
+                        android:text="Diwali Puja Muhurat : "
+                        android:textColor="#fff"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_height="wrap_content">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="15dp"
+                        android:background="@drawable/round_border_orange"
+                        android:layout_height="wrap_content"
+                        android:elevation="5dp"
+                        android:padding="20dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="1"
+                            android:layout_marginTop="15dp"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="13sp"
+                                android:fontFamily="@font/josefinsans_regular"
+                                android:textStyle="bold"
+                                android:layout_weight="0.30"
+                                android:text="Significance"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="13sp"
+                                android:fontFamily="@font/josefinsans_regular"
+                                android:layout_weight="0.70"
+                                android:text="Panchang upto 09:59 shashthi"/>
+
+                        </LinearLayout>
+
+
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:paddingLeft="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:elevation="5dp"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:paddingRight="20dp"
+                        android:background="@drawable/gradient_back_text"
+                        android:gravity="center"
+                        android:text="Observances : "
+                        android:textColor="#fff"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_height="wrap_content">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="15dp"
+                        android:background="@drawable/round_border_orange"
+                        android:layout_height="wrap_content"
+                        android:elevation="5dp"
+                        android:padding="20dp"
+                        android:orientation="vertical">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="1"
+                            android:layout_marginTop="15dp"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="13sp"
+                                android:fontFamily="@font/josefinsans_regular"
+                                android:textStyle="bold"
+                                android:layout_weight="0.30"
+                                android:text="Significance"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="13sp"
+                                android:fontFamily="@font/josefinsans_regular"
+                                android:layout_weight="0.70"
+                                android:text="Panchang upto 09:59 shashthi"/>
+
+                        </LinearLayout>
+
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:paddingLeft="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:elevation="5dp"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp"
+                        android:paddingRight="20dp"
+                        android:background="@drawable/gradient_back_text"
+                        android:gravity="center"
+                        android:text="Devotional Songs :"
+                        android:textColor="#fff"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+            </LinearLayout>
+        </ScrollView>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/material_share"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:visibility="gone"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="100dp"
+        android:backgroundTint="#F49242"
+        app:cardCornerRadius="40dp"
+        app:cardElevation="0dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_share"/>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+</RelativeLayout>
+</ScrollView>

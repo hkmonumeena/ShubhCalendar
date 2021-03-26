@@ -74,7 +74,8 @@
             android:layout_marginTop="20dp"
             app:cardBackgroundColor="#ffe5d4"
             app:cardCornerRadius="100dp"
-            android:layout_gravity="center">
+            android:layout_gravity="center"
+            app:cardElevation="0dp">
 
 
             <ImageView
@@ -122,8 +123,6 @@
             android:fontFamily="@font/josefinsans_bold2"/>
 
 
-
-
         <com.google.android.material.card.MaterialCardView
             android:layout_width="60dp"
             android:layout_height="60dp"
@@ -132,6 +131,7 @@
             android:layout_centerHorizontal="true"
             app:cardBackgroundColor="@color/black"
             app:cardCornerRadius="25dp"
+            app:cardElevation="0dp"
             android:layout_gravity="center"
             android:layout_marginTop="50dp">
 

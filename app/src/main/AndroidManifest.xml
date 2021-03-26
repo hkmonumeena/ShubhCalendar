@@ -13,27 +13,31 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ShubhCalendar">
-        <activity android:name=".activities.FestivalDetailsActivity">
-
-        </activity>
-        <activity android:name=".activities.FestivalActivity" >
-
-        </activity>
-        <activity android:name=".activities.PaymentSuccessActivity">
-
-        </activity>
+        <activity android:name=".activities.KathasActivity"></activity>
+        <activity android:name=".activities.VidhiActivity" />
+        <activity android:name=".activities.SelectPujaActivity" />
+        <activity android:name=".activities.NotificationActivity" />
+        <activity android:name=".activities.PickPlanActivity" />
+        <activity android:name=".activities.MuhuratActivity" />
+        <activity android:name=".activities.FestivalDetailActivity" />
+        <activity android:name=".activities.PanchangActivity" />
+        <activity android:name=".activities.HolidaysActivity" />
+        <activity android:name=".activities.FestivalDetailsActivity" />
+        <activity android:name=".activities.FestivalActivity" />
+        <activity android:name=".activities.PaymentSuccessActivity" />
         <activity android:name=".activities.SelectPaymentActivity" />
         <activity android:name=".activities.RashiActivity" />
         <activity android:name=".activities.GetHoroscopeActivity" />
-        <activity android:name=".activities.HomeActivity" />
-        <activity android:name=".activities.RegisterMobileActivity" />
-        <activity android:name=".activities.LanguageActivity" />
-        <activity android:name=".activities.SplashActivity" >
-
+        <activity android:name=".activities.HomeActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".activities.RegisterMobileActivity" />
+        <activity android:name=".activities.LanguageActivity" />
+        <activity android:name=".activities.SplashActivity">
 
         </activity>
         <activity android:name=".activities.ProfileActivity" />

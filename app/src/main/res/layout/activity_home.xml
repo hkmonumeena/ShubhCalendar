@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context=".activities.HomeActivity"
-    tools:openDrawer="end">
+    tools:openDrawer="cl">
 
     <RelativeLayout
         android:visibility="visible"
@@ -267,16 +267,10 @@
 
         </RelativeLayout>
 
-
         <ScrollView
             android:layout_width="match_parent"
             android:layout_below="@+id/rlCalendarView"
             android:layout_height="match_parent">
-
-
-
-
-
 
 
             <LinearLayout
@@ -331,6 +325,7 @@
 
 
                     <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/material_card_panchang"
                         android:layout_width="match_parent"
                         android:layout_height="120dp"
                         android:layout_margin="16dp"
@@ -382,6 +377,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="120dp"
                         android:layout_margin="16dp"
+                        android:id="@+id/material_puja"
                         android:layout_weight="1"
                         app:cardElevation="8dp"
                         app:cardCornerRadius="5dp"
@@ -468,6 +464,7 @@
 
 
                     <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/material_card_holidays"
                         android:layout_width="match_parent"
                         android:layout_height="120dp"
                         android:layout_margin="16dp"
@@ -553,6 +550,8 @@
 
             </LinearLayout>
         </ScrollView>
+
+
     </RelativeLayout>
 
 
@@ -818,7 +817,6 @@
 
                 <RelativeLayout
                     android:id="@+id/rlFestival"
-
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:paddingLeft="10dp">
@@ -832,6 +830,34 @@
                         android:paddingLeft="60dp"
                         android:id="@+id/txt"
                         android:text="Language"
+                        android:textColor="@color/white"
+                        android:textSize="15dp" />
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlNotification"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:paddingLeft="10dp">
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:src="@drawable/ic_baseline_notifications_24"
+                        app:tint="@color/white" />
+
+                    <TextView
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:paddingLeft="60dp"
+                        android:text="Notification"
                         android:textColor="@color/white"
                         android:textSize="15dp" />
 
