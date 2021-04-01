@@ -13,7 +13,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ShubhCalendar">
-        <activity android:name=".activities.KathasActivity"></activity>
+        <activity android:name=".ui.HomeNewActivity">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+        <activity android:name=".activities.KathasActivity" />
         <activity android:name=".activities.VidhiActivity" />
         <activity android:name=".activities.SelectPujaActivity" />
         <activity android:name=".activities.NotificationActivity" />
@@ -28,18 +37,12 @@
         <activity android:name=".activities.SelectPaymentActivity" />
         <activity android:name=".activities.RashiActivity" />
         <activity android:name=".activities.GetHoroscopeActivity" />
-        <activity android:name=".activities.HomeActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".activities.HomeActivity">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".activities.RegisterMobileActivity" />
         <activity android:name=".activities.LanguageActivity" />
-        <activity android:name=".activities.SplashActivity">
-
-        </activity>
+        <activity android:name=".activities.SplashActivity"></activity>
         <activity android:name=".activities.ProfileActivity" />
         <activity android:name=".MainActivity" />
     </application>

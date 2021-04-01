@@ -1,2 +1,4 @@
+include ':naviagationmanager'
 include ':app'
+project(':naviagationmanager').projectDir = new File(rootDir, 'naviagationmanage/')
 rootProject.name = "Shubh Calendar"

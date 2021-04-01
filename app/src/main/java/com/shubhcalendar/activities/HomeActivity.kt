@@ -86,8 +86,7 @@ binding.materialPuja.setOnClickListener {
                     )
                 }
 
-                binding.recyclerMonth.layoutManager =
-                    LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+                binding.recyclerMonth.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
                 binding.recyclerMonth.adapter = AdapterMonth(mutableList as ArrayList<ModelMonth>)
 
             }

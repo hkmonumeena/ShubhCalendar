@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigationCalendar"
+        android:icon="@drawable/ic_calendar"
+        android:title="@string/calendar" />
+
+    <item
+        android:id="@+id/navigationHolidays"
+        android:icon="@drawable/icholidays"
+        android:title="@string/holidays" />
+
+    <item
+        android:id="@+id/navigationHome"
+        android:icon="@drawable/home"
+        android:title="@string/home" />
+
+  <item
+        android:id="@+id/navigationPanchang"
+        android:icon="@drawable/ic_swastik"
+        android:title="@string/panchang" />
+
+      <item
+        android:id="@+id/navigationHoroscope"
+        android:icon="@drawable/ichoroscope"
+        android:title="@string/horoscope" />
+
+
+
+</menu>
