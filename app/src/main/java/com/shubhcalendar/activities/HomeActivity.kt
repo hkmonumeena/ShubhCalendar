@@ -4,12 +4,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.DatePicker
 import android.widget.ImageView
 import androidx.cardview.widget.CardView
 import androidx.core.view.GravityCompat
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.card.MaterialCardView
+import com.ibotta.android.support.pickerdialogs.SupportedDatePickerDialog
+import com.ibotta.android.support.pickerdialogs.SupportedTimePickerDialog
 import com.shubhcalendar.R
 import com.shubhcalendar.databinding.ActivityHomeBinding
 import com.shubhcalendar.utills.Craft.confirmationDialog
@@ -21,7 +22,7 @@ import com.shubhcalendar.utills.ViewHolder
 import kotlinx.android.synthetic.main.calendar_item.view.*
 import java.util.*
 
-class HomeActivity : AppCompatActivity() {
+class HomeActivity : AppCompatActivity(),SupportedDatePickerDialog.OnDateSetListener{
     lateinit var binding: ActivityHomeBinding
     private val calendar = Calendar.getInstance()
     private var currentMonth = 0
@@ -40,21 +41,6 @@ class HomeActivity : AppCompatActivity() {
         binding.rlFestival.setOnClickListener {
             startActivity<LanguageActivity>()
         }
-binding.materialPuja.setOnClickListener {
-            startActivity<SelectPujaActivity>()
-        }
-
-        binding.materialCardHolidays.setOnClickListener {
-            startActivity<HolidaysActivity>()
-        }
-        binding.rlNotification.setOnClickListener {
-            startActivity<NotificationActivity>()
-        }
-
-        binding.materialCardPanchang.setOnClickListener {
-            startActivity<PanchangActivity>()
-        }
-
         binding.icMenu.setOnClickListener { binding.drawer.openDrawer(GravityCompat.END) }
         binding.ivCross.setOnClickListener { binding.drawer.closeDrawer(GravityCompat.END) }
 
@@ -69,7 +55,7 @@ binding.materialPuja.setOnClickListener {
         minute = calendar.get(Calendar.MINUTE)
         seconds = calendar.get(Calendar.SECOND)
         binding.textViewDateYear.setOnClickListener {
-            confirmationDialog("Select Month", monthNumListShow,monthNumList)
+           /* confirmationDialog("Select Month", monthNumListShow,monthNumList)
             { position, value, id ->
                 currentMonth=id.toInt()
                 mutableList.clear()
@@ -89,7 +75,13 @@ binding.materialPuja.setOnClickListener {
                 binding.recyclerMonth.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
                 binding.recyclerMonth.adapter = AdapterMonth(mutableList as ArrayList<ModelMonth>)
 
-            }
+            }*/
+            val currentDate = Calendar.getInstance()
+            val year = currentDate.get(Calendar.YEAR)
+            val month = currentDate.get(Calendar.MONTH)
+            val dayOfMonth = currentDate.get(Calendar.DAY_OF_MONTH)
+            SupportedDatePickerDialog(this, R.style.SpinnerDatePickerDialogTheme, this, year, month, dayOfMonth).show()
+
         }
 
         getFutureDatesOfCurrentMonth().forEach {
@@ -164,6 +156,10 @@ binding.materialPuja.setOnClickListener {
         calendar.add(Calendar.DATE, -1)
 
         return list
+    }
+
+    override fun onDateSet(view: DatePicker, year: Int, month: Int, dayOfMonth: Int) {
+
     }
 
 
