@@ -14,13 +14,15 @@ import com.shubhcalendar.activities.ModelMonth
 import com.shubhcalendar.databinding.FragmentHomeBinding
 import com.shubhcalendar.ui.HomeNewActivity
 import com.shubhcalendar.ui.calendar.CalendarFragment
+import com.shubhcalendar.ui.home.panchangmuhurat.PanchabgMuhurat
+import com.shubhcalendar.ui.profile.ProfileFragment
 import com.shubhcalendar.utills.BaseFragment
 import com.trendyol.medusalib.navigator.Navigator
 import com.trendyol.medusalib.navigator.transitionanimation.TransitionAnimationType
 import java.util.*
 
 
-class HomeFragment : BaseFragment(),View.OnClickListener{
+class HomeFragment : BaseFragment(), View.OnClickListener {
     lateinit var binding: FragmentHomeBinding
     private val calendar = Calendar.getInstance()
     private var currentMonth = 0
@@ -59,16 +61,37 @@ class HomeFragment : BaseFragment(),View.OnClickListener{
         initializeClickListeners()
         initializeHorizontalCalendar() // for first time show calendar with current month
     }
-    private fun initializeClickListeners(){
+
+    private fun initializeClickListeners() {
         binding.icMenu.setOnClickListener(this)
         binding.cardViewCalendar.setOnClickListener(this)
+        binding.llPanchangMuhurat.setOnClickListener(this)
+        binding.cardViewProfile.setOnClickListener(this)
     }
+
     override fun onClick(v: View?) {
-        when(v){
-            binding.icMenu ->{(activity as HomeNewActivity).binding.drawer.openDrawer(GravityCompat.END)}
-            binding.cardViewCalendar ->{multipleStackNavigator!!.switchTab(0)}
+        when (v) {
+            binding.icMenu -> {
+                (activity as HomeNewActivity).binding.drawer.openDrawer(GravityCompat.END)
+            }
+            binding.cardViewCalendar -> {
+                multipleStackNavigator!!.switchTab(0)
+            }
+            binding.llPanchangMuhurat -> {
+                multipleStackNavigator?.start(
+                    PanchabgMuhurat(),
+                    TransitionAnimationType.FADE_IN_OUT
+                )
+            }
+            binding.cardViewProfile -> {
+                multipleStackNavigator?.start(
+                    ProfileFragment(),
+                    TransitionAnimationType.FADE_IN_OUT
+                )
+            }
         }
     }
+
     private fun initializeHorizontalCalendar() {
         getFutureDatesOfCurrentMonth().forEach {
             mutableList.add(
@@ -87,6 +110,7 @@ class HomeFragment : BaseFragment(),View.OnClickListener{
             LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false)
         binding.recyclerMonth.adapter = AdapterMonth(mutableList as ArrayList<ModelMonth>)
     }
+
     private fun getDatesOfNextMonth(): List<Date> {
         currentMonth++ // + because we want next month
         if (currentMonth == 12) {
@@ -96,6 +120,7 @@ class HomeFragment : BaseFragment(),View.OnClickListener{
         }
         return getDates(mutableListOf())
     }
+
     private fun getDatesOfPreviousMonth(): List<Date> {
         currentMonth-- // - because we want previous month
         if (currentMonth == -1) {
@@ -105,19 +130,22 @@ class HomeFragment : BaseFragment(),View.OnClickListener{
         }
         return getDates(mutableListOf())
     }
+
     private fun getFutureDatesOfCurrentMonth(): List<Date> {
         // get all next dates of current month
         currentMonth--
         currentMonth = calendar[Calendar.MONTH]
-        Log.e("TestActivity", "getFutureDatesOfCurrentMonth: $currentMonth");
+        Log.e("TestActivity", "getFutureDatesOfCurrentMonth: $currentMonth")
         return getDates(mutableListOf())
     }
+
     private fun getAnyDate(selectedMonth: Int): List<Date> {
         // get all next dates of current month
         currentMonth--
         currentMonth = selectedMonth
         return getDates(mutableListOf())
     }
+
     private fun getDates(list: MutableList<Date>): List<Date> {
         // load dates of whole month
         Log.e("pihu", "getDates: " + currentMonth)

@@ -11,9 +11,11 @@ import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import com.shubhcalendar.MainActivity
 import com.shubhcalendar.R
+import com.shubhcalendar.ui.HomeNewActivity
 import com.shubhcalendar.utills.Craft.getKey
 import com.shubhcalendar.utills.Craft.startActivity
 import com.shubhcalendar.utills.Keys
+import com.shubhcalendar.utills.LocaleUtils
 
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,8 +26,17 @@ class SplashActivity : AppCompatActivity() {
             WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
             WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
         )
+        val Lang = getKey(Keys.Language)
+        Log.e("dsjdik", "onCreate: $Lang", )
+        if (Lang == "en") {
+            LocaleUtils.setLocale(this, 1)
+        } else if (Lang == "hi") {
+            LocaleUtils.setLocale(this, 0)
+        } else {
+            LocaleUtils.setLocale(this, 1)
+        }
         Handler().postDelayed({
-            Log.e("SplashActivity", "onCreate: ${getKey(Keys.userID)}");
+            Log.e("SplashActivity", "onCreate: ${getKey(Keys.userID)}")
             takeAction()
         }, 2000)
 
@@ -36,7 +47,7 @@ class SplashActivity : AppCompatActivity() {
             startActivity<RegisterMobileActivity>()
             finish()
         } else {
-            startActivity<HomeActivity>()
+            startActivity<HomeNewActivity>()
             finish()
         }
     }

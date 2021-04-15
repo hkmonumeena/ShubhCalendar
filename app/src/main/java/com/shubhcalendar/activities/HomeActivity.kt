@@ -130,7 +130,7 @@ class HomeActivity : AppCompatActivity(),SupportedDatePickerDialog.OnDateSetList
         // get all next dates of current month
         currentMonth--
         currentMonth = calendar[Calendar.MONTH]
-        Log.e("TestActivity", "getFutureDatesOfCurrentMonth: $currentMonth");
+        Log.e("TestActivity", "getFutureDatesOfCurrentMonth: $currentMonth")
         return getDates(mutableListOf())
     }
 

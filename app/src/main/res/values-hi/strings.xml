@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="menu">मेन्यू</string>
+    <string name="app_name">Shubh Calendar</string>
+    <string name="shubh_calendar">शुभ कैलेंडर</string>
+    <string name="register_with_your_phone_number">अपने फोन नंबर के साथ रजिस्टर करें</string>
+    <string name="enter_your_phone_number">अपना फोन नंबर डालें</string>
+    <string name="get_otp">ओटीपी प्राप्त करें</string>
+    <string name="an_sms_with_a_code_was_sent_to_you_please_type_it_below">कोड के साथ एक एसएमएस आपको भेजा गया था, कृपया इसे नीचे लिखें</string>
+    <string name="didn_t_get_an_sms_click_here_to_resend">एक एसएमएस नहीं मिला ?, यहाँ क्लिक करें को पुनः भेजें</string>
+    <string name="enter_your_full_name">अपना पूरा नाम भरें</string>
+    <string name="wrong_mobile_number_click_here">गलत मोबाइल नंबर? यहाँ क्लिक करें</string>
+    <string name="login_with_mobile">या मोबाइल से लॉगिन करें</string>
+    <string name="next">अगला</string>
+    <string name="home">होम</string>
+    <string name="panchang_muharat">पंचांग / मुहर्रत</string>
+    <string name="pooja_artis_mantras_kathas">पूजा-आरती, मंत्र, कथा</string>
+    <string name="horoscope">राशिफल</string>
+    <string name="holiday">छुट्टी का दिन</string>
+    <string name="festivals">समारोह</string>
+    <string name="logout">लॉग आउट</string>
+    <string name="select_your_language">अपनी भाषा का चयन करें</string>
+    <string name="holidays">छुट्टियां</string>
+    <string name="pooja">पूजा</string>
+    <string name="panchang">पंचांग</string>
+    <string name="calendar">पंचांग</string>
+    <string name="muhurat">मुहुर्त</string>
+    <string name="language">भाषा: हिन्दी</string>
+    <string name="notification">अधिसूचना</string>
+</resources>

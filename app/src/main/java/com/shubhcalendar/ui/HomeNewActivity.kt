@@ -1,13 +1,14 @@
 package com.shubhcalendar.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.shubhcalendar.R
 import com.shubhcalendar.databinding.ActivityHomeNewBinding
 import com.shubhcalendar.ui.calendar.CalendarFragment
+import com.shubhcalendar.ui.childhelps.LangugageSheet
 import com.shubhcalendar.ui.holidays.HolidaysFragment
 import com.shubhcalendar.ui.home.HomeFragment
 import com.shubhcalendar.ui.horoscope.HoroscopeFragment
@@ -25,15 +26,19 @@ class HomeNewActivity : AppCompatActivity(), Navigator.NavigatorListener, View.O
         { PanchangFragment() },     //3
         { HoroscopeFragment() })     //4
     val multipleStackNavigator: MultipleStackNavigator =
-        MultipleStackNavigator(supportFragmentManager, R.id.frame, rootFragmentProvider, navigatorListener = this, navigatorConfiguration = NavigatorConfiguration(2, true, NavigatorTransaction.SHOW_HIDE))
+        MultipleStackNavigator(
+            supportFragmentManager,
+            R.id.frame,
+            rootFragmentProvider,
+            navigatorListener = this,
+            navigatorConfiguration = NavigatorConfiguration(2, true, NavigatorTransaction.SHOW_HIDE)
+        )
     private val mOnNavigationItemSelectedListener =
         BottomNavigationView.OnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.navigationCalendar -> {
                     multipleStackNavigator.switchTab(0)
                     return@OnNavigationItemSelectedListener true
-
-
                 }
                 R.id.navigationHolidays -> {
 
@@ -62,7 +67,10 @@ class HomeNewActivity : AppCompatActivity(), Navigator.NavigatorListener, View.O
         binding = ActivityHomeNewBinding.inflate(layoutInflater)
         setContentView(binding.root)
         multipleStackNavigator.initialize(savedInstanceState)
-        binding.bottomNavigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+        binding.bottomNavigation.setOnNavigationItemSelectedListener(
+            mOnNavigationItemSelectedListener
+        )
+        binding.rlLanguage.setOnClickListener(this)
 
     }
 
@@ -70,7 +78,7 @@ class HomeNewActivity : AppCompatActivity(), Navigator.NavigatorListener, View.O
         if (multipleStackNavigator.canGoBack()) {
             multipleStackNavigator.goBack()
         } else {
-           // takeExit()
+            // takeExit()
         }
     }
 
@@ -83,11 +91,21 @@ class HomeNewActivity : AppCompatActivity(), Navigator.NavigatorListener, View.O
             4 -> binding.bottomNavigation.selectedItemId = R.id.navigationHoroscope
         }
     }
+
     override fun onSaveInstanceState(outState: Bundle) {
         multipleStackNavigator.onSaveInstanceState(outState)
         super.onSaveInstanceState(outState)
     }
-    override fun onClick(v: View?) {
 
+    override fun onClick(v: View?) {
+        when (v) {
+            binding.rlLanguage -> {
+                val bundle = Bundle()
+                bundle.putString("openedFrom", "ShowAddressBottomsheet")
+                val bottomSheet = LangugageSheet()
+                bottomSheet.arguments = bundle
+                bottomSheet.show(supportFragmentManager, "new address")
+            }
+        }
     }
 }

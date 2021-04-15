@@ -32,4 +32,4 @@ abstract class GenricAdapter<T>(var items: ArrayList<T>): RecyclerView.Adapter<R
 
 }
 
-class ViewHolder(view: View): RecyclerView.ViewHolder(view) {}
+class ViewHolder(view: View): RecyclerView.ViewHolder(view)

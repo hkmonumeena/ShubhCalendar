@@ -14,15 +14,20 @@
 
     <string name="panchang_muharat">Panchang/Muharat</string>
     <string name="pooja_artis_mantras_kathas">Pooja-Artis,Mantras,Kathas</string>
-    <string name="horoscope">Horoscope</string>
+    <string name="horosscrrecope">Horoscope</string>
     <string name="holiday">Holiday</string>
     <string name="festivals">Festivals</string>
     <string name="logout">Logout</string>
     <string name="select_your_language">Select Your Language</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
     <string name="holidays">Holidays</string>
     <string name="pooja">Pooja</string>
     <string name="panchang">Panchang</string>
+    <string name="calendar">Calendar</string>
+    <string name="muhurat">Muhurat</string>
+    <string name="menu">Menu</string>
+    <string name="language">Language</string>
+    <string name="notification">Notification</string>
     <string name="calendar">Calendar</string>
 </resources>

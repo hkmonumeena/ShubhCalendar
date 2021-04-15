@@ -88,7 +88,7 @@ class RegisterMobileActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun getUserNameMobile() {
         binding.imgLoading.visibility = View.VISIBLE
-        binding.imgLoading?.load("https://fjkf.com") {
+        binding.imgLoading.load("https://fjkf.com") {
             placeholder(R.drawable.loading)
             error(R.drawable.loading)
         }
@@ -116,7 +116,7 @@ class RegisterMobileActivity : AppCompatActivity(), View.OnClickListener {
                                 binding.rlGetOtp.visibility = View.GONE
                                 binding.rlVerifyOtp.visibility = View.VISIBLE
                             } else {
-                                toast("${data?.result}")
+                                toast("${data.result}")
                             }
                         } else {
                             toast("Something went wrong")
@@ -127,7 +127,7 @@ class RegisterMobileActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun getVerifyUserMobile(getfieldOtp: String) {
         binding.imgLoading.visibility = View.VISIBLE
-        binding.imgLoading?.load("https://fjkf.com") {
+        binding.imgLoading.load("https://fjkf.com") {
             placeholder(R.drawable.loading)
             error(R.drawable.loading)
         }
@@ -141,7 +141,7 @@ class RegisterMobileActivity : AppCompatActivity(), View.OnClickListener {
                     binding.imgLoading.visibility = View.GONE
                     if (error == null) {
                         if (data?.result == "Login successfully") {
-                            toast(data?.result)
+                            toast(data.result)
                             putKey(Keys.userID, data.id)
                             putKey(Keys.userName, data.name)
                             putKey(Keys.userMobile, data.mobile)

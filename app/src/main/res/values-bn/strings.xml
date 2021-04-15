@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">শুভ ক্যালেন্ডার</string>
+    <string name="shubh_calendar">শুভ ক্যালেন্ডার</string>
+    <string name="register_with_your_phone_number">আপনার ফোন নম্বর দিয়ে নিবন্ধন করুন</string>
+    <string name="enter_your_phone_number">আপনার ফোন নম্বর লিখুন</string>
+    <string name="get_otp">ওটিপি পান</string>
+    <string name="an_sms_with_a_code_was_sent_to_you_please_type_it_below">একটি কোড সহ একটি এসএমএস আপনাকে পাঠানো হয়েছিল, দয়া করে এটি নীচে টাইপ করুন</string>
+    <string name="didn_t_get_an_sms_click_here_to_resend">একটি এসএমএস পেলেন না?, পুনরায় পাঠাতে এখানে ক্লিক করুন</string>
+    <string name="enter_your_full_name">আপনার পুরো নাম লিখুন</string>
+    <string name="wrong_mobile_number_click_here">ভুল মোবাইল নম্বর? এখানে ক্লিক করুন</string>
+    <string name="login_with_mobile">অথবা মোবাইল দিয়ে লগইন করুন</string>
+    <string name="next">পরবর্তী</string>
+    <string name="home">বাড়ি</string>
+    <string name="pooja_artis_mantras_kathas">পূজা-আর্টিস, মন্ত্র, কাঠাস</string>
+    <string name="panchang_muharat">পঞ্চং / মহরত</string>
+    <string name="horoscope">রাশিফল</string>
+    <string name="holiday">ছুটি</string>
+    <string name="festivals">উত্সব</string>
+    <string name="logout">প্রস্থান</string>
+    <string name="select_your_language">আপনার ভাষা নির্বাচন করুন</string>
+    <string name="holidays">ছুটি</string>
+    <string name="pooja">পূজা</string>
+    <string name="panchang">পঞ্চং</string>
+    <string name="calendar">পঞ্জিকা</string>
+    <string name="muhurat">মুহুর্ত</string>
+    <string name="menu">তালিকা</string>
+    <string name="language">ভাষা</string>
+    <string name="notification">বিজ্ঞপ্তি</string>
+</resources>

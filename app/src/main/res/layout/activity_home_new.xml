@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context=".activities.HomeActivity"
-    tools:openDrawer="cl">
+    tools:openDrawer="end">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -79,7 +79,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingLeft="40dp"
-                    android:text="Menu"
+                    android:text="@string/menu"
                     android:id="@+id/txMenu"
                     android:layout_marginTop="15dp"
                     android:textColor="@color/blue"
@@ -314,7 +314,7 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/rlFestival"
+                    android:id="@+id/rlLanguage"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:paddingLeft="10dp">
@@ -327,7 +327,7 @@
                         android:layout_centerVertical="true"
                         android:paddingLeft="60dp"
                         android:id="@+id/txt"
-                        android:text="Language"
+                        android:text="@string/language"
                         android:textColor="@color/white"
                         android:textSize="15dp" />
 
@@ -355,7 +355,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:paddingLeft="60dp"
-                        android:text="Notification"
+                        android:text="@string/notification"
                         android:textColor="@color/white"
                         android:textSize="15dp" />
 
