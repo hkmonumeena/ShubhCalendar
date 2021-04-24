@@ -14,14 +14,14 @@ public class LocaleUtils {
 
 
     @Retention(RetentionPolicy.SOURCE)
-    @StringDef({HINDI,ENGLISH,BANGALI})
+    @StringDef({HINDI,ENGLISH,BENGALI})
     public @interface LocaleDef {
-        String[] SUPPORTED_LOCALES = {HINDI,ENGLISH,BANGALI};
+        String[] SUPPORTED_LOCALES = {HINDI,ENGLISH, BENGALI};
     }
 
     public static final String ENGLISH = "en";
     public static final String HINDI = "hi";
-    public static final String BANGALI = "bn";
+    public static final String BENGALI = "bn";
 
     public static void initialize(Context context) {
 //        String lang = getPersistedData(context, Locale.getDefault().getLanguage());

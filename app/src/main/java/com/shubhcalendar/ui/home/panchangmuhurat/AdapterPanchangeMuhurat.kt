@@ -5,8 +5,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
 import com.shubhcalendar.R
-import com.shubhcalendar.ui.home.panchangmuhurat.childfragments.MuhuratFragment
 import com.shubhcalendar.ui.home.panchangmuhurat.childfragments.PanchangFragment
+import com.shubhcalendar.ui.home.panchangmuhurat.childfragments.MuhuratFrag
 
 
 /**
@@ -28,7 +28,7 @@ class AdapterPanchangeMuhurat(fm: FragmentManager?, var mContext: Context) : Fra
     override fun getItem(position: Int): Fragment {
         when (position) {
             0 -> return PanchangFragment()
-            1 -> return MuhuratFragment()
+            1 -> return MuhuratFrag()
 
             else -> {
                 throw IllegalStateException("$position is illegal")

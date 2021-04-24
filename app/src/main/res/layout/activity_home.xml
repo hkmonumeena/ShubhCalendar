@@ -20,8 +20,8 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="25dp"
             android:padding="10dp"
-            android:visibility="gone"
             android:src="@drawable/ic_menu"
+            android:visibility="gone"
             app:tint="@color/black" />
 
 
@@ -47,7 +47,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 app:labelVisibilityMode="labeled"
-                app:menu="@menu/navigation"/>
+                app:menu="@menu/navigation" />
 
 
         </com.google.android.material.card.MaterialCardView>
@@ -57,9 +57,10 @@
 
 
     <RelativeLayout
-        android:visibility="visible"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
         <ImageView
             android:id="@+id/imgTopHeader"
             android:layout_width="match_parent"
@@ -147,9 +148,9 @@
                         android:textSize="14dp" />
 
                     <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerMonth"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/recyclerMonth"/>
+                        android:layout_height="wrap_content" />
 
                 </LinearLayout>
 
@@ -161,8 +162,8 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_below="@+id/rlCalendarView"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_below="@+id/rlCalendarView">
 
 
             <LinearLayout
@@ -183,9 +184,9 @@
                         android:layout_height="120dp"
                         android:layout_margin="16dp"
                         android:layout_weight="1"
-                        app:cardElevation="8dp"
+                        app:cardBackgroundColor="#fe513a"
                         app:cardCornerRadius="5dp"
-                        app:cardBackgroundColor="#fe513a">
+                        app:cardElevation="8dp">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -222,9 +223,9 @@
                         android:layout_height="120dp"
                         android:layout_margin="16dp"
                         android:layout_weight="1"
-                        app:cardElevation="8dp"
+                        app:cardBackgroundColor="#fd813b"
                         app:cardCornerRadius="5dp"
-                        app:cardBackgroundColor="#fd813b">
+                        app:cardElevation="8dp">
 
 
                         <LinearLayout
@@ -266,14 +267,14 @@
 
 
                     <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/material_puja"
                         android:layout_width="match_parent"
                         android:layout_height="120dp"
                         android:layout_margin="16dp"
-                        android:id="@+id/material_puja"
                         android:layout_weight="1"
-                        app:cardElevation="8dp"
+                        app:cardBackgroundColor="#f8a232"
                         app:cardCornerRadius="5dp"
-                        app:cardBackgroundColor="#f8a232">
+                        app:cardElevation="8dp">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -305,14 +306,14 @@
 
 
                     <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cardViewGetHoroscope"
                         android:layout_width="match_parent"
                         android:layout_height="120dp"
                         android:layout_margin="16dp"
-                        app:cardElevation="8dp"
-                        app:cardCornerRadius="5dp"
                         android:layout_weight="1"
-                        android:id="@+id/cardViewGetHoroscope"
-                        app:cardBackgroundColor="#993fee">
+                        app:cardBackgroundColor="#993fee"
+                        app:cardCornerRadius="5dp"
+                        app:cardElevation="8dp">
 
 
                         <LinearLayout
@@ -332,7 +333,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="5dp"
-                                android:text="Horoscope"
+                                android:text="@string/horoscope"
                                 android:textAlignment="center"
                                 android:textColor="@color/white" />
 
@@ -344,8 +345,6 @@
 
 
                 </LinearLayout>
-
-
 
 
                 <LinearLayout
@@ -361,9 +360,9 @@
                         android:layout_height="120dp"
                         android:layout_margin="16dp"
                         android:layout_weight="1"
-                        app:cardElevation="8dp"
+                        app:cardBackgroundColor="#00c13f"
                         app:cardCornerRadius="5dp"
-                        app:cardBackgroundColor="#00c13f">
+                        app:cardElevation="8dp">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -399,9 +398,9 @@
                         android:layout_height="120dp"
                         android:layout_margin="16dp"
                         android:layout_weight="1"
-                        app:cardElevation="8dp"
+                        app:cardBackgroundColor="#ff1e42"
                         app:cardCornerRadius="5dp"
-                        app:cardBackgroundColor="#ff1e42">
+                        app:cardElevation="8dp">
 
 
                         <LinearLayout
@@ -435,20 +434,11 @@
                 </LinearLayout>
 
 
-
-
-
-
-
             </LinearLayout>
         </ScrollView>
 
 
     </RelativeLayout>
-
-
-
-
 
 
     <com.google.android.material.navigation.NavigationView
@@ -459,8 +449,8 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_marginTop="35dp"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp">
 
             <RelativeLayout
                 android:id="@+id/rl"
@@ -470,26 +460,24 @@
 
                 <TextView
 
+                    android:id="@+id/txMenu"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
                     android:paddingLeft="40dp"
                     android:text="Menu"
-                    android:id="@+id/txMenu"
-                    android:layout_marginTop="15dp"
                     android:textColor="@color/blue"
                     android:textSize="15dp" />
 
 
                 <ImageView
+                    android:id="@+id/ivCross"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
-                    android:padding="8dp"
-                    android:id="@+id/ivCross"
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="15dp"
-                    android:src="@drawable/wrong"
-                   />
-
+                    android:padding="8dp"
+                    android:src="@drawable/wrong" />
 
 
                 <com.google.android.material.card.MaterialCardView
@@ -497,8 +485,8 @@
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_below="@+id/ivCross"
-                    android:layout_marginTop="25dp"
                     android:layout_marginStart="15dp"
+                    android:layout_marginTop="25dp"
                     android:layout_marginEnd="10dp"
                     app:cardCornerRadius="25dp"
                     app:cardElevation="8dp">
@@ -507,26 +495,27 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:padding="0dp"
-                        android:id="@+id/ivUser"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/icdummy_user" />
+                        <ImageView
+                            android:id="@+id/ivUser"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:padding="0dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/icdummy_user" />
 
 
                     </RelativeLayout>
                 </com.google.android.material.card.MaterialCardView>
+
                 <TextView
 
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_below="@+id/txMenu"
+                    android:layout_marginTop="25dp"
+                    android:layout_toRightOf="@+id/cardViewProfile"
                     android:paddingLeft="40dp"
                     android:text="Name"
-                    android:layout_below="@+id/txMenu"
-                    android:layout_toRightOf="@+id/cardViewProfile"
-                    android:layout_marginTop="25dp"
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 
@@ -716,11 +705,11 @@
 
                     <TextView
 
+                        android:id="@+id/txt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:paddingLeft="60dp"
-                        android:id="@+id/txt"
                         android:text="Language"
                         android:textColor="@color/white"
                         android:textSize="15dp" />

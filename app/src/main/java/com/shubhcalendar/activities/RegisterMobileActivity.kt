@@ -14,6 +14,7 @@ import com.github.kittinunf.fuel.gson.responseObject
 import com.google.gson.Gson
 import com.shubhcalendar.R
 import com.shubhcalendar.databinding.ActivityRegisterMobileBinding
+import com.shubhcalendar.ui.HomeNewActivity
 import com.shubhcalendar.utills.Api.mainLink
 import com.shubhcalendar.utills.Api.mobile_validation
 import com.shubhcalendar.utills.Api.signup_mobile
@@ -145,7 +146,7 @@ class RegisterMobileActivity : AppCompatActivity(), View.OnClickListener {
                             putKey(Keys.userID, data.id)
                             putKey(Keys.userName, data.name)
                             putKey(Keys.userMobile, data.mobile)
-                            startActivity<HomeActivity>()
+                            startActivity<HomeNewActivity>()
                             finish()
                         } else {
                             toast(data?.result!!)

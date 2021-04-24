@@ -136,12 +136,12 @@
                         android:layout_weight="1"
                         app:cardElevation="8dp"
                         app:cardCornerRadius="5dp"
-                        android:id="@+id/cardViewCalendar"
                         app:cardBackgroundColor="#fe513a">
 
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:id="@+id/cardViewCalendar"
                             android:orientation="vertical">
 
 

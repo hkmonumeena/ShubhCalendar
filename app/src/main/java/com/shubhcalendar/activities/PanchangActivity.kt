@@ -19,11 +19,6 @@ class PanchangActivity : AppCompatActivity() {
         binding=ActivityPanchangBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.materialShare.setOnClickListener {
-            startActivity<FestivalDetailActivity>()
-        }
-        binding.layoutMuhurat.setOnClickListener {
-            startActivity<MuhuratActivity>()
-        }
+
     }
 }

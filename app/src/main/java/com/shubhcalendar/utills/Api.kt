@@ -5,4 +5,5 @@ object Api {
    val signup_mobile ="${mainLink}signup_mobile"
    val mobile_validation ="${mainLink}mobile_validation"
    val show_profile ="${mainLink}show_profile"
+   val show_muhurat ="${mainLink}show_muhrat"
 }

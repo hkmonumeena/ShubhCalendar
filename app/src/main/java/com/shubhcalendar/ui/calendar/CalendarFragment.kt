@@ -68,6 +68,7 @@ class CalendarFragment : BaseFragment(),View.OnClickListener,CoroutineScope {
       binding.icMenu.setOnClickListener(this)
       binding.cardViewBack.setOnClickListener(this)
       binding.cardViewForward.setOnClickListener(this)
+
    }
 
    private fun initializeFullScreenCalendar(action: Int) {
@@ -125,12 +126,14 @@ class CalendarFragment : BaseFragment(),View.OnClickListener,CoroutineScope {
          mutableMonthDateList.forEach {
             list.add(TestConcat(it,null,null))
          }
-         binding.recyclerDates.adapter = AdapterCalendar(list)
-         showFestivals(DateUtils.getMonthNumber(getFutureDatesOfCurrentMonth().get(0)),DateUtils.getYear(getFutureDatesOfCurrentMonth().get(0)),mutableMonthDateList as ArrayList<ModelCalendarMonth>)
+      binding.recyclerDates.adapter = AdapterCalendar(list)
+        showFestivals(DateUtils.getMonthNumber(getFutureDatesOfCurrentMonth().get(0)),DateUtils.getYear(getFutureDatesOfCurrentMonth().get(0)),mutableMonthDateList as ArrayList<ModelCalendarMonth>)
       } else if (action == 1) {
          getDatesOfPreviousMonth().forEach {
             val getMonthName = DateUtils.getMonthName(it)
             val getYear = DateUtils.getYear(it)
+            getMonthNum = DateUtils.getMonthNumber(it)
+            getYearNum = DateUtils.getYear(it)
             binding.texcViewDateCenter.text = """$getMonthName - $getYear"""
             if (DateUtils.getDayNumber(it) == "01") {
                if (DateUtils.getDay3LettersName(it) == "Sun") {
@@ -170,20 +173,24 @@ class CalendarFragment : BaseFragment(),View.OnClickListener,CoroutineScope {
                mutableMonthDateList.add(ModelCalendarMonth(DateUtils.getDayNumber(it),DateUtils.getDay3LettersName(it),DateUtils.getMonthNumber(it),DateUtils.getYear(it),hour.toString(),minute.toString()))
             }
          }
+
+
+
          val list = arrayListOf<TestConcat?>()
          mutableMonthDateList.forEach {
             list.add(TestConcat(it,null,null))
          }
          binding.recyclerDates.adapter = AdapterCalendar(list)
-         // showFestivals(DateUtils.getMonthNumber(getDatesOfPreviousMonth()[0]),DateUtils.getYear(getDatesOfPreviousMonth()[0]),mutableMonthDateList as ArrayList<ModelCalendarMonth>)
+         showFestivals(getMonthNum,getYearNum,mutableMonthDateList as ArrayList<ModelCalendarMonth>)
       } else if (action == 2) {
+
          getDatesOfNextMonth().forEach {
             val getMonthName = DateUtils.getMonthName(it)
             val getYear = DateUtils.getYear(it)
+            getMonthNum = DateUtils.getMonthNumber(it)
+            getYearNum = DateUtils.getYear(it)
             binding.texcViewDateCenter.text = """$getMonthName - $getYear"""
             if (DateUtils.getDayNumber(it) == "01") {
-               getMonthNum = DateUtils.getMonthNumber(it)
-               getYearNum = DateUtils.getYear(it)
                if (DateUtils.getDay3LettersName(it) == "Sun") {
                   mutableMonthDateList.add(ModelCalendarMonth(DateUtils.getDayNumber(it),DateUtils.getDay3LettersName(it),DateUtils.getMonthNumber(it),DateUtils.getYear(it),hour.toString(),minute.toString()))
                } else if (DateUtils.getDay3LettersName(it) == "Mon") {
@@ -221,12 +228,21 @@ class CalendarFragment : BaseFragment(),View.OnClickListener,CoroutineScope {
                mutableMonthDateList.add(ModelCalendarMonth(DateUtils.getDayNumber(it),DateUtils.getDay3LettersName(it),DateUtils.getMonthNumber(it),DateUtils.getYear(it),hour.toString(),minute.toString()))
             }
          }
-         val list = arrayListOf<TestConcat?>()
+         Log.e("dskdhsj", "initializeFullScreenCalendar: ${mutableMonthDateList.size}")
+
+val list = arrayListOf<TestConcat?>()
          mutableMonthDateList.forEach {
+
             list.add(TestConcat(it,null,null))
          }
-         binding.recyclerDates.adapter = AdapterCalendar(list)
-         //  showFestivals(DateUtils.getMonthNumber(getDatesOfNextMonth().get(0)),DateUtils.getYear(getDatesOfNextMonth().get(0)),mutableMonthDateList as ArrayList<ModelCalendarMonth>)
+
+  binding.recyclerDates.adapter = AdapterCalendar(list)
+         /*
+//         val getMonthName = DateUtils.getMonthName(it)
+//         val getYear = DateUtils.getYear(it)
+Log.e("Dsdsdsds", "initializeFullScreenCalendar: ${DateUtils.getMonthNumber(getDatesOfNextMonth().get(0))}" )
+Log.e("Dsdsdsds", "initializeFullScreenCalendar: ${DateUtils.getYear(getDatesOfNextMonth().get(0))}" )*/
+       showFestivals(getMonthNum,getYearNum,mutableMonthDateList as ArrayList<ModelCalendarMonth>)
       }
    }
 
@@ -334,7 +350,7 @@ class CalendarFragment : BaseFragment(),View.OnClickListener,CoroutineScope {
                   if (result?.responseCode == 200) {
                      if (result.responseString?.isNotEmpty() == true) {
                         val data = createModelFromClass<DataShowFestival>(result.responseString !!)
-                        Log.e("CalendarFragment","showFestivals: ${result.responseString}");
+                        Log.e("CalendarFragment","showFestivals: ${result.responseString}")
                         if (data.result == "sucessfull") {
                            var count: Boolean
                            for (elements in mutableMonthDateList) {
@@ -354,7 +370,9 @@ class CalendarFragment : BaseFragment(),View.OnClickListener,CoroutineScope {
                            }
 
                            for (i in 0 until mutableMonthDateList.size) {
-                              concatList.add(TestConcat(mutableMonthDateList.get(i),concatFestivs?.get(i),listIsFestival?.get(i)))
+                              concatList.add(TestConcat(mutableMonthDateList.get(i),concatFestivs?.get(i),
+                                 listIsFestival.get(i)
+                              ))
                            }
                            binding.festivalRecyclerView.adapter = AdapterShowFestivs(data.data as ArrayList<DataShowFestival.Data>)
                            binding.festivalRecyclerView.layoutManager = LinearLayoutManager(requireActivity())

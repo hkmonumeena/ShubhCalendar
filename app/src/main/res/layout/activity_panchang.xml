@@ -12,101 +12,6 @@
         android:paddingBottom="20dp"
         android:layout_height="match_parent">
 
-         <RelativeLayout
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/imgtopheader">
-
-        <RelativeLayout
-            android:id="@+id/rel_backbtn"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/back_shape">
-
-            <ImageView
-                android:id="@+id/backbtn"
-                android:layout_width="30dp"
-                android:layout_height="25dp"
-                android:layout_centerInParent="true"
-                android:src="@drawable/ic_baseline_arrow_back_24" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_below="@+id/rel_backbtn"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="25dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Holidays"
-                android:visibility="gone"
-                android:textColor="#FE8226"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/rl_nav"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="10dp"
-            android:layout_alignParentRight="true"
-            android:layout_marginEnd="10dp"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/back_shape">
-
-
-            <ImageView
-                android:id="@+id/icMenu"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:padding="8dp"
-                android:src="@drawable/ic_baseline_menu_24"
-                app:tint="@color/white" />
-        </RelativeLayout>
-
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="55dp"
-            android:layout_toStartOf="@+id/cardViewProfile"
-            android:padding="12dp"
-            android:src="@drawable/notification"
-            app:tint="@color/white" />
-
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cardViewProfile"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_below="@+id/rl_nav"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            app:cardCornerRadius="25dp"
-            app:cardElevation="8dp">
-
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="0dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/ellipse_6670_ek1" />
-
-
-        </com.google.android.material.card.MaterialCardView>
-
-    </RelativeLayout>
-
         <LinearLayout
             android:id="@+id/layout_panchang"
             android:layout_below="@+id/toolbar"
@@ -115,61 +20,6 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:weightSum="1"
-                android:orientation="horizontal">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_weight="0.50">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Panchang"
-                        android:gravity="center"
-                        android:textSize="18sp"
-                        android:fontFamily="@font/josefinsans_regular"
-                        android:textColor="@color/black" />
-                    <View
-                        android:layout_width="80dp"
-                        android:layout_height="2px"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="5dp"
-                        android:background="@drawable/gradient_back" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/layout_muhurat"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_weight="0.50"
-                    >
-
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Muhrat"
-                        android:gravity="center"
-                        android:textSize="18sp"
-                        android:fontFamily="@font/josefinsans_regular"
-                        android:textColor="@color/black" />
-                    <View
-                        android:layout_width="80dp"
-                        android:layout_height="2px"
-                        android:visibility="gone"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="5dp"
-                        android:background="@drawable/gradient_back" />
-                </LinearLayout>
-            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -189,7 +39,7 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:weightSum="4">
 
 
@@ -216,23 +66,35 @@
                 </com.google.android.material.card.MaterialCardView>
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_centerVertical="true"
                     android:gravity="center"
                     android:fontFamily="@font/josefinsans_regular"
                     android:layout_toLeftOf="@+id/ivSerach"
                     android:layout_marginLeft="20dp"
+                    android:id="@+id/textViewDateMain"
+                    android:visibility="gone"
                     android:layout_toRightOf="@+id/cardViewbackbtn"
                     android:text="Tomorrow, 9 Dec"
                     android:textColor="@color/black" />
 
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toLeftOf="@+id/ivSerach"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/cardViewbackbtn"
+                    android:id="@+id/rvShowMainDate"/>
+
+
                 <ImageView
                     android:id="@+id/ivSerach"
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
                     android:layout_centerVertical="true"
-                    android:layout_marginRight="20dp"
+                    android:layout_marginRight="10dp"
+                    android:padding="10dp"
                     android:layout_toLeftOf="@+id/cardViewforwordbtn"
                     android:src="@drawable/search" />
 
@@ -300,6 +162,7 @@
                             android:drawableLeft="@drawable/sun1_copy_ek1"
                             android:layout_marginTop="5dp"
                             android:textSize="11sp"
+                            android:id="@+id/textViewSunset"
                             android:drawablePadding="10dp"
                             android:gravity="center"
                             android:text="Sunset 07:07 AM"
@@ -320,6 +183,7 @@
                             android:layout_height="wrap_content"
                             android:drawableLeft="@drawable/moon1_copy"
                             android:textSize="11sp"
+                            android:id="@+id/textViewmoonrise"
                             android:drawablePadding="10dp"
                             android:gravity="center"
                             android:text="Moonrise 06:57 AM"
@@ -331,6 +195,7 @@
                             android:drawableLeft="@drawable/moon1_copy_ek1"
                             android:layout_marginTop="10dp"
                             android:textSize="11sp"
+                            android:id="@+id/textViewmoonset"
                             android:drawablePadding="10dp"
                             android:gravity="center"
                             android:text="Moonset 07:07 AM"
@@ -377,6 +242,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="13sp"
+                            android:id="@+id/textViewtithi"
                             android:fontFamily="@font/josefinsans_regular"
                             android:layout_weight="0.70"
                             android:text="Panchang upto 09:59 shashthi"/>
@@ -402,6 +268,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="13sp"
+                            android:id="@+id/nakshatra"
                             android:fontFamily="@font/josefinsans_regular"
                             android:layout_weight="0.70"
                             android:text="Panchang upto 09:59 shashthi"/>
@@ -426,6 +293,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="13sp"
+                            android:id="@+id/yoga"
                             android:fontFamily="@font/josefinsans_regular"
                             android:layout_weight="0.70"
                             android:text="Panchang upto 09:59 shashthi"/>
