@@ -9,18 +9,19 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/imgtopheader">
 
             <RelativeLayout
-                android:id="@+id/rel_backbtn"
+                android:id="@+id/rlDismiss"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/back_shape">
 
@@ -36,7 +37,7 @@
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
-                android:layout_below="@+id/rel_backbtn"
+                android:layout_below="@+id/rlDismiss"
                 android:layout_marginLeft="10dp"
                 android:visibility="gone"
                 android:layout_marginTop="25dp">
@@ -52,7 +53,7 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/rl_nav"
+                android:id="@+id/relativeLayoutMenu"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="10dp"
@@ -69,6 +70,7 @@
                     android:padding="8dp"
                     android:src="@drawable/ic_baseline_menu_24"
                     app:tint="@color/white" />
+
             </RelativeLayout>
 
             <ImageView
@@ -85,8 +87,8 @@
                 android:id="@+id/cardViewProfile"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_below="@+id/rl_nav"
-                android:layout_alignParentRight="true"
+                android:layout_below="@+id/relativeLayoutMenu"
+                android:layout_alignParentEnd="true"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
                 app:cardCornerRadius="25dp"
@@ -270,7 +272,7 @@
 
 
                     <TextView
-                        android:id="@+id/txt_newyear"
+                        android:id="@+id/textViewTitle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
@@ -281,7 +283,7 @@
                         android:textColor="#265F72" />
 
                     <TextView
-                        android:layout_below="@+id/txt_newyear"
+                        android:layout_below="@+id/textViewTitle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"

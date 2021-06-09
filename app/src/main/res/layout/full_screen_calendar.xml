@@ -1,47 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="70dp">
 
 
-  <com.google.android.material.card.MaterialCardView
-       android:layout_width="match_parent"
-       android:layout_height="45dp"
-       app:cardElevation="2dp"
-       android:layout_margin="2.5dp"
-       android:translationY="-1dp"
-       android:translationZ="-1dp"
-       android:id="@+id/cardViewCalendar">
-
-       <RelativeLayout
-           android:layout_width="match_parent"
-           android:layout_height="match_parent">
-
-           <TextView
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:fontFamily="@font/josefinsans_regular"
-               android:id="@+id/textViewDateNum"
-               android:layout_marginTop="5dp"
-               android:textColor="@color/black"
-               android:textSize="16dp"
-               android:text="01"
-               android:textAlignment="center"/>
-
-           <com.google.android.material.card.MaterialCardView
-               android:layout_width="10dp"
-               android:layout_height="10dp"
-               app:cardBackgroundColor="@color/blue"
-               android:id="@+id/cardViewIsFestiv"
-               android:layout_below="@+id/textViewDateNum"
-               android:layout_marginTop="2dp"
-               android:visibility="gone"
-               android:layout_centerHorizontal="true"/>
-
-       </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/cardViewCalendar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="1dp">
 
 
-  </com.google.android.material.card.MaterialCardView>
+        <ImageView
+            android:id="@+id/imgFestival"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/diwali"
+            android:visibility="gone" />
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/cardViewCurrent"
+            android:visibility="gone"
+            app:cardBackgroundColor="#D50">
+
+            <TextView
+                android:id="@+id/textViewDateNumCurrent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/josefinsans_regular"
+                android:text="01"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                android:visibility="visible" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <TextView
+            android:id="@+id/textViewDateNum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/josefinsans_regular"
+            android:text="01"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:visibility="visible" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardViewIsFestiv"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:visibility="gone"
+            app:cardBackgroundColor="@color/purple_200"
+            app:cardCornerRadius="15dp">
+
+
+            <TextView
+                android:id="@+id/textViewDateNum2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/josefinsans_regular"
+                android:text="01"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                android:visibility="visible" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </RelativeLayout>
+
 
 </RelativeLayout>

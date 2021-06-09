@@ -30,6 +30,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_above="@+id/llbottmnav" />
+        <FrameLayout
+            android:id="@+id/frame2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:layout_above="@+id/llbottmnav" />
 
 
         <com.google.android.material.card.MaterialCardView
@@ -37,6 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
+            android:visibility="gone"
             app:cardCornerRadius="5dp"
             app:cardElevation="12dp">
 
@@ -109,30 +116,39 @@
                     app:cardCornerRadius="25dp"
                     app:cardElevation="8dp">
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+
 
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:padding="0dp"
-                            android:id="@+id/ivUser"
+                            android:id="@+id/imageViewUserProfile"
                             android:scaleType="fitXY"
                             android:src="@drawable/icdummy_user" />
 
 
-                    </RelativeLayout>
+
                 </com.google.android.material.card.MaterialCardView>
                 <TextView
 
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="40dp"
-                    android:text="Name"
+                    android:id="@+id/textViewUserName"
                     android:layout_below="@+id/txMenu"
                     android:layout_toRightOf="@+id/cardViewProfile"
                     android:layout_marginTop="25dp"
+                    android:textColor="@color/black"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="40dp"
+                    android:id="@+id/textViewUserEmail"
+                    android:layout_below="@+id/textViewUserName"
+                    android:layout_toRightOf="@+id/cardViewProfile"
+                    android:layout_marginTop="5dp"
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 
@@ -175,7 +191,6 @@
 
                 <RelativeLayout
                     android:id="@+id/rlCalendar"
-
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:paddingLeft="10dp">
@@ -185,7 +200,7 @@
                         android:layout_height="35dp"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="10dp"
-                        android:src="@drawable/ic_calendar"
+                        android:src="@drawable/ic_cal2"
                         app:tint="@color/white" />
 
                     <TextView
@@ -213,7 +228,7 @@
                         android:layout_height="35dp"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="10dp"
-                        android:src="@drawable/ic_swastik"
+                        android:src="@drawable/ic_new_swastik"
                         app:tint="@color/white" />
 
                     <TextView
@@ -241,7 +256,7 @@
                         android:layout_height="35dp"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="10dp"
-                        android:src="@drawable/icnamaskr"
+                        android:src="@drawable/ic_namaskar"
                         app:tint="@color/white" />
 
                     <TextView
@@ -269,7 +284,7 @@
                         android:layout_height="35dp"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="10dp"
-                        android:src="@drawable/ichoroscope"
+                        android:src="@drawable/ic_horoscope"
                         app:tint="@color/white" />
 
                     <TextView
@@ -297,7 +312,7 @@
                         android:layout_height="35dp"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="10dp"
-                        android:src="@drawable/icholidays"
+                        android:src="@drawable/ic_holiday"
                         app:tint="@color/white" />
 
                     <TextView
@@ -363,7 +378,7 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/rlLogout"
+                    android:id="@+id/relativeLayoutLogout"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
                     android:layout_gravity="right"

@@ -19,7 +19,7 @@
         android:background="@drawable/imgtopheader">
 
         <RelativeLayout
-            android:id="@+id/rel_backbtn"
+            android:id="@+id/rlDismiss"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginLeft="10dp"
@@ -38,7 +38,7 @@
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:layout_below="@+id/rel_backbtn"
+            android:layout_below="@+id/rlDismiss"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="25dp">
 
@@ -53,7 +53,7 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@+id/rl_nav"
+            android:id="@+id/relativeLayoutMenu"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginLeft="10dp"
@@ -86,7 +86,7 @@
             android:id="@+id/cardViewProfile"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_below="@+id/rl_nav"
+            android:layout_below="@+id/relativeLayoutMenu"
             android:layout_alignParentRight="true"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
@@ -106,424 +106,90 @@
 
     </RelativeLayout>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:weightSum="4">
-
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cardViewbackbtn"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="20sp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="5dp"
-            android:layout_weight="1"
-            app:cardCornerRadius="25dp"
-            app:cardElevation="8dp">
-
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_gravity="center"
-
-                android:src="@drawable/backbtn" />
-
-
-        </com.google.android.material.card.MaterialCardView>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="20dp"
-            android:layout_toRightOf="@+id/cardViewbackbtn"
-            android:text="January,2021"
-            android:textColor="@color/black"
-            android:textStyle="bold" />
-
-        <ImageView
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="20dp"
-            android:layout_toLeftOf="@+id/cardViewforwordbtn"
-            android:src="@drawable/search" />
-
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cardViewforwordbtn"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="5dp"
-            app:cardCornerRadius="25dp"
-            app:cardElevation="8dp">
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_gravity="center"
-                android:src="@drawable/forverdbtn" />
-
-
-        </com.google.android.material.card.MaterialCardView>
-    </RelativeLayout>
-
-
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp">
+            android:layout_height="60dp"
+            android:weightSum="4">
+
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/cardViewcolor"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_centerVertical="true"
+                android:id="@+id/cardViewbackbtn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_marginLeft="20sp"
                 android:layout_marginTop="10dp"
-                android:backgroundTint="#F4E6F0"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
                 app:cardCornerRadius="25dp"
                 app:cardElevation="8dp">
+
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+
+                    android:src="@drawable/backbtn" />
 
 
             </com.google.android.material.card.MaterialCardView>
 
             <TextView
-                android:id="@+id/txt_newyear"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_toRightOf="@+id/cardViewcolor"
-                android:text="New Year"
-                android:textColor="#265F72" />
-
-            <TextView
-                android:id="@+id/txt_state"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/txt_newyear"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:textSize="13sp"
-                android:layout_toRightOf="@+id/cardViewcolor"
-                android:text="States: All"
-                android:textColor="#000" />
-
-            <ImageView
-                android:id="@+id/lock"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:fontFamily="@font/josefinsans_regular"
+                android:layout_toLeftOf="@+id/ivSerach"
+                android:layout_marginLeft="20dp"
+                android:id="@+id/textViewDateMain"
                 android:visibility="gone"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_below="@+id/txt_newyear"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_toRightOf="@+id/txt_religion"
-                android:padding="0dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/lock_open" />
+                android:layout_toRightOf="@+id/cardViewbackbtn"
+                android:text="Tomorrow, 9 Dec"
+                android:textColor="@color/black" />
 
-
-            <TextView
-                android:id="@+id/txt_moreinfo"
-                android:layout_width="80dp"
-                android:layout_height="25dp"
-                android:drawableLeft="@drawable/ic_share"
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toLeftOf="@+id/ivSerach"
                 android:layout_centerVertical="true"
-                android:paddingLeft="5dp"
-                android:layout_below="@+id/txt_newyear"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_toLeftOf="@+id/number"
-                android:background="@drawable/gradient_back"
-                android:gravity="center"
-                android:text="Share"
-                android:textColor="#fff"
-                android:textSize="10sp"
-                android:textStyle="bold" />
+                android:layout_toRightOf="@+id/cardViewbackbtn"
+                android:id="@+id/rvShowMainDate"/>
+
+
+            <ImageView
+                android:id="@+id/ivSerach"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:padding="10dp"
+                android:layout_toLeftOf="@+id/cardViewforwordbtn"
+                android:src="@drawable/search" />
+
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/number"
+                android:id="@+id/cardViewforwordbtn"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_alignParentRight="true"
-                android:layout_marginLeft="20sp"
                 android:layout_marginTop="10dp"
-                android:layout_marginRight="20dp"
-                android:layout_weight="1"
-                android:backgroundTint="#FFF8F4"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="5dp"
                 app:cardCornerRadius="25dp"
                 app:cardElevation="8dp">
 
-
-                <TextView
-                    android:layout_width="30dp"
-                    android:layout_height="20sp"
-                    android:gravity="center"
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
                     android:layout_gravity="center"
-                    android:text="1"
-                    android:textColor="#FF6C43"
-                    android:textSize="17sp"
-                    android:textStyle="bold" />
+                    android:src="@drawable/forverdbtn" />
 
 
             </com.google.android.material.card.MaterialCardView>
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/txt_moreinfo"
-                android:layout_below="@+id/number"
-                android:layout_marginTop="10dp"
-                android:gravity="center"
-                android:layout_alignParentRight="true"
-                android:text="Share"
-                android:textColor="#F18C8E"
-                android:textSize="10sp"
-                />
-
-
         </RelativeLayout>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2px"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="10dp"
-            android:background="@color/grey" />
 
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp">
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/cardViewcolor1"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="20sp"
-                android:layout_marginTop="10dp"
-                android:backgroundTint="#FFF5E5"
-                app:cardCornerRadius="25dp"
-                app:cardElevation="8dp">
-
-
-            </com.google.android.material.card.MaterialCardView>
-
-            <TextView
-                android:id="@+id/txt_newyear1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_toRightOf="@+id/cardViewcolor1"
-                android:text="Lohri"
-                android:textColor="#265F72" />
-
-            <TextView
-                android:id="@+id/txt_state1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/txt_newyear1"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:textSize="13sp"
-                android:layout_toRightOf="@+id/cardViewcolor1"
-                android:text="States: All"
-                android:textColor="#000" />
-
-
-            <TextView
-                android:id="@+id/txt_moreinfo1"
-                android:layout_width="80dp"
-                android:layout_height="25dp"
-                android:drawableLeft="@drawable/ic_share"
-                android:layout_centerVertical="true"
-                android:paddingLeft="5dp"
-                android:layout_below="@+id/txt_newyear1"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_toLeftOf="@+id/number1"
-                android:background="@drawable/gradient_back"
-                android:gravity="center"
-                android:text="Share"
-                android:textColor="#fff"
-                android:textSize="10sp"
-                android:textStyle="bold" />
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/number1"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_alignParentRight="true"
-                android:layout_marginLeft="20sp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="20dp"
-                android:layout_weight="1"
-                android:backgroundTint="#FFF8F4"
-                app:cardCornerRadius="25dp"
-                app:cardElevation="8dp">
-
-
-                <TextView
-                    android:layout_width="30dp"
-                    android:layout_height="20sp"
-                    android:gravity="center"
-                    android:layout_gravity="center"
-                    android:text="13"
-                    android:textColor="#FF6C43"
-                    android:textSize="17sp"
-                    android:textStyle="bold" />
-
-
-            </com.google.android.material.card.MaterialCardView>
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/txt_moreinfo1"
-                android:layout_below="@+id/number1"
-                android:layout_marginTop="10dp"
-                android:gravity="center"
-                android:layout_alignParentRight="true"
-                android:text="Wednessday"
-                android:textColor="#F18C8E"
-                android:textSize="10sp"
-                />
-
-
-        </RelativeLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2px"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="10dp"
-            android:background="@color/grey" />
-
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp">
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/cardViewcolor2"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="20sp"
-                android:layout_marginTop="10dp"
-                android:backgroundTint="#EAF9FE"
-                app:cardCornerRadius="25dp"
-                app:cardElevation="8dp">
-
-            </com.google.android.material.card.MaterialCardView>
-
-            <TextView
-                android:id="@+id/txt_newyear2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_toRightOf="@+id/cardViewcolor2"
-                android:text="Makarsankranti"
-                android:textColor="#265F72" />
-
-            <TextView
-                android:id="@+id/txt_state2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/txt_newyear2"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:textSize="13sp"
-                android:layout_toRightOf="@+id/cardViewcolor2"
-                android:text="States: All"
-                android:textColor="#000" />
-
-
-            <TextView
-                android:id="@+id/txt_share"
-                android:layout_width="80dp"
-                android:layout_height="25dp"
-                android:drawableLeft="@drawable/ic_share"
-                android:layout_centerVertical="true"
-                android:paddingLeft="5dp"
-                android:layout_below="@+id/txt_newyear2"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_toLeftOf="@+id/number2"
-                android:background="@drawable/gradient_back"
-                android:gravity="center"
-                android:text="Share"
-                android:textColor="#fff"
-                android:textSize="10sp"
-                android:textStyle="bold" />
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/number2"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_alignParentRight="true"
-                android:layout_marginLeft="20sp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="20dp"
-                android:layout_weight="1"
-                android:backgroundTint="#FFF8F4"
-                app:cardCornerRadius="25dp"
-                app:cardElevation="8dp">
-
-
-                <TextView
-                    android:layout_width="30dp"
-                    android:layout_height="20sp"
-                    android:gravity="center"
-                    android:layout_gravity="center"
-                    android:text="14"
-                    android:textColor="#FF6C43"
-                    android:textSize="17sp"
-                    android:textStyle="bold" />
-
-
-            </com.google.android.material.card.MaterialCardView>
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/txt_moreinfo2"
-                android:layout_below="@+id/number2"
-                android:layout_marginTop="10dp"
-                android:gravity="center"
-                android:layout_alignParentRight="true"
-                android:text="Thursday"
-                android:textColor="#F18C8E"
-                android:textSize="10sp"
-                />
-
-
-        </RelativeLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2px"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="10dp"
-            android:background="@color/grey" />
 
 
     </LinearLayout>

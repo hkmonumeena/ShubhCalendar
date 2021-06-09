@@ -23,12 +23,12 @@ TextView txt_share;
         setContentView(R.layout.activity_holidays);
 
 
-        txt_share=findViewById(R.id.txt_share);
+     /*   txt_share=findViewById(R.id.txt_share);
         txt_share.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(),PickPlanActivity.class));
             }
-        });
+        });*/
     }
 }

@@ -86,14 +86,14 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginTop="55dp"
-            android:layout_toStartOf="@+id/card"
+            android:layout_toStartOf="@+id/cardViewProfileUser"
             android:padding="12dp"
             android:src="@drawable/icalarm"
             app:tint="@color/white" />
 
 
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card"
+            android:id="@+id/cardViewProfileUser"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_below="@+id/icMenu"
@@ -267,7 +267,7 @@
 
 
                     <com.google.android.material.card.MaterialCardView
-                        android:id="@+id/material_puja"
+                        android:id="@+id/cardViewAartiPoojaKatha"
                         android:layout_width="match_parent"
                         android:layout_height="120dp"
                         android:layout_margin="16dp"
@@ -746,7 +746,7 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/rlLogout"
+                    android:id="@+id/relativeLayoutLogout"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
                     android:layout_gravity="right"

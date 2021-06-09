@@ -39,7 +39,7 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="65dp"
                 android:weightSum="4">
 
 
@@ -121,7 +121,7 @@
             </RelativeLayout>
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/cardViewcolor"
+                    android:id="@+id/cardViewcolor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
@@ -215,6 +215,7 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="20dp"
+                android:id="@+id/cardViewCard2"
                 app:cardCornerRadius="30dp"
                 app:cardElevation="8dp">
                 <LinearLayout
@@ -231,7 +232,7 @@
                         android:layout_marginTop="10dp"
                         android:orientation="horizontal">
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="65dp"
                             android:layout_height="wrap_content"
                             android:textSize="13sp"
                             android:fontFamily="@font/josefinsans_regular"
@@ -257,7 +258,7 @@
                         android:layout_marginTop="10dp"
                         android:orientation="horizontal">
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="65dp"
                             android:layout_height="wrap_content"
                             android:textSize="13sp"
                             android:fontFamily="@font/josefinsans_regular"
@@ -282,7 +283,7 @@
                         android:layout_marginTop="10dp"
                         android:orientation="horizontal">
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="65dp"
                             android:layout_height="wrap_content"
                             android:textSize="13sp"
                             android:fontFamily="@font/josefinsans_regular"
@@ -308,7 +309,7 @@
                         android:layout_marginTop="10dp"
                         android:orientation="horizontal">
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="65dp"
                             android:layout_height="wrap_content"
                             android:textSize="13sp"
                             android:fontFamily="@font/josefinsans_regular"
@@ -319,6 +320,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="13sp"
+                            android:id="@+id/textViewKaran"
                             android:fontFamily="@font/josefinsans_regular"
                             android:layout_weight="0.70"
                             android:text="Panchang upto 09:59 shashthi"/>
@@ -332,7 +334,7 @@
                         android:layout_marginTop="10dp"
                         android:orientation="horizontal">
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="65dp"
                             android:layout_height="wrap_content"
                             android:textSize="13sp"
                             android:fontFamily="@font/josefinsans_regular"
@@ -343,6 +345,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="13sp"
+                            android:id="@+id/textViewPaksha"
                             android:fontFamily="@font/josefinsans_regular"
                             android:layout_weight="0.70"
                             android:text="Panchang upto 09:59 shashthi"/>
@@ -356,7 +359,7 @@
                         android:layout_marginTop="10dp"
                         android:orientation="horizontal">
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="65dp"
                             android:layout_height="wrap_content"
                             android:textSize="13sp"
                             android:fontFamily="@font/josefinsans_regular"
@@ -367,6 +370,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="13sp"
+                            android:id="@+id/textViewWeekday"
                             android:fontFamily="@font/josefinsans_regular"
                             android:layout_weight="0.70"
                             android:text="Panchang upto 09:59 shashthi"/>
@@ -380,7 +384,7 @@
                         android:layout_marginTop="10dp"
                         android:orientation="horizontal">
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="65dp"
                             android:layout_height="wrap_content"
                             android:textSize="13sp"
                             android:fontFamily="@font/josefinsans_regular"
@@ -391,6 +395,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="13sp"
+                            android:id="@+id/textViewVikramSamvat"
                             android:fontFamily="@font/josefinsans_regular"
                             android:layout_weight="0.70"
                             android:text="Panchang upto 09:59 shashthi"/>
@@ -405,17 +410,19 @@
                         android:layout_marginTop="10dp"
                         android:orientation="horizontal">
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="65dp"
                             android:layout_height="wrap_content"
                             android:textSize="13sp"
                             android:fontFamily="@font/josefinsans_regular"
                             android:textStyle="bold"
                             android:layout_weight="0.30"
-                            android:text="Rahu Kalam"/>
+                            
+                            android:text="Rahu Kaal"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="13sp"
+                            android:id="@+id/textViewRahuKaal"
                             android:fontFamily="@font/josefinsans_regular"
                             android:layout_weight="0.70"
                             android:text="Panchang upto 09:59 shashthi"/>
@@ -429,7 +436,7 @@
                         android:layout_marginTop="10dp"
                         android:orientation="horizontal">
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="65dp"
                             android:layout_height="wrap_content"
                             android:textSize="13sp"
                             android:fontFamily="@font/josefinsans_regular"
@@ -440,6 +447,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="13sp"
+                            android:id="@+id/textViewGuliKaal"
                             android:fontFamily="@font/josefinsans_regular"
                             android:layout_weight="0.70"
                             android:text="Panchang upto 09:59 shashthi"/>
@@ -453,17 +461,18 @@
                         android:layout_marginTop="10dp"
                         android:orientation="horizontal">
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="65dp"
                             android:layout_height="wrap_content"
                             android:textSize="13sp"
                             android:fontFamily="@font/josefinsans_regular"
                             android:textStyle="bold"
                             android:layout_weight="0.30"
-                            android:text="Yama Gandi"/>
+                            android:text="Yamghatkal"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="13sp"
+                            android:id="@+id/textViewYamghat"
                             android:fontFamily="@font/josefinsans_regular"
                             android:layout_weight="0.70"
                             android:text="Panchang upto 09:59 shashthi"/>
@@ -478,7 +487,7 @@
                         android:layout_marginTop="10dp"
                         android:orientation="horizontal">
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="65dp"
                             android:layout_height="wrap_content"
                             android:textSize="13sp"
                             android:fontFamily="@font/josefinsans_regular"
@@ -491,6 +500,7 @@
                             android:textSize="13sp"
                             android:fontFamily="@font/josefinsans_regular"
                             android:layout_weight="0.70"
+                            android:id="@+id/textViewAbhijit"
                             android:text="Panchang upto 09:59 shashthi"/>
 
                     </LinearLayout>
@@ -502,7 +512,7 @@
                         android:layout_marginTop="10dp"
                         android:orientation="horizontal">
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="65dp"
                             android:layout_height="wrap_content"
                             android:textSize="13sp"
                             android:fontFamily="@font/josefinsans_regular"
@@ -513,6 +523,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="13sp"
+                            android:id="@+id/textViewDurMuhuratam"
                             android:fontFamily="@font/josefinsans_regular"
                             android:layout_weight="0.70"
                             android:text="Panchang upto 09:59 shashthi"/>
@@ -532,8 +543,8 @@
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/material_share"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="65dp"
+            android:layout_height="65dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
             android:layout_marginRight="30dp"

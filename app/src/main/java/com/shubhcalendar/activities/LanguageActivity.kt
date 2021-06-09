@@ -10,6 +10,7 @@ class LanguageActivity : AppCompatActivity() {
     lateinit var binding: ActivityLanguageBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = ActivityLanguageBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.cardViewHindi.setOnClickListener {

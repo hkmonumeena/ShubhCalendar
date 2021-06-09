@@ -1,23 +1,21 @@
 package com.shubhcalendar.activities
 
-import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.WindowManager
 import android.widget.EditText
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import coil.api.load
 import com.github.kittinunf.fuel.Fuel
 import com.github.kittinunf.fuel.core.ResponseDeserializable
-import com.github.kittinunf.fuel.gson.responseObject
 import com.google.gson.Gson
 import com.shubhcalendar.R
 import com.shubhcalendar.databinding.ActivityRegisterMobileBinding
 import com.shubhcalendar.ui.HomeNewActivity
-import com.shubhcalendar.utills.Api.mainLink
+import com.shubhcalendar.ui.childhelps.LangugageSheet
 import com.shubhcalendar.utills.Api.mobile_validation
 import com.shubhcalendar.utills.Api.signup_mobile
+import com.shubhcalendar.utills.Craft.getKey
 import com.shubhcalendar.utills.Craft.isOnline
 import com.shubhcalendar.utills.Craft.putKey
 import com.shubhcalendar.utills.Craft.startActivity
@@ -34,8 +32,8 @@ class RegisterMobileActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(binding.root)
         val w = window
         w.setFlags(
-                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
-                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+            WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+            WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
         )
         init()
         val edit = arrayOf<EditText>(binding.etOne, binding.etTwo, binding.etThree, binding.etFour)
@@ -93,37 +91,39 @@ class RegisterMobileActivity : AppCompatActivity(), View.OnClickListener {
             placeholder(R.drawable.loading)
             error(R.drawable.loading)
         }
-        Fuel.post(signup_mobile,
-                listOf(
-                        "name" to binding.etName.text.toString().trim(),
-                        "mobile" to binding.etMobile.text.toString().trim()
-                ))
-                .responseObject(DataSignupMobile.Des()) { request, response, result ->
-                    val (data, error) = result
-                    binding.imgLoading.visibility = View.GONE
-                    if (error == null) {
-                        if (data?.result == "Otp Sent Successfully") {
-                            if (binding.etName.text!!.isEmpty()) {
-                                toast("Number Not Register Yet")
-                            } else {
-                                binding.rlGetOtp.visibility = View.GONE
-                                binding.rlVerifyOtp.visibility = View.VISIBLE
-                            }
-
-                        } else if (data?.result == "Otp Sent Successfull") {
-                            if (checkSignupOrMobile == 0) {
-
-                            } else if (checkSignupOrMobile == 1) {
-                                binding.rlGetOtp.visibility = View.GONE
-                                binding.rlVerifyOtp.visibility = View.VISIBLE
-                            } else {
-                                toast("${data.result}")
-                            }
+        Fuel.post(
+            signup_mobile,
+            listOf(
+                "name" to binding.etName.text.toString().trim(),
+                "mobile" to binding.etMobile.text.toString().trim()
+            )
+        )
+            .responseObject(DataSignupMobile.Des()) { request, response, result ->
+                val (data, error) = result
+                binding.imgLoading.visibility = View.GONE
+                if (error == null) {
+                    if (data?.result == "Otp Sent Successfully") {
+                        if (binding.etName.text!!.isEmpty()) {
+                            toast("Number Not Register Yet")
                         } else {
-                            toast("Something went wrong")
+                            binding.rlGetOtp.visibility = View.GONE
+                            binding.rlVerifyOtp.visibility = View.VISIBLE
                         }
+
+                    } else if (data?.result == "Otp Sent Successfull") {
+                        if (checkSignupOrMobile == 0) {
+
+                        } else if (checkSignupOrMobile == 1) {
+                            binding.rlGetOtp.visibility = View.GONE
+                            binding.rlVerifyOtp.visibility = View.VISIBLE
+                        } else {
+                            toast("${data.result}")
+                        }
+                    } else {
+                        toast("Something went wrong")
                     }
                 }
+            }
     }
 
     private fun getVerifyUserMobile(getfieldOtp: String) {
@@ -134,25 +134,35 @@ class RegisterMobileActivity : AppCompatActivity(), View.OnClickListener {
         }
 
         Fuel.post(
-                mobile_validation,
-                listOf("otp" to getfieldOtp, "mobile" to binding.etMobile.text.toString().trim())
+            mobile_validation,
+            listOf("otp" to getfieldOtp, "mobile" to binding.etMobile.text.toString().trim())
         )
-                .responseObject(DataSignupMobile.Des()) { request, response, result ->
-                    val (data, error) = result
-                    binding.imgLoading.visibility = View.GONE
-                    if (error == null) {
-                        if (data?.result == "Login successfully") {
-                            toast(data.result)
-                            putKey(Keys.userID, data.id)
-                            putKey(Keys.userName, data.name)
-                            putKey(Keys.userMobile, data.mobile)
+            .responseObject(DataSignupMobile.Des()) { request, response, result ->
+                val (data, error) = result
+                binding.imgLoading.visibility = View.GONE
+                if (error == null) {
+                    if (data?.result == "Login successfully") {
+                        toast(data.result)
+                        putKey(Keys.userID, data.id)
+                        putKey(Keys.userName, data.name)
+                        putKey(Keys.userMobile, data.mobile)
+                        if (getKey(Keys.isLanguageSelected)?.isEmpty() == true) {
+                            val bundle = Bundle()
+                            bundle.putString("openedFrom", "ShowAddressBottomsheet")
+                            val bottomSheet = LangugageSheet()
+                            bottomSheet.arguments = bundle
+                            bottomSheet.show(supportFragmentManager, "new address")
+                        } else {
                             startActivity<HomeNewActivity>()
                             finish()
-                        } else {
-                            toast(data?.result!!)
                         }
+
+
+                    } else {
+                        toast(data?.result!!)
                     }
                 }
+            }
 
     }
 
@@ -234,6 +244,7 @@ class RegisterMobileActivity : AppCompatActivity(), View.OnClickListener {
                     binding.textViewTitleSub.text = "Login With Your Mobile Number"
                     binding.btnGetOtp.text = "LOGIN WITH OTP"
                     binding.name.visibility = View.GONE
+
                 } else {
                     checkSignupOrMobile = 0
                     binding.etName.setText("")
@@ -248,18 +259,20 @@ class RegisterMobileActivity : AppCompatActivity(), View.OnClickListener {
         }
 
     }
+
+
     data class DataSignupMobile(
-            val id: String,
-            val mobile: String,
-            val name: String,
-            val otp: String,
-            val status: String,
-            val regid: String,
-            val result: String
+        val id: String,
+        val mobile: String,
+        val name: String,
+        val otp: String,
+        val status: String,
+        val regid: String,
+        val result: String
     ) {
         class Des : ResponseDeserializable<DataSignupMobile> {
             override fun deserialize(content: String) =
-                    Gson().fromJson(content, DataSignupMobile::class.java)
+                Gson().fromJson(content, DataSignupMobile::class.java)
         }
     }
 }

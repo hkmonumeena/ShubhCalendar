@@ -21,7 +21,7 @@
         android:background="@drawable/imgtopheader">
 
         <RelativeLayout
-            android:id="@+id/rel_backbtn"
+            android:id="@+id/rlDismiss"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginLeft="10dp"
@@ -40,7 +40,7 @@
 
 
         <RelativeLayout
-            android:id="@+id/rl_nav"
+            android:id="@+id/relativeLayoutMenu"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginLeft="10dp"
@@ -73,7 +73,7 @@
             android:id="@+id/cardViewProfile"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_below="@+id/rl_nav"
+            android:layout_below="@+id/relativeLayoutMenu"
             android:layout_alignParentRight="true"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
@@ -96,7 +96,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/rel_backbtn"
+        android:layout_below="@+id/rlDismiss"
        >
 
         <TextView

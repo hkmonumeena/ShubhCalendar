@@ -7,6 +7,7 @@
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/cadViewForAllDates"
         app:cardElevation="5dp">
         <RelativeLayout
             android:layout_width="match_parent"
@@ -35,5 +36,41 @@
         android:textSize="16dp" />
         </RelativeLayout>
     </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="#D50"
+        android:visibility="gone"
+        android:id="@+id/cardViewForCurrentDate"
+        app:cardElevation="5dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Sun"
+                android:id="@+id/textViewDayName2"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_below="@+id/textViewDayName2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewDate2"
+                android:layout_weight="1"
+                android:text="01"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="16dp" />
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+
 
 </RelativeLayout>

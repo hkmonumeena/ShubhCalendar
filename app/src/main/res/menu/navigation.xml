@@ -3,12 +3,12 @@
 
     <item
         android:id="@+id/navigationCalendar"
-        android:icon="@drawable/ic_calendar"
+        android:icon="@drawable/ic_cal2"
         android:title="@string/calendar" />
 
     <item
         android:id="@+id/navigationHolidays"
-        android:icon="@drawable/icholidays"
+        android:icon="@drawable/ic_holiday"
         android:title="@string/holidays" />
 
     <item
@@ -18,12 +18,12 @@
 
   <item
         android:id="@+id/navigationPanchang"
-        android:icon="@drawable/ic_swastik"
+        android:icon="@drawable/ic_new_swastik"
         android:title="@string/panchang" />
 
       <item
         android:id="@+id/navigationHoroscope"
-        android:icon="@drawable/ichoroscope"
+        android:icon="@drawable/ic_horoscope"
         android:title="@string/horoscope" />
 
 

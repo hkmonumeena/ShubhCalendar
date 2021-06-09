@@ -40,6 +40,7 @@
                 android:layout_height="30dp"
                 android:layout_gravity="center"
                 android:padding="8dp"
+                android:id="@+id/imageViewClose"
                 android:src="@drawable/ic_close"
                 app:tint="@color/teal_700" />
 
@@ -101,6 +102,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_swastik"
+                android:id="@+id/imageViewUserProfile"
+                android:scaleType="fitXY"/>
+
 
 
         </com.google.android.material.card.MaterialCardView>
@@ -114,7 +122,6 @@
         android:layout_below="@+id/rlProfilePhoto"
         android:textColor="@color/black"
         android:fontFamily="@font/josefinsans_bold2"
-        android:text="Anil Kapoor"
         android:id="@+id/textViewName"
         android:textSize="18dp"
         android:layout_centerHorizontal="true"/>
@@ -148,7 +155,6 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Anil Kapoor"
                 android:textSize="16dp"
                     android:id="@+id/textViewName2"
                 android:textColor="@color/black"
@@ -162,6 +168,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Edit"
+                android:id="@+id/textViewEditName"
                 android:textColor="@color/teal_700"
                 android:fontFamily="@font/josefinsans_bold2"
                 android:layout_alignParentRight="true"
@@ -205,7 +212,6 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="anilkapoor@gmail.com"
                 android:textSize="16dp"
                 android:id="@+id/textViewEmail"
                 android:textColor="@color/black"
@@ -219,6 +225,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Edit"
+                android:id="@+id/textViewEditEmail"
                 android:textColor="@color/teal_700"
                 android:fontFamily="@font/josefinsans_bold2"
                 android:layout_alignParentRight="true"
@@ -275,7 +282,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="14dp"
-        android:id="@+id/rlLogout"
+        android:id="@+id/relativeLayoutLogout"
         android:layout_below="@+id/rlHelp">
 
 
@@ -313,7 +320,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="14dp"
         android:id="@+id/rlShare"
-        android:layout_below="@+id/rlLogout">
+        android:layout_below="@+id/relativeLayoutLogout">
 
 
 

@@ -1,6 +1,7 @@
 package com.httpconnection.httpconnectionV2
 
 import android.util.Base64
+import com.google.gson.Gson
 import com.httpconnection.httpconnectionV2.requestMethods.Execute
 import com.httpconnection.httpconnectionV2.requestMethods.Get
 import com.httpconnection.httpconnectionV2.requestMethods.Upload
@@ -13,6 +14,9 @@ class Http {
         val upload = Upload()
     }
 
+    inline fun <reified T : Any> createModelFromClass(json: String): T {
+        return Gson().fromJson(json, T::class.java)
+    }
     data class Post(
         private var mUrl: String?,
         private var connectTimeout: Int? = 15000,

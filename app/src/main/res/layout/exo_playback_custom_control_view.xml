@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:layout_height="110dp">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rlexo_progress">
+
+
+        <TextView
+            android:id="@+id/exo_position"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/exo_progress"
+            android:text="0 min, 0 sec"
+            android:fontFamily="@font/josefinsans_bold2"
+            android:textColor="#000000"
+            android:textSize="14dp" />
+
+        <com.google.android.exoplayer2.ui.DefaultTimeBar
+            android:id="@+id/exo_progress"
+            android:layout_width="match_parent"
+            android:layout_height="26dp"
+            android:layout_centerVertical="true"
+            app:played_color="#D50"
+            app:unplayed_color="#c7c7c7"
+            app:buffered_color="@android:color/darker_gray"
+            android:backgroundTint="@color/black"
+            android:layout_toLeftOf="@+id/exo_duration"
+            android:layout_toRightOf="@+id/exo_position" />
+
+        <TextView
+            android:id="@+id/exo_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 min, 0 sec"
+            android:gravity="end"
+            android:fontFamily="@font/josefinsans_bold2"
+            android:layout_alignParentRight="true"
+            android:textColor="#000000"
+            android:textSize="14dp" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rlHeader"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/rlexo_progress"
+        android:gravity="center_horizontal"
+        android:background="@drawable/bottom_sheet_dialog_bg">
+
+        <ImageButton
+            android:id="@+id/exo_prev"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:padding="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_toStartOf="@+id/exo_rew"
+            android:background="@null"
+            style="@style/CustomExoMediaButton.Prev" />
+
+        <ImageButton
+            android:id="@+id/exo_rew"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:padding="12dp"
+            android:background="@null"
+            style="@style/CustomExoMediaButton.Rewind"
+            />
+
+        <ImageButton
+            android:id="@+id/exo_play"
+            android:layout_width="70dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="10dp"
+            android:background="@null"
+            android:padding="12dp"
+            android:layout_toRightOf="@+id/exo_rew"
+            style="@style/CustomExoMediaButton.Play" />
+
+        <ImageButton
+            android:id="@+id/exo_pause"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/exo_play"
+            android:layout_marginLeft="10dp"
+            android:visibility="gone"
+            android:layout_toRightOf="@+id/exo_play"
+            android:src="@android:drawable/ic_media_pause" />
+
+        <ImageButton
+            android:id="@+id/exo_ffwd"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/exo_pause"
+            android:layout_centerVertical="true"
+            android:rotation="180"
+            android:background="@null"
+            android:padding="12dp"
+            android:contentDescription="@+id/imageButton3"
+            style="@style/CustomExoMediaButton.FastForward" />
+
+        <ImageButton
+            android:id="@+id/exo_next"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:rotation="180"
+            android:layout_toEndOf="@+id/exo_ffwd"
+            android:background="@null"
+            android:padding="10dp"
+            style="@style/CustomExoMediaButton.Next"/>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

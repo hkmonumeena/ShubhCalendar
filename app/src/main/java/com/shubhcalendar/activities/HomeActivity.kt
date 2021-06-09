@@ -8,6 +8,7 @@ import android.widget.DatePicker
 import android.widget.ImageView
 import androidx.cardview.widget.CardView
 import androidx.core.view.GravityCompat
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ibotta.android.support.pickerdialogs.SupportedDatePickerDialog
 import com.ibotta.android.support.pickerdialogs.SupportedTimePickerDialog
@@ -20,6 +21,7 @@ import com.shubhcalendar.utills.GenricAdapter
 import com.shubhcalendar.utills.Keys
 import com.shubhcalendar.utills.ViewHolder
 import kotlinx.android.synthetic.main.calendar_item.view.*
+import java.text.SimpleDateFormat
 import java.util.*
 
 class HomeActivity : AppCompatActivity(),SupportedDatePickerDialog.OnDateSetListener{
@@ -167,7 +169,8 @@ class HomeActivity : AppCompatActivity(),SupportedDatePickerDialog.OnDateSetList
 
 
 class AdapterMonth(items: ArrayList<ModelMonth>) : GenricAdapter<ModelMonth>(items) {
-
+    private val simpleDateFormat by lazy { SimpleDateFormat("dd") }
+    private val currentDateAndTime: String = simpleDateFormat.format(Date())
 
     override fun getItemViewType(position: Int): Int {
         return R.layout.calendar_item
@@ -175,6 +178,13 @@ class AdapterMonth(items: ArrayList<ModelMonth>) : GenricAdapter<ModelMonth>(ite
 
     override fun configure(item: ModelMonth, holder: ViewHolder, position: Int) {
         val set = holder.itemView
+        if (currentDateAndTime == item.day){
+            set.cardViewForCurrentDate.isVisible = true
+            set.cadViewForAllDates.isVisible = false
+            set.textViewDayName2.text = item.dayname
+            set.textViewDate2.text = item.day
+        }
+
         set.textViewDayName.text = item.dayname
         set.textViewDate.text = item.day
     }

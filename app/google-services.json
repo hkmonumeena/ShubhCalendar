@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "849361946736",
+    "project_id": "shubh-calendar",
+    "storage_bucket": "shubh-calendar.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:849361946736:android:4fcdfac2d718a672e78cb5",
+        "android_client_info": {
+          "package_name": "com.shubhcalendar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "849361946736-l9s96if63ugdhbq8hbvo3s33o8so1kdi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARZxaAeqBbd5r39WtAjtZ9Q37jrn4g-UI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "849361946736-l9s96if63ugdhbq8hbvo3s33o8so1kdi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

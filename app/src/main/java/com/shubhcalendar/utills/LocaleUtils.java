@@ -16,7 +16,7 @@ public class LocaleUtils {
     @Retention(RetentionPolicy.SOURCE)
     @StringDef({HINDI,ENGLISH,BENGALI})
     public @interface LocaleDef {
-        String[] SUPPORTED_LOCALES = {HINDI,ENGLISH, BENGALI};
+        String[] SUPPORTED_LOCALES = {HINDI,ENGLISH,BENGALI};
     }
 
     public static final String ENGLISH = "en";

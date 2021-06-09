@@ -5,5 +5,7 @@ object Keys {
     val userName = "userName"
     val userMobile = "userMobile"
     val Language = "Language"
+    val isLanguageSelected = "isLanguageSelected"
+    val isFragBack = "isFragBack"
 
 }

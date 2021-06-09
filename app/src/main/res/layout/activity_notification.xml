@@ -94,7 +94,7 @@
         </com.google.android.material.card.MaterialCardView>
 
         <TextView
-            android:id="@+id/txt_newyear"
+            android:id="@+id/textViewTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -108,7 +108,7 @@
             android:id="@+id/txt_state"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/txt_newyear"
+            android:layout_below="@+id/textViewTitle"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
             android:textSize="13sp"
@@ -121,10 +121,10 @@
             android:visibility="gone"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:layout_below="@+id/txt_newyear"
+            android:layout_below="@+id/textViewTitle"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
-            android:layout_toRightOf="@+id/txt_religion"
+            android:layout_toRightOf="@+id/textViewReligion"
             android:padding="0dp"
             android:scaleType="fitXY"
             android:src="@drawable/lock_open" />
@@ -223,7 +223,7 @@
                 android:layout_below="@+id/txt_newyear1"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:layout_toRightOf="@+id/txt_religion"
+                android:layout_toRightOf="@+id/textViewReligion"
                 android:padding="0dp"
                 android:scaleType="fitXY"
                 android:src="@drawable/lock_open" />
@@ -318,7 +318,7 @@
                 android:layout_below="@+id/txt_newyear2"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:layout_toRightOf="@+id/txt_religion"
+                android:layout_toRightOf="@+id/textViewReligion"
                 android:padding="0dp"
                 android:scaleType="fitXY"
                 android:src="@drawable/lock_open" />
@@ -414,7 +414,7 @@
                 android:layout_below="@+id/txt_newyear3"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:layout_toRightOf="@+id/txt_religion"
+                android:layout_toRightOf="@+id/textViewReligion"
                 android:padding="0dp"
                 android:scaleType="fitXY"
                 android:src="@drawable/lock_open" />
@@ -509,7 +509,7 @@
                 android:layout_below="@+id/txt_newyear4"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:layout_toRightOf="@+id/txt_religion"
+                android:layout_toRightOf="@+id/textViewReligion"
                 android:padding="0dp"
                 android:scaleType="fitXY"
                 android:src="@drawable/lock_open" />

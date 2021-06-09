@@ -15,8 +15,6 @@ class VidhiActivity : AppCompatActivity() {
         binding=ActivityVidhiBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.layoutMuhurat.setOnClickListener {
-            startActivity<KathasActivity>()
-        }
+
     }
 }

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardViewcolor"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20sp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#F4E6F0"
+            app:cardCornerRadius="25dp"
+            app:cardElevation="8dp">
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/cardViewcolor"
+            android:text="New Year"
+            android:textColor="#265F72" />
+
+        <TextView
+            android:id="@+id/textViewReligion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewTitle"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/cardViewcolor"
+            android:text="Religion: Christian"
+            android:textColor="#265F72" />
+
+        <ImageView
+            android:id="@+id/lock"
+            android:visibility="gone"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_below="@+id/textViewTitle"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/textViewReligion"
+            android:padding="0dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/lock_open" />
+
+
+        <TextView
+            android:id="@+id/txt_moreinfo"
+            android:layout_width="100dp"
+            android:layout_height="20sp"
+            android:layout_below="@+id/textViewTitle"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toLeftOf="@+id/number"
+            android:layout_toRightOf="@+id/lock"
+            android:background="@drawable/moreshape"
+            android:gravity="center"
+            android:text="More Info"
+            android:textColor="#fff"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/number"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="20sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_weight="1"
+            android:backgroundTint="#FFF8F4"
+            app:cardCornerRadius="25dp"
+            app:cardElevation="8dp">
+
+
+            <TextView
+
+                android:layout_width="30dp"
+                android:layout_height="20sp"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/textViewDate"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/cardViewcolor"
+                android:gravity="center"
+                android:text="1"
+                android:textColor="#FF6C43"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/black" />
+</LinearLayout>

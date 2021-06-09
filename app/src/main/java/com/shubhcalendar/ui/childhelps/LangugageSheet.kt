@@ -37,10 +37,12 @@ class LangugageSheet : BaseBottomSheetFragment(), View.OnClickListener, Coroutin
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val dialog = super.onCreateDialog(savedInstanceState) as BottomSheetDialog
         dialog.setOnShowListener {
-            val bottomSheet = (it as BottomSheetDialog).findViewById<View>(com.google.android.material.R.id.design_bottom_sheet) as FrameLayout?
+            val bottomSheet =
+                (it as BottomSheetDialog).findViewById<View>(com.google.android.material.R.id.design_bottom_sheet) as FrameLayout?
             val behavior = BottomSheetBehavior.from(bottomSheet!!)
             behavior.state = BottomSheetBehavior.STATE_EXPANDED
-            BottomSheetBehavior.from(bottomSheet).peekHeight = Resources.getSystem().displayMetrics.heightPixels
+            BottomSheetBehavior.from(bottomSheet).peekHeight =
+                Resources.getSystem().displayMetrics.heightPixels
             behavior.isDraggable = false
         }
 
@@ -78,7 +80,8 @@ class LangugageSheet : BaseBottomSheetFragment(), View.OnClickListener, Coroutin
             binder.cardViewEnglish -> {
                 requireActivity().putKey(Keys.Language, "en")
                 langcheck()
-            }  binder.cardViewBengali -> {
+            }
+            binder.cardViewBengali -> {
                 requireActivity().putKey(Keys.Language, "bn")
                 langcheck()
             }
@@ -92,13 +95,15 @@ class LangugageSheet : BaseBottomSheetFragment(), View.OnClickListener, Coroutin
             LocaleUtils.setLocale(requireActivity(), 1)
         } else if (Lang == "hi") {
             LocaleUtils.setLocale(requireActivity(), 0)
-        }else if (Lang == "bn") {
+        } else if (Lang == "bn") {
             LocaleUtils.setLocale(requireActivity(), 2)
         } else {
             LocaleUtils.setLocale(requireActivity(), 1)
         }
+
+        requireActivity().putKey(Keys.isLanguageSelected, "true")
         startActivity(Intent(requireActivity(), SplashActivity::class.java))
-        requireActivity()?.finishAffinity()
+        requireActivity().finishAffinity()
     }
 
     override fun onDestroy() {

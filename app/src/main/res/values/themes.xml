@@ -30,4 +30,74 @@
         <item name="android:colorControlNormal" tools:targetApi="lollipop">@color/purple_500</item>
     </style>
 
+    <style name="BottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bottom_sheet_dialog_bg</item>
+    </style>
+
+    <style name="AppBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/BottomSheetStyle</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:colorBackground">     @android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.0</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+
+
+    <style name="PlayerTheme" parent="android:Theme.DeviceDefault.Light">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/white</item>
+    </style>
+
+
+
+    <style name="PlayerTheme.Spherical">
+        <item name="surface_type">spherical_view</item>
+    </style>
+
+
+    <style name="CustomExoMediaButton">
+        <item name="android:background">?android:attr/selectableItemBackground</item>
+        <item name="android:scaleType">fitXY</item>
+        <item name="android:layout_width">30dp</item>
+        <item name="android:layout_height">30dp</item>
+    </style>
+
+    <style name="CustomExoMediaButton.Play">
+        <item name="android:src">@drawable/play</item>
+    </style>
+
+    <style name="CustomExoMediaButton.Pause">
+        <item name="android:src">@drawable/ic_next</item>
+    </style>
+
+    <style name="CustomExoMediaButton.Rewind">
+        <item name="android:src">@drawable/backward</item>
+    </style>
+
+    <style name="CustomExoMediaButton.FastForward">
+        <item name="android:src">@drawable/backward</item>
+    </style>
+
+    <style name="CustomExoMediaButton.Prev">
+        <item name="android:src">@drawable/ic_next</item>
+    </style>
+
+    <style name="CustomExoMediaButton.Next">
+        <item name="android:src">@drawable/ic_next</item>
+    </style>
+
+
+
 </resources>
