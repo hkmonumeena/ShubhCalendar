@@ -20,6 +20,7 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 import com.shubhcalendar.R
+import com.shubhcalendar.activities.NotificationActivity
 import com.shubhcalendar.ui.HomeNewActivity
 
 import org.json.JSONObject
@@ -72,7 +73,7 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
                         .setAutoCancel(true)  //dismisses the notification on click
                         .setSound(defaultSoundUri)
 
-                    val notifyIntent = Intent(this, HomeNewActivity::class.java).apply {
+                    val notifyIntent = Intent(this, NotificationActivity::class.java).apply {
                         flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                     }
                     val notifyPendingIntent = PendingIntent.getActivity(this, 0, notifyIntent, PendingIntent.FLAG_UPDATE_CURRENT)

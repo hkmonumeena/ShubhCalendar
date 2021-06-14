@@ -1,13 +1,17 @@
 package com.shubhcalendar.activities
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.WindowManager
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import coil.api.load
 import com.github.kittinunf.fuel.Fuel
 import com.github.kittinunf.fuel.core.ResponseDeserializable
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.messaging.FirebaseMessaging
 import com.google.gson.Gson
 import com.shubhcalendar.R
 import com.shubhcalendar.databinding.ActivityRegisterMobileBinding
@@ -26,6 +30,7 @@ import com.shubhcalendar.utills.Keys
 class RegisterMobileActivity : AppCompatActivity(), View.OnClickListener {
     lateinit var binding: ActivityRegisterMobileBinding
     var checkSignupOrMobile = 0
+    private var getRegToken: String? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRegisterMobileBinding.inflate(layoutInflater)
@@ -41,6 +46,18 @@ class RegisterMobileActivity : AppCompatActivity(), View.OnClickListener {
         binding.etTwo.addTextChangedListener(GenericTextWatcher(edit, binding.etTwo))
         binding.etThree.addTextChangedListener(GenericTextWatcher(edit, binding.etThree))
         binding.etFour.addTextChangedListener(GenericTextWatcher(edit, binding.etFour))
+
+        FirebaseMessaging.getInstance().token.addOnCompleteListener(OnCompleteListener { task ->
+            if (!task.isSuccessful) {
+                Log.e("FCM", "Fetching FCM registration token failed", task.exception)
+                return@OnCompleteListener
+            }
+            // Get new FCM registration token
+            getRegToken = task.result
+            Log.e("FCM", "" + getRegToken)
+            Toast.makeText(baseContext, getRegToken, Toast.LENGTH_SHORT).show()
+        })
+
     }
 
     private fun init() {
@@ -95,7 +112,8 @@ class RegisterMobileActivity : AppCompatActivity(), View.OnClickListener {
             signup_mobile,
             listOf(
                 "name" to binding.etName.text.toString().trim(),
-                "mobile" to binding.etMobile.text.toString().trim()
+                "mobile" to binding.etMobile.text.toString().trim(),
+                "regid" to getRegToken
             )
         )
             .responseObject(DataSignupMobile.Des()) { request, response, result ->
@@ -141,6 +159,7 @@ class RegisterMobileActivity : AppCompatActivity(), View.OnClickListener {
                 val (data, error) = result
                 binding.imgLoading.visibility = View.GONE
                 if (error == null) {
+                    Log.e("flag--", "getVerifyUserMobile(RegisterMobileActivity.kt:162)-->>$data")
                     if (data?.result == "Login successfully") {
                         toast(data.result)
                         putKey(Keys.userID, data.id)

@@ -1,11 +1,13 @@
 package com.shubhcalendar.ui.home.festival
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.text.isDigitsOnly
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -86,6 +88,7 @@ class ShowFestivals : BaseFragment(), IShowFestival, DatePickerDialog.OnDateSetL
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        dateOfMonth = calendar.get(Calendar.DAY_OF_MONTH)
         binding.rlDismiss.setOnClickListener{
         if (multipleStackNavigator?.canGoBack() == true) multipleStackNavigator?.goBack()
         }
@@ -114,7 +117,7 @@ class ShowFestivals : BaseFragment(), IShowFestival, DatePickerDialog.OnDateSetL
             4
         )
         initializeHorizontalCalendar()
-        showFestival(mutableMapOf("month" to "04", "year" to "2021"))
+      //  showFestival(mutableMapOf("month" to "04", "year" to "2021"))
     }
 
     override fun onDestroy() {
@@ -128,6 +131,8 @@ class ShowFestivals : BaseFragment(), IShowFestival, DatePickerDialog.OnDateSetL
             .build()
             .executeString(object : IGetResponse {
                 override fun onResponse(response: String?) {
+                    Log.e("flag--", "onResponse(ShowFestivals.kt:132)-->>$response")
+                    Log.e("flag--", "onResponse(ShowFestivals.kt:132)-->>$mutableMap")
                     if (job.isActive) {
                         when {
                             response?.isEmpty() == true -> {
@@ -139,7 +144,6 @@ class ShowFestivals : BaseFragment(), IShowFestival, DatePickerDialog.OnDateSetL
                                     .show()
                             }
                             response?.isNotEmpty() == true -> {
-
                                 val getData =
                                     Http().createModelFromClass<DataShowFestival>(response)
                                 if (getData.result == "sucessfull") {
@@ -155,11 +159,7 @@ class ShowFestivals : BaseFragment(), IShowFestival, DatePickerDialog.OnDateSetL
                                     }
                                 } else {
                                     val emptyList = arrayListOf<DataShowFestival.Data.AllFalst>()
-                                    Toast.makeText(
-                                        requireActivity(),
-                                        "No Data Found",
-                                        Toast.LENGTH_SHORT
-                                    ).show()
+                                    Toast.makeText(requireActivity(), "No Data Found", Toast.LENGTH_SHORT).show()
                                     binding.recyclerViewShowFestival.apply {
                                         layoutManager = LinearLayoutManager(requireActivity())
                                         adapter = RvShowFestival(emptyList)
@@ -329,13 +329,7 @@ class ShowFestivals : BaseFragment(), IShowFestival, DatePickerDialog.OnDateSetL
         var oneTImeShowCurrentMonth = true
         getFutureDatesOfCurrentMonth().forEach {
             if (oneTImeShowCurrentMonth) {
-                showFestival(
-                    mutableMapOf(
-                        "month" to com.michalsvec.singlerowcalendar.utils.DateUtils.getMonthNumber(
-                            it
-                        ), "year" to com.michalsvec.singlerowcalendar.utils.DateUtils.getYear(it)
-                    )
-                )
+                showFestival(mutableMapOf("month" to com.michalsvec.singlerowcalendar.utils.DateUtils.getMonthNumber(it), "year" to com.michalsvec.singlerowcalendar.utils.DateUtils.getYear(it)))
                 oneTImeShowCurrentMonth = false
             }
             mutableList.add(
@@ -359,13 +353,17 @@ class ShowFestivals : BaseFragment(), IShowFestival, DatePickerDialog.OnDateSetL
         when (calendar[Calendar.MONTH]) {
 
         }
-        val calendar = 23
-        calendarBackForwardButtons(
+        val calendar =  dateOfMonth
+
+        binding.rvShowMainDate.scrollToPosition(calendar-1)
+        rvShowDate.update(mutableList as java.util.ArrayList<ModelMonth>)
+
+     /*   calendarBackForwardButtons(
             calendar - 1,
             mutableMapOf("date" to "${mutableList[calendar].year}-${mutableList[calendar].monthNum}-${mutableList[calendar].day}"),
             mutableList[calendar].day,
             mutableList[calendar].dayname
-        )
+        )*/
     }
 
     private fun getDates(list: MutableList<Date>): List<Date> {
@@ -390,7 +388,14 @@ class ShowFestivals : BaseFragment(), IShowFestival, DatePickerDialog.OnDateSetL
     ) {
         binding.rvShowMainDate.scrollToPosition(position)
         rvShowDate.update(mutableList as java.util.ArrayList<ModelMonth>)
+
+      /*  var getYear = mutableMapOf.toString().split("-").subList(0,1)[0].filter { getIntegerValue -> getIntegerValue.isDigit() }
+        var getMonth = mutableMapOf.toString().split("-").subList(1,2)[0].filter { getIntegerValue -> getIntegerValue.isDigit() }*/
+
+
         showFestival(mutableMapOf)
+
+   //
     }
 
     override fun getNextMonth() {
@@ -398,9 +403,7 @@ class ShowFestivals : BaseFragment(), IShowFestival, DatePickerDialog.OnDateSetL
         getDatesOfNextMonth().forEach {
             mutableList.add(
                 ModelMonth(
-                    com.michalsvec.singlerowcalendar.utils.DateUtils.getDayNumber(
-                        it
-                    ),
+                    com.michalsvec.singlerowcalendar.utils.DateUtils.getDayNumber(it),
                     com.michalsvec.singlerowcalendar.utils.DateUtils.getDayName(it),
                     com.michalsvec.singlerowcalendar.utils.DateUtils.getMonthNumber(it),
                     com.michalsvec.singlerowcalendar.utils.DateUtils.getYear(it),
@@ -417,9 +420,7 @@ class ShowFestivals : BaseFragment(), IShowFestival, DatePickerDialog.OnDateSetL
         getDatesOfPreviousMonth().forEach {
             mutableList.add(
                 ModelMonth(
-                    com.michalsvec.singlerowcalendar.utils.DateUtils.getDayNumber(
-                        it
-                    ),
+                    com.michalsvec.singlerowcalendar.utils.DateUtils.getDayNumber(it),
                     com.michalsvec.singlerowcalendar.utils.DateUtils.getDayName(it),
                     com.michalsvec.singlerowcalendar.utils.DateUtils.getMonthNumber(it),
                     com.michalsvec.singlerowcalendar.utils.DateUtils.getYear(it),
@@ -433,7 +434,6 @@ class ShowFestivals : BaseFragment(), IShowFestival, DatePickerDialog.OnDateSetL
 
     override fun onDateSet(view: DatePicker?, year: Int, monthOfYear: Int, dayOfMonth: Int) {
         dateOfMonth = calendar.get(Calendar.DAY_OF_MONTH)
-
         showFestival(mutableMapOf("month" to monthOfYear.toString(), "year" to year.toString()))
     }
 }

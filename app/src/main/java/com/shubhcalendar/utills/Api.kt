@@ -11,4 +11,5 @@ object Api {
    val show_mantra_bypuja_id ="${mainLink}show_mantra_bypuja_id"
    val show_festival ="${mainLink}show_festival"
    val show_vidhi_bypuja_id ="${mainLink}show_vidhi_bypuja_id"
+   val show_notification ="${mainLink}show_notification"
 }

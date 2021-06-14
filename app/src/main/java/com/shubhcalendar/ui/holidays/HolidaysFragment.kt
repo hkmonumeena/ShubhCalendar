@@ -28,6 +28,7 @@ import com.tsongkha.spinnerdatepicker.DatePickerDialog
 import com.tsongkha.spinnerdatepicker.SpinnerDatePickerDialogBuilder
 import kotlinx.android.synthetic.main.activity_home_new.*
 import kotlinx.android.synthetic.main.calendar_item.view.*
+import kotlinx.coroutines.Job
 import java.util.*
 
 interface IHolidaysFragment {
@@ -57,7 +58,7 @@ class HolidaysFragment : BaseFragment(), DatePickerDialog.OnDateSetListener, IHo
     var seconds: Int = 0
     lateinit var layoutManager: LinearLayoutManager
     lateinit var rvShowDate: RvShowDate
-
+lateinit var job: Job
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -69,6 +70,7 @@ class HolidaysFragment : BaseFragment(), DatePickerDialog.OnDateSetListener, IHo
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        job = Job()
         binding.ivSerach.setOnClickListener(this)
         binding.relativeLayoutMenu.setOnClickListener(this)
         binding.rlDismiss.setOnClickListener(this)
@@ -235,34 +237,36 @@ class HolidaysFragment : BaseFragment(), DatePickerDialog.OnDateSetListener, IHo
         Http.Post("https://maestrosinfotech.org/shubh_calendar/appservice/process.php?action=show_holidays")
             .bodyParameter(mutableMapOf).build().executeString(object : IGetResponse {
             override fun onResponse(response: String?) {
-                when {
-                    response?.isEmpty() == true -> {
-                    }
-                    response?.isNotEmpty() == true -> {
-                        val getData = Http().createModelFromClass<DataShowHolidays>(response)
-                        if (getData.result == "sucessfull") {
-                            binding.rvRecyclerView.apply {
-                                layoutManager = LinearLayoutManager(requireActivity())
-                                adapter =
-                                    RvShowHolidays(getData.data as ArrayList<DataShowHolidays.Data>)
+
+                if (job.isActive) {
+                    when {
+                        response?.isEmpty() == true -> {
+                        }
+                        response?.isNotEmpty() == true -> {
+                            val getData = Http().createModelFromClass<DataShowHolidays>(response)
+                            if (getData.result == "sucessfull") {
+                                binding.rvRecyclerView.apply {
+                                    layoutManager = LinearLayoutManager(requireActivity())
+                                    adapter =
+                                        RvShowHolidays(getData.data as ArrayList<DataShowHolidays.Data>)
+                                }
+                            } else {
+                                val emptyList = arrayListOf<DataShowHolidays.Data>()
+                                binding.rvRecyclerView.apply {
+                                    layoutManager = LinearLayoutManager(requireActivity())
+                                    adapter = RvShowHolidays(emptyList)
+                                }
+                                Toast.makeText(
+                                    requireActivity(),
+                                    "NO Data Available for ${mutableMapOf["month"]} - ${mutableMapOf["year"]}",
+                                    Toast.LENGTH_SHORT
+                                ).show()
                             }
-                        } else {
-                            val emptyList = arrayListOf<DataShowHolidays.Data>()
-                            binding.rvRecyclerView.apply {
-                                layoutManager = LinearLayoutManager(requireActivity())
-                                adapter = RvShowHolidays(emptyList)
-                            }
-                            Toast.makeText(
-                                requireActivity(),
-                                "NO Data Available for ${mutableMapOf["month"]} - ${mutableMapOf["year"]}",
-                                Toast.LENGTH_SHORT
-                            ).show()
                         }
                     }
+                    Log.e("flag--", "onResponse(HolidaysFragment.kt:116)-->>$response")
                 }
-                Log.e("flag--", "onResponse(HolidaysFragment.kt:116)-->>$response")
             }
-
             override fun onError(error: Exception?) {
             }
         })
@@ -295,6 +299,11 @@ class HolidaysFragment : BaseFragment(), DatePickerDialog.OnDateSetListener, IHo
 
 
         }
+    }
+
+    override fun onDestroy() {
+        job.cancel()
+        super.onDestroy()
     }
 }
 

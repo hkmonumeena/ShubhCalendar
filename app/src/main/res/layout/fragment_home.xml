@@ -356,7 +356,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="5dp"
-                                android:text="@string/holidays"
+                                android:text="@string/holidayandfestival"
                                 android:textAlignment="center"
                                 android:textColor="@color/white" />
 
@@ -395,7 +395,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="5dp"
-                                android:text="@string/festivals"
+                                android:text="@string/share"
                                 android:textAlignment="center"
                                 android:textColor="@color/white" />
 

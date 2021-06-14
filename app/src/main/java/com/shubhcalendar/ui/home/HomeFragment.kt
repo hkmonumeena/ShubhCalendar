@@ -110,7 +110,7 @@ class HomeFragment : BaseFragment(), View.OnClickListener {
             binding.llPanchangMuhurat -> {
                 multipleStackNavigator?.start(
                     PanchabgMuhurat(),
-                    TransitionAnimationType.RIGHT_TO_LEFT
+                    
                 )
 
 
@@ -122,26 +122,25 @@ class HomeFragment : BaseFragment(), View.OnClickListener {
                  (activity as HomeNewActivity).binding.frame.isVisible = false
                  (activity as HomeNewActivity).binding.frame2.isVisible = true*/
                 multipleStackNavigator?.start(
-                    ArtiVidhiKathaFrag(),
-                    TransitionAnimationType.LEFT_TO_RIGHT
+                    ArtiVidhiKathaFrag()
                 )
             }
             binding.cardViewProfile -> {
                 multipleStackNavigator?.start(
-                    ProfileFragment(),
-                    TransitionAnimationType.RIGHT_TO_LEFT
+                    ProfileFragment()
                 )
             }
             binding.cardViewFestivals -> {
-                multipleStackNavigator?.start(
-                    ShowFestivals(),
-                    TransitionAnimationType.RIGHT_TO_LEFT
-                )
-            }
-            binding.materialCardHolidays -> {
-                multipleStackNavigator?.start(
+             /*   multipleStackNavigator?.start(
                     HolidaysFragment(),
                     TransitionAnimationType.LEFT_TO_RIGHT
+                )*/
+            }
+            binding.materialCardHolidays -> {
+
+
+                multipleStackNavigator?.start(
+                    ShowFestivals()
                 )
             }
 

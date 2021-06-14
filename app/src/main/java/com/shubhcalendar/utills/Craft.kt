@@ -13,10 +13,12 @@ import android.os.Build
 import android.util.Log
 import android.view.View
 import android.view.animation.BounceInterpolator
-import android.widget.EditText
-import android.widget.Toast
+import android.widget.*
 import androidx.annotation.RequiresApi
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.isVisible
+import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.card.MaterialCardView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 object Craft {
@@ -204,6 +206,53 @@ object Craft {
                 }
             })
     }
+
+
+
+    fun View.textView(id: Int): TextView {
+        return findViewById(id)
+
+    }
+
+    fun View.editText(id: Int): EditText {
+        return findViewById(id)
+
+    }
+
+    fun View.imageView(id: Int): ImageView {
+        return findViewById(id)
+
+    }
+
+    fun View.materialCardView(id: Int): MaterialCardView {
+        return findViewById(id)
+
+    }
+
+    fun View.linearLayout(id: Int): LinearLayout {
+        return findViewById(id)
+
+    }
+
+    fun View.constraintLayout(id: Int): ConstraintLayout {
+        return findViewById(id)
+
+    }
+
+    fun View.relativeLayout(id: Int): RelativeLayout {
+        return findViewById(id)
+
+    }   fun View.recyclerView(id: Int): RecyclerView {
+        return findViewById(id)
+
+    }
+
+
+
+
+
+
+
 
 
 }
