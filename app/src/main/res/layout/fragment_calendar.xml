@@ -71,6 +71,7 @@
                     android:layout_marginTop="55dp"
                     android:layout_toStartOf="@+id/cardViewProfileUser"
                     android:padding="12dp"
+                    android:id="@+id/imageViewNotification"
                     android:src="@drawable/icalarm"
                     app:tint="@color/white" />
 

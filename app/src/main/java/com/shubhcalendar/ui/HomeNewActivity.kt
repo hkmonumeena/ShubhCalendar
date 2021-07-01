@@ -11,21 +11,21 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.core.view.GravityCompat
-import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import coil.api.load
 import com.e.mylibrary.Fasttrack
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.shubhcalendar.R
+import com.shubhcalendar.activities.NotificationActivity
 import com.shubhcalendar.activities.SplashActivity
 import com.shubhcalendar.databinding.ActivityHomeNewBinding
 import com.shubhcalendar.ui.calendar.CalendarFragment
 import com.shubhcalendar.ui.childhelps.LangugageSheet
-import com.shubhcalendar.ui.holidays.HolidaysFragment
+import com.shubhcalendar.ui.home.festival.HolidaysFragment
 import com.shubhcalendar.ui.home.HomeFragment
+import com.shubhcalendar.ui.home.festival.FestivalAndHoliday
 import com.shubhcalendar.ui.home.panchangmuhurat.PanchabgMuhurat
 import com.shubhcalendar.ui.home.poojaartiskatha.ArtiVidhiKathaFrag
-import com.shubhcalendar.ui.horoscope.HoroscopeFragment
 import com.shubhcalendar.ui.profile.DataShowProfile
 import com.shubhcalendar.ui.profile.ProfileFragment
 import com.shubhcalendar.utills.Api
@@ -114,6 +114,7 @@ class HomeNewActivity : AppCompatActivity(), Navigator.NavigatorListener, View.O
         binding.rlHome.setOnClickListener(this)
         binding.ivCross.setOnClickListener(this)
         binding.cardViewProfile.setOnClickListener(this)
+        binding.rlNotification.setOnClickListener(this)
         showProfile()
 
     }
@@ -258,7 +259,14 @@ class HomeNewActivity : AppCompatActivity(), Navigator.NavigatorListener, View.O
             }
 
             binding.rlHoliday -> {
-                multipleStackNavigator.start(HolidaysFragment(),TransitionAnimationType.RIGHT_TO_LEFT)
+                multipleStackNavigator.start(FestivalAndHoliday(),TransitionAnimationType.RIGHT_TO_LEFT)
+                binding.drawer.closeDrawer(GravityCompat.END)
+
+            }
+
+
+            binding.rlNotification -> {
+           startActivity<NotificationActivity>()
                 binding.drawer.closeDrawer(GravityCompat.END)
 
             }

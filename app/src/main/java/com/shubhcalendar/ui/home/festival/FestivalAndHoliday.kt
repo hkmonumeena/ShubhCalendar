@@ -1,8 +1,6 @@
-package com.shubhcalendar.ui.home.panchangmuhurat
+package com.shubhcalendar.ui.home.festival
 
 import android.os.Bundle
-import android.view.Gravity
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,12 +11,11 @@ import com.shubhcalendar.ui.HomeNewActivity
 import com.shubhcalendar.ui.profile.ProfileFragment
 import com.shubhcalendar.utills.BaseFragment
 import com.shubhcalendar.utills.Craft.startActivity
-import com.trendyol.medusalib.navigator.transitionanimation.TransitionAnimationType
 import kotlinx.android.synthetic.main.activity_home_new.*
 
-class PanchabgMuhurat : BaseFragment(),View.OnClickListener {
+class FestivalAndHoliday : BaseFragment(), View.OnClickListener {
     lateinit var binding: FragmentPanchabgMuhuratBinding
-    lateinit var adapterPanchangeMuhurat: AdapterPanchangeMuhurat
+    lateinit var adapterPanchangeMuhurat: AdapterHolidayFestival
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -29,11 +26,10 @@ class PanchabgMuhurat : BaseFragment(),View.OnClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        adapterPanchangeMuhurat = AdapterPanchangeMuhurat(fragmentManager, activity!!)
-        binding.viewPager.offscreenPageLimit =2
+        adapterPanchangeMuhurat = AdapterHolidayFestival(fragmentManager, activity!!)
+        binding.viewPager.offscreenPageLimit = 2
         binding.viewPager.adapter = adapterPanchangeMuhurat
         binding.tabs.setupWithViewPager(binding.viewPager)
-
         binding.relativeLayoutOpenMenu.setOnClickListener(this)
         binding.cardViewProfile.setOnClickListener(this)
         binding.rlDismiss.setOnClickListener(this)
@@ -41,23 +37,25 @@ class PanchabgMuhurat : BaseFragment(),View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
-       when(v){
-           binding.relativeLayoutOpenMenu ->{
-               (activity as HomeNewActivity).drawer.openDrawer(GravityCompat.END)
-           }
-
-           binding.imageViewNotification ->{
-             requireActivity().startActivity<NotificationActivity>()
-           }
-           binding.cardViewProfile ->{
-              multipleStackNavigator?.start(ProfileFragment(),TransitionAnimationType.RIGHT_TO_LEFT)
-           }
-           binding.rlDismiss ->{
-            if (multipleStackNavigator?.canGoBack() == true){
-                multipleStackNavigator?.goBack()
+        when (v) {
+            binding.relativeLayoutOpenMenu -> {
+                (activity as HomeNewActivity).drawer.openDrawer(GravityCompat.END)
             }
-           }
-       }
+            binding.cardViewProfile -> {
+                multipleStackNavigator?.start(
+                    ProfileFragment()
+                )
+            }
+            binding.rlDismiss -> {
+                if (multipleStackNavigator?.canGoBack() == true) {
+                    multipleStackNavigator?.goBack()
+                }
+            }
+
+            binding.imageViewNotification ->{
+                requireActivity().startActivity<NotificationActivity>()
+            }
+        }
     }
 
 

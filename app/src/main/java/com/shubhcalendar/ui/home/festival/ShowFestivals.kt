@@ -7,8 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
-import androidx.core.text.isDigitsOnly
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
@@ -26,7 +24,9 @@ import com.shubhcalendar.utills.ViewHolder
 import com.tsongkha.spinnerdatepicker.DatePicker
 import com.tsongkha.spinnerdatepicker.DatePickerDialog
 import com.tsongkha.spinnerdatepicker.SpinnerDatePickerDialogBuilder
-import kotlinx.android.synthetic.main.calendar_item.view.*
+import kotlinx.android.synthetic.main.calendar_item.view.textViewDate
+import kotlinx.android.synthetic.main.calendar_item.view.textViewDayName
+import kotlinx.android.synthetic.main.rv_single_date.view.*
 import kotlinx.coroutines.Job
 import java.util.*
 
@@ -89,17 +89,17 @@ class ShowFestivals : BaseFragment(), IShowFestival, DatePickerDialog.OnDateSetL
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         dateOfMonth = calendar.get(Calendar.DAY_OF_MONTH)
-        binding.rlDismiss.setOnClickListener{
-        if (multipleStackNavigator?.canGoBack() == true) multipleStackNavigator?.goBack()
+        binding.rlDismiss.setOnClickListener {
+            if (multipleStackNavigator?.canGoBack() == true) multipleStackNavigator?.goBack()
         }
         binding.ivSerach.setOnClickListener {
             SpinnerDatePickerDialogBuilder().context(requireActivity()).callback(this)
                 .spinnerTheme(R.style.NumberPickerStyle).showTitle(true).showDaySpinner(true)
                 .maxDate(2030, 0, 1).defaultDate(
-                calendar.get(Calendar.YEAR),
-                calendar.get(Calendar.MONTH),
-                calendar.get(Calendar.DAY_OF_MONTH)
-            )
+                    calendar.get(Calendar.YEAR),
+                    calendar.get(Calendar.MONTH),
+                    calendar.get(Calendar.DAY_OF_MONTH)
+                )
                 //   .minDate(2000, 0, 1)
                 .build().show()
         }
@@ -117,7 +117,7 @@ class ShowFestivals : BaseFragment(), IShowFestival, DatePickerDialog.OnDateSetL
             4
         )
         initializeHorizontalCalendar()
-      //  showFestival(mutableMapOf("month" to "04", "year" to "2021"))
+        //  showFestival(mutableMapOf("month" to "04", "year" to "2021"))
     }
 
     override fun onDestroy() {
@@ -159,7 +159,11 @@ class ShowFestivals : BaseFragment(), IShowFestival, DatePickerDialog.OnDateSetL
                                     }
                                 } else {
                                     val emptyList = arrayListOf<DataShowFestival.Data.AllFalst>()
-                                    Toast.makeText(requireActivity(), "No Data Found", Toast.LENGTH_SHORT).show()
+                                    Toast.makeText(
+                                        requireActivity(),
+                                        "No Data Found",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
                                     binding.recyclerViewShowFestival.apply {
                                         layoutManager = LinearLayoutManager(requireActivity())
                                         adapter = RvShowFestival(emptyList)
@@ -198,6 +202,7 @@ class ShowFestivals : BaseFragment(), IShowFestival, DatePickerDialog.OnDateSetL
             val set = holder.itemView
             set.textViewDayName.text = item.dayname
             set.textViewDate.text = item.day
+            set.textViewMonthAndYear.text = """Month-${item.monthNum} Year-${item.year}"""
             cardViewforwordbtn.setOnClickListener {
                 var nextPosition = if (position == items.size - 1) position else position + 1
                 when (moveToNextMonth) {
@@ -329,7 +334,13 @@ class ShowFestivals : BaseFragment(), IShowFestival, DatePickerDialog.OnDateSetL
         var oneTImeShowCurrentMonth = true
         getFutureDatesOfCurrentMonth().forEach {
             if (oneTImeShowCurrentMonth) {
-                showFestival(mutableMapOf("month" to com.michalsvec.singlerowcalendar.utils.DateUtils.getMonthNumber(it), "year" to com.michalsvec.singlerowcalendar.utils.DateUtils.getYear(it)))
+                showFestival(
+                    mutableMapOf(
+                        "month" to com.michalsvec.singlerowcalendar.utils.DateUtils.getMonthNumber(
+                            it
+                        ), "year" to com.michalsvec.singlerowcalendar.utils.DateUtils.getYear(it)
+                    )
+                )
                 oneTImeShowCurrentMonth = false
             }
             mutableList.add(
@@ -346,24 +357,21 @@ class ShowFestivals : BaseFragment(), IShowFestival, DatePickerDialog.OnDateSetL
             )
         }
         val snapHelper = PagerSnapHelper()
-
         snapHelper.attachToRecyclerView(binding.rvShowMainDate)
         binding.rvShowMainDate.layoutManager = layoutManager
         binding.rvShowMainDate.adapter = rvShowDate
         when (calendar[Calendar.MONTH]) {
 
         }
-        val calendar =  dateOfMonth
-
-        binding.rvShowMainDate.scrollToPosition(calendar-1)
+        val calendar = dateOfMonth
+        binding.rvShowMainDate.scrollToPosition(calendar - 1)
         rvShowDate.update(mutableList as java.util.ArrayList<ModelMonth>)
-
-     /*   calendarBackForwardButtons(
-            calendar - 1,
-            mutableMapOf("date" to "${mutableList[calendar].year}-${mutableList[calendar].monthNum}-${mutableList[calendar].day}"),
-            mutableList[calendar].day,
-            mutableList[calendar].dayname
-        )*/
+        /*   calendarBackForwardButtons(
+               calendar - 1,
+               mutableMapOf("date" to "${mutableList[calendar].year}-${mutableList[calendar].monthNum}-${mutableList[calendar].day}"),
+               mutableList[calendar].day,
+               mutableList[calendar].dayname
+           )*/
     }
 
     private fun getDates(list: MutableList<Date>): List<Date> {
@@ -389,13 +397,13 @@ class ShowFestivals : BaseFragment(), IShowFestival, DatePickerDialog.OnDateSetL
         binding.rvShowMainDate.scrollToPosition(position)
         rvShowDate.update(mutableList as java.util.ArrayList<ModelMonth>)
 
-      /*  var getYear = mutableMapOf.toString().split("-").subList(0,1)[0].filter { getIntegerValue -> getIntegerValue.isDigit() }
-        var getMonth = mutableMapOf.toString().split("-").subList(1,2)[0].filter { getIntegerValue -> getIntegerValue.isDigit() }*/
+        /*  var getYear = mutableMapOf.toString().split("-").subList(0,1)[0].filter { getIntegerValue -> getIntegerValue.isDigit() }
+          var getMonth = mutableMapOf.toString().split("-").subList(1,2)[0].filter { getIntegerValue -> getIntegerValue.isDigit() }*/
 
 
         showFestival(mutableMapOf)
 
-   //
+        //
     }
 
     override fun getNextMonth() {

@@ -9,24 +9,21 @@ import android.widget.Toast
 import androidx.core.view.GravityCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.MobileAds
-import com.google.android.gms.ads.initialization.OnInitializationCompleteListener
-import com.shubhcalendar.R
 import com.shubhcalendar.activities.AdapterMonth
 import com.shubhcalendar.activities.ModelMonth
 import com.shubhcalendar.activities.NotificationActivity
 import com.shubhcalendar.databinding.FragmentHomeBinding
 import com.shubhcalendar.ui.HomeNewActivity
 import com.shubhcalendar.ui.calendar.CalendarFragment
-import com.shubhcalendar.ui.holidays.HolidaysFragment
+import com.shubhcalendar.ui.home.festival.FestivalAndHoliday
 import com.shubhcalendar.ui.home.festival.ShowFestivals
 import com.shubhcalendar.ui.home.panchangmuhurat.PanchabgMuhurat
 import com.shubhcalendar.ui.home.poojaartiskatha.ArtiVidhiKathaFrag
+import com.shubhcalendar.ui.horoscope.HoroscopeFragment
 import com.shubhcalendar.ui.profile.ProfileFragment
 import com.shubhcalendar.utills.BaseFragment
 import com.shubhcalendar.utills.Craft.startActivity
-import com.trendyol.medusalib.navigator.transitionanimation.TransitionAnimationType
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -94,6 +91,7 @@ class HomeFragment : BaseFragment(), View.OnClickListener {
         binding.cardViewFestivals.setOnClickListener(this)
         binding.rlDismiss.setOnClickListener(this)
         binding.imageViewNotification.setOnClickListener(this)
+        binding.cardViewGetHoroscope.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -137,10 +135,13 @@ class HomeFragment : BaseFragment(), View.OnClickListener {
                 )*/
             }
             binding.materialCardHolidays -> {
-
-
                 multipleStackNavigator?.start(
-                    ShowFestivals()
+                    FestivalAndHoliday()
+                )
+            }
+binding.cardViewGetHoroscope -> {
+                multipleStackNavigator?.start(
+                    HoroscopeFragment()
                 )
             }
 
@@ -156,9 +157,7 @@ class HomeFragment : BaseFragment(), View.OnClickListener {
         getFutureDatesOfCurrentMonth().forEach {
             if (forOneTime) {
                 binding.textViewDateYear.text =
-                    "${com.michalsvec.singlerowcalendar.utils.DateUtils.getMonthName(it)} ${
-                        com.michalsvec.singlerowcalendar.utils.DateUtils.getYear(it)
-                    }"
+                    "${com.michalsvec.singlerowcalendar.utils.DateUtils.getMonthName(it)} ${com.michalsvec.singlerowcalendar.utils.DateUtils.getYear(it)}"
                 forOneTime = false
             }
             mutableList.add(

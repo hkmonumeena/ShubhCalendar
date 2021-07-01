@@ -22,11 +22,13 @@ import com.httpconnection.httpconnectionV2.interfaces.IGetResponse
 import com.httpconnection.httpconnectionV2.models.Exception
 import com.michalsvec.singlerowcalendar.utils.DateUtils
 import com.shubhcalendar.R
+import com.shubhcalendar.activities.NotificationActivity
 import com.shubhcalendar.databinding.FragmentCalendarBinding
 import com.shubhcalendar.roomdb.DbFestivals
 import com.shubhcalendar.ui.HomeNewActivity
 import com.shubhcalendar.utills.Api.SHOW_HOLIDDAYS
 import com.shubhcalendar.utills.BaseFragment
+import com.shubhcalendar.utills.Craft.startActivity
 import com.shubhcalendar.utills.GenricAdapter
 import com.shubhcalendar.utills.ViewHolder
 import kotlinx.android.synthetic.main.full_screen_calendar.view.*
@@ -110,6 +112,7 @@ class CalendarFragment : BaseFragment(), View.OnClickListener, CoroutineScope {
         binding.cardViewForward.setOnClickListener(this)
         binding.cardViewProfileUser.setOnClickListener(this)
         binding.rlDismiss.setOnClickListener(this)
+        binding.imageViewNotification.setOnClickListener(this)
 
     }
 
@@ -142,6 +145,10 @@ class CalendarFragment : BaseFragment(), View.OnClickListener, CoroutineScope {
                 Handler().postDelayed({
                     multipleStackNavigator?.switchTab(1)
                 }, 500)
+            }
+
+            binding.imageViewNotification -> {
+                requireActivity().startActivity<NotificationActivity>()
             }
         }
     }
@@ -901,8 +908,7 @@ class CalendarFragment : BaseFragment(), View.OnClickListener, CoroutineScope {
                         if (job.isActive) {
                             if (response?.isNotBlank() == true) {
                                 if (!isLocalStoreDataAvailable) {
-                                    val data =
-                                        Post.createModelFromClass<DataShowFestival>(response)
+                                    val data = Post.createModelFromClass<DataShowFestival>(response)
                                     if (data.result == "sucessfull") {
                                         concatList.clear()
                                         var count: Boolean
@@ -927,9 +933,7 @@ class CalendarFragment : BaseFragment(), View.OnClickListener, CoroutineScope {
                                         for (elements in mutableMonthDateList) {
                                             count = true
                                             for (i in 0 until data.data?.size!!) {
-                                                if (elements.day == data.data.get(i)?.newdate?.split(
-                                                        "-"
-                                                    )
+                                                if (elements.day == data.data.get(i)?.newdate?.split("-")
                                                         ?.get(2)
                                                 ) {
                                                     concatFestivs?.add(data.data.get(i))

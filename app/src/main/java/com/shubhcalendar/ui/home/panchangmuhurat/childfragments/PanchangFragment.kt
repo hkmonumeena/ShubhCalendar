@@ -68,7 +68,9 @@ class PanchangFragment : Fragment(), IPanchangFragment, DatePickerDialog.OnDateS
             LinearLayoutManager(requireActivity(), LinearLayoutManager.HORIZONTAL, false)
         snapHelper.attachToRecyclerView(binding.rvShowMainDate)
         initializeHorizontalCalendar()
-        Log.e("flag--", "$dateOfMonth")
+        binding.cardViewcolor.isVisible = false
+        binding.cardViewCard2.isVisible = false
+        binding.materialShare.isVisible = false
 
         viewModel.showPanchang(
             mutableMapOf(

@@ -12,7 +12,7 @@ class GetHoroscopeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_get_horoscope)
         val cardViewArrow = findViewById<CardView>(R.id.cardViewArrow)
         cardViewArrow.setOnClickListener {
-            startActivity<RashiActivity>()
+
         }
     }
 }

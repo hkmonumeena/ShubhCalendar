@@ -10,6 +10,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import coil.api.load
 import com.httpconnection.httpconnectionV2.Http
 import com.httpconnection.httpconnectionV2.interfaces.IGetResponse
 import com.httpconnection.httpconnectionV2.models.Exception
@@ -17,6 +18,7 @@ import com.shubhcalendar.R
 import com.shubhcalendar.databinding.ActivityNotificationBinding
 import com.shubhcalendar.utills.Api.show_notification
 import com.shubhcalendar.utills.Craft.getKey
+import com.shubhcalendar.utills.Craft.imageView
 import com.shubhcalendar.utills.Craft.textView
 import com.shubhcalendar.utills.GenricAdapter
 import com.shubhcalendar.utills.Keys
@@ -102,6 +104,8 @@ private class RvShowNotifications(
             textView(R.id.textViewTitle).text = item.title
             textView(R.id.textViewDescription).text = item.description
             textView(R.id.textViewDate).text = item.date
+            imageView(R.id.imageViewNotificationImg).load(item.path.plus(item.image))
+
         }
     }
 

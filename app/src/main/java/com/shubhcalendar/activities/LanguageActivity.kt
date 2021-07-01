@@ -32,7 +32,7 @@ class LanguageActivity : AppCompatActivity() {
         }
 
         binding.cardViewTelugu.setOnClickListener {
-            startActivity<RashiActivity>()
+         //   startActivity<RashiActivity>()
         }
     }
 }

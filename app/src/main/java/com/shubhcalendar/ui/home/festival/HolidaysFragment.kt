@@ -1,4 +1,4 @@
-package com.shubhcalendar.ui.holidays
+package com.shubhcalendar.ui.home.festival
 
 import android.os.Bundle
 import android.util.Log
@@ -10,6 +10,7 @@ import androidx.core.view.GravityCompat
 import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
+import coil.api.load
 import com.google.android.material.card.MaterialCardView
 import com.httpconnection.httpconnectionV2.Http
 import com.httpconnection.httpconnectionV2.interfaces.IGetResponse
@@ -20,6 +21,7 @@ import com.shubhcalendar.databinding.FragmentHolidaysBinding
 import com.shubhcalendar.ui.HomeNewActivity
 import com.shubhcalendar.ui.profile.ProfileFragment
 import com.shubhcalendar.utills.BaseFragment
+import com.shubhcalendar.utills.Craft
 import com.shubhcalendar.utills.GenricAdapter
 import com.shubhcalendar.utills.ViewHolder
 import com.trendyol.medusalib.navigator.transitionanimation.TransitionAnimationType
@@ -27,7 +29,10 @@ import com.tsongkha.spinnerdatepicker.DatePicker
 import com.tsongkha.spinnerdatepicker.DatePickerDialog
 import com.tsongkha.spinnerdatepicker.SpinnerDatePickerDialogBuilder
 import kotlinx.android.synthetic.main.activity_home_new.*
-import kotlinx.android.synthetic.main.calendar_item.view.*
+import kotlinx.android.synthetic.main.calendar_item.view.textViewDate
+import kotlinx.android.synthetic.main.calendar_item.view.textViewDayName
+import kotlinx.android.synthetic.main.rv_show_holidays.view.*
+import kotlinx.android.synthetic.main.rv_single_date.view.*
 import kotlinx.coroutines.Job
 import java.util.*
 
@@ -71,6 +76,7 @@ lateinit var job: Job
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         job = Job()
+        dateOfMonth = calendar.get(Calendar.DAY_OF_MONTH)
         binding.ivSerach.setOnClickListener(this)
         binding.relativeLayoutMenu.setOnClickListener(this)
         binding.rlDismiss.setOnClickListener(this)
@@ -153,16 +159,16 @@ lateinit var job: Job
         snapHelper.attachToRecyclerView(binding.rvShowMainDate)
         binding.rvShowMainDate.layoutManager = layoutManager
         binding.rvShowMainDate.adapter = rvShowDate
-        when (calendar[Calendar.MONTH]) {
+        val calendar =  dateOfMonth
 
-        }
-        val calendar = 23
-        calendarBackForwardButtons(
+        binding.rvShowMainDate.scrollToPosition(calendar-1)
+        rvShowDate.update(mutableList as java.util.ArrayList<ModelMonth>)
+       /* calendarBackForwardButtons(
             calendar - 1,
             mutableMapOf("date" to "${mutableList[calendar].year}-${mutableList[calendar].monthNum}-${mutableList[calendar].day}"),
             mutableList[calendar].day,
             mutableList[calendar].dayname
-        )
+        )*/
     }
 
     private fun getDates(list: MutableList<Date>): List<Date> {
@@ -237,7 +243,7 @@ lateinit var job: Job
         Http.Post("https://maestrosinfotech.org/shubh_calendar/appservice/process.php?action=show_holidays")
             .bodyParameter(mutableMapOf).build().executeString(object : IGetResponse {
             override fun onResponse(response: String?) {
-
+                Log.e("flag--", "onResponse(HolidaysFragment.kt:244)-->>$response")
                 if (job.isActive) {
                     when {
                         response?.isEmpty() == true -> {
@@ -245,13 +251,24 @@ lateinit var job: Job
                         response?.isNotEmpty() == true -> {
                             val getData = Http().createModelFromClass<DataShowHolidays>(response)
                             if (getData.result == "sucessfull") {
+
+                                val dataList = arrayListOf<DataShowHolidays.Data.AllFalst>()
+
+                                getData.data?.forEach {
+                                    data ->
+                                    data?.all_falst?.forEach {
+                                        if (it != null) {
+                                            dataList.add(it)
+                                        }
+                                    }
+                                }
+
                                 binding.rvRecyclerView.apply {
                                     layoutManager = LinearLayoutManager(requireActivity())
-                                    adapter =
-                                        RvShowHolidays(getData.data as ArrayList<DataShowHolidays.Data>)
+                                    adapter = RvShowHolidays(dataList)
                                 }
                             } else {
-                                val emptyList = arrayListOf<DataShowHolidays.Data>()
+                                val emptyList = arrayListOf<DataShowHolidays.Data.AllFalst>()
                                 binding.rvRecyclerView.apply {
                                     layoutManager = LinearLayoutManager(requireActivity())
                                     adapter = RvShowHolidays(emptyList)
@@ -326,6 +343,7 @@ class RvShowDate(
         val set = holder.itemView
         set.textViewDayName.text = item.dayname
         set.textViewDate.text = item.day
+        set.textViewMonthAndYear.text = """Month-${item.monthNum} Year-${item.year}"""
         cardViewforwordbtn.setOnClickListener {
             var nextPosition = if (position == items.size - 1) position else position + 1
             when (moveToNextMonth) {
@@ -405,9 +423,14 @@ class RvShowDate(
     }
 }
 
-private class RvShowHolidays(items: ArrayList<DataShowHolidays.Data>) :
-    GenricAdapter<DataShowHolidays.Data>(items) {
-    override fun configure(item: DataShowHolidays.Data, holder: ViewHolder, position: Int) {
+private class RvShowHolidays(items: ArrayList<DataShowHolidays.Data.AllFalst>) :
+    GenricAdapter<DataShowHolidays.Data.AllFalst>(items) {
+    override fun configure(item: DataShowHolidays.Data.AllFalst, holder: ViewHolder, position: Int) {
+        holder.itemView.textViewTitle.text = item.title
+        holder.itemView.textViewState.text = item.states
+        holder.itemView.textViewDate.text = item.date
+        holder.itemView.holidayImage.load("https://maestrosinfotech.org/shubh_calendar/image/"+item.image)
+
     }
 
     override fun getItemViewType(position: Int): Int {
@@ -434,7 +457,8 @@ data class DataShowHolidays(val `data`: List<Data?>? = null, val result: String?
             val newdate: String? = null,
             val states: String? = null,
             val title: String? = null,
-            val year: String? = null
+            val year: String? = null,
+            val image: String? = null
         )
     }
 }

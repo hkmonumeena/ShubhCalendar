@@ -5,17 +5,18 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.core.view.GravityCompat
 import com.httpconnection.httpconnectionV2.Http
 import com.httpconnection.httpconnectionV2.interfaces.IGetResponse
 import com.httpconnection.httpconnectionV2.models.Exception
+import com.shubhcalendar.activities.NotificationActivity
 import com.shubhcalendar.databinding.FragmentArtiVidhiKathaBinding
 import com.shubhcalendar.ui.HomeNewActivity
 import com.shubhcalendar.ui.home.poojaartiskatha.childhelp.DataShowAllPooja
 import com.shubhcalendar.ui.profile.ProfileFragment
 import com.shubhcalendar.utills.BaseFragment
 import com.shubhcalendar.utills.Craft.confirmationDialog
+import com.shubhcalendar.utills.Craft.startActivity
 import com.trendyol.medusalib.navigator.transitionanimation.TransitionAnimationType
 
 private const val ARG_PARAM1 = "param1"
@@ -52,6 +53,7 @@ class ArtiVidhiKathaFrag : BaseFragment(), View.OnClickListener {
         binding!!.rlDismiss.setOnClickListener(this)
         binding!!.relativeLayoutMenu.setOnClickListener(this)
         binding!!.cardViewProfile.setOnClickListener(this)
+        binding?.imageViewNotification?.setOnClickListener(this)
         showAllKatha()
     }
 
@@ -121,6 +123,10 @@ class ArtiVidhiKathaFrag : BaseFragment(), View.OnClickListener {
                     ProfileFragment(),
                     TransitionAnimationType.RIGHT_TO_LEFT
                 )
+            }
+
+            binding?.imageViewNotification -> {
+                requireActivity().startActivity<NotificationActivity>()
             }
         }
     }
