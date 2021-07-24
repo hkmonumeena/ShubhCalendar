@@ -1,435 +1,439 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.home.HomeFragment">
 
-    <RelativeLayout
-        android:visibility="visible"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_above="@+id/adView">
 
-        <ImageView
-            android:id="@+id/imgTopHeader"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_marginTop="-10dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/imgtopheader" />
-
-        <RelativeLayout
-            android:id="@+id/rlDismiss"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/back_shape">
-
-            <ImageView
-                android:id="@+id/backbtn"
-                android:layout_width="30dp"
-                android:layout_height="25dp"
-                android:layout_centerInParent="true"
-                android:src="@drawable/ic_baseline_arrow_back_24" />
-
-        </RelativeLayout>
-
-
-
-        <ImageView
-            android:id="@+id/icMenu"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:padding="8dp"
-            android:src="@drawable/ic_menu"
-            app:tint="@color/white" />
-
-
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="55dp"
-            android:layout_toStartOf="@+id/cardViewProfile"
-            android:padding="12dp"
-            android:id="@+id/imageViewNotification"
-            android:src="@drawable/icalarm"
-            app:tint="@color/white" />
-
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cardViewProfile"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_below="@+id/icMenu"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            app:cardCornerRadius="25dp"
-            app:cardElevation="8dp">
-
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="0dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/icdummy_user" />
-
-
-        </com.google.android.material.card.MaterialCardView>
-
-
-        <RelativeLayout
-            android:id="@+id/rlCalendarView"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/imgTopHeader">
+            android:orientation="vertical">
 
-            <com.google.android.material.card.MaterialCardView
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="90dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="5dp"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="10dp">
+                android:layout_height="match_parent"
+                android:visibility="visible">
 
-                <LinearLayout
+                <ImageView
+                    android:id="@+id/imgTopHeader"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="-10dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/imgtopheader" />
+
+                <RelativeLayout
+                    android:id="@+id/rlDismiss"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/back_shape">
+
+                    <ImageView
+                        android:id="@+id/backbtn"
+                        android:layout_width="30dp"
+                        android:layout_height="25dp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/ic_baseline_arrow_back_24" />
+
+                </RelativeLayout>
+
+
+                <ImageView
+                    android:id="@+id/icMenu"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentRight="true"
                     android:layout_marginTop="10dp"
-                    android:orientation="vertical">
+                    android:layout_marginEnd="10dp"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_menu"
+                    app:tint="@color/white" />
 
 
-                    <TextView
-                        android:id="@+id/textViewDateYear"
-                        android:layout_width="wrap_content"
+                <ImageView
+                    android:id="@+id/imageViewNotification"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="55dp"
+                    android:layout_toStartOf="@+id/cardViewProfile"
+                    android:padding="12dp"
+                    android:src="@drawable/icalarm"
+                    app:tint="@color/white" />
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardViewProfile"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/icMenu"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    app:cardCornerRadius="25dp"
+                    app:cardElevation="8dp">
+
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="0dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/icdummy_user" />
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+                <RelativeLayout
+                    android:id="@+id/rlCalendarView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/imgTopHeader">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="90dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="5dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="10dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="vertical">
+
+
+                            <TextView
+                                android:id="@+id/textViewDateYear"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="5dp"
+                                android:text="March 2021"
+                                android:textColor="@color/black"
+                                android:textSize="14dp" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/recyclerMonth"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+
+                        </LinearLayout>
+
+
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                </RelativeLayout>
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/rlCalendarView">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="5dp"
-                        android:text="March 2021"
-                        android:textColor="@color/black"
-                        android:textSize="14dp" />
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/recyclerMonth"/>
-
-                </LinearLayout>
-
-
-            </com.google.android.material.card.MaterialCardView>
-
-
-        </RelativeLayout>
-
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_below="@+id/rlCalendarView"
-            android:layout_height="match_parent">
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:weightSum="2">
-
-
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="match_parent"
-                        android:layout_height="120dp"
-                        android:layout_margin="16dp"
-                        android:layout_weight="1"
-                        app:cardElevation="8dp"
-                        app:cardCornerRadius="5dp"
-                        app:cardBackgroundColor="#fe513a">
+                        android:layout_marginTop="4dp"
+                        android:orientation="vertical">
 
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:id="@+id/cardViewCalendar"
-                            android:orientation="vertical">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
 
 
-                            <ImageView
+                            <com.google.android.material.card.MaterialCardView
                                 android:layout_width="match_parent"
-                                android:layout_height="80dp"
-                                android:layout_marginTop="10dp"
-                                android:padding="4dp"
-                                android:src="@drawable/ic_cal2"
-                                app:tint="@color/white" />
+                                android:layout_height="120dp"
+                                android:layout_margin="16dp"
+                                android:layout_weight="1"
+                                app:cardBackgroundColor="#fe513a"
+                                app:cardCornerRadius="5dp"
+                                app:cardElevation="8dp">
 
-                            <TextView
+                                <LinearLayout
+                                    android:id="@+id/cardViewCalendar"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+
+                                    <ImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="80dp"
+                                        android:layout_marginTop="10dp"
+                                        android:padding="4dp"
+                                        android:src="@drawable/ic_cal2"
+                                        app:tint="@color/white" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="5dp"
+                                        android:text="@string/calendar"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/white" />
+
+
+                                </LinearLayout>
+
+
+                            </com.google.android.material.card.MaterialCardView>
+
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/material_card_panchang"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="5dp"
-                                android:text="@string/calendar"
-                                android:textAlignment="center"
-                                android:textColor="@color/white" />
+                                android:layout_height="120dp"
+                                android:layout_margin="16dp"
+                                android:layout_weight="1"
+                                app:cardBackgroundColor="#fd813b"
+                                app:cardCornerRadius="5dp"
+                                app:cardElevation="8dp">
+
+
+                                <LinearLayout
+                                    android:id="@+id/llPanchangMuhurat"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="80dp"
+                                        android:layout_marginTop="10dp"
+                                        android:padding="4dp"
+                                        android:src="@drawable/ic_new_swastik"
+                                        app:tint="@color/white" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="5dp"
+                                        android:text="@string/panchang_muharat"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/white" />
+
+
+                                </LinearLayout>
+
+
+                            </com.google.android.material.card.MaterialCardView>
 
 
                         </LinearLayout>
-
-
-                    </com.google.android.material.card.MaterialCardView>
-
-
-                    <com.google.android.material.card.MaterialCardView
-                        android:id="@+id/material_card_panchang"
-                        android:layout_width="match_parent"
-                        android:layout_height="120dp"
-                        android:layout_margin="16dp"
-                        android:layout_weight="1"
-                        app:cardElevation="8dp"
-                        app:cardCornerRadius="5dp"
-                        app:cardBackgroundColor="#fd813b">
 
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:id="@+id/llPanchangMuhurat"
-                            android:orientation="vertical">
+                            android:orientation="horizontal"
+                            android:weightSum="2">
 
-                            <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="80dp"
-                                android:layout_marginTop="10dp"
-                                android:padding="4dp"
-                                android:src="@drawable/ic_new_swastik"
-                                app:tint="@color/white" />
 
-                            <TextView
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/cardViewAartiPoojaKatha"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="5dp"
-                                android:text="@string/panchang_muharat"
-                                android:textAlignment="center"
-                                android:textColor="@color/white" />
+                                android:layout_height="120dp"
+                                android:layout_margin="16dp"
+                                android:layout_weight="1"
+                                app:cardBackgroundColor="#f8a232"
+                                app:cardCornerRadius="5dp"
+                                app:cardElevation="8dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+
+                                    <ImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="80dp"
+                                        android:layout_marginTop="10dp"
+                                        android:padding="4dp"
+                                        android:src="@drawable/ic_namaskar"
+                                        app:tint="@color/white" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="5dp"
+                                        android:text="@string/pooja_artis_mantras_kathas"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/white" />
+
+
+                                </LinearLayout>
+
+
+                            </com.google.android.material.card.MaterialCardView>
+
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/cardViewGetHoroscope"
+                                android:layout_width="match_parent"
+                                android:layout_height="120dp"
+                                android:layout_margin="16dp"
+                                android:layout_weight="1"
+                                app:cardBackgroundColor="#993fee"
+                                app:cardCornerRadius="5dp"
+                                app:cardElevation="8dp">
+
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="80dp"
+                                        android:layout_marginTop="10dp"
+                                        android:padding="4dp"
+                                        android:src="@drawable/ic_horoscope"
+                                        app:tint="@color/white" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="5dp"
+                                        android:text="@string/horoscope"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/white" />
+
+
+                                </LinearLayout>
+
+
+                            </com.google.android.material.card.MaterialCardView>
 
 
                         </LinearLayout>
-
-
-                    </com.google.android.material.card.MaterialCardView>
-
-
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:weightSum="2">
-
-
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="match_parent"
-                        android:layout_height="120dp"
-                        android:layout_margin="16dp"
-                        android:id="@+id/cardViewAartiPoojaKatha"
-                        android:layout_weight="1"
-                        app:cardElevation="8dp"
-                        app:cardCornerRadius="5dp"
-                        app:cardBackgroundColor="#f8a232">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-
-
-                            <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="80dp"
-                                android:layout_marginTop="10dp"
-                                android:padding="4dp"
-                                android:src="@drawable/ic_namaskar"
-                                app:tint="@color/white" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="5dp"
-                                android:text="@string/pooja_artis_mantras_kathas"
-                                android:textAlignment="center"
-                                android:textColor="@color/white" />
-
-
-                        </LinearLayout>
-
-
-                    </com.google.android.material.card.MaterialCardView>
-
-
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="match_parent"
-                        android:layout_height="120dp"
-                        android:layout_margin="16dp"
-                        app:cardElevation="8dp"
-                        app:cardCornerRadius="5dp"
-                        android:layout_weight="1"
-                        android:id="@+id/cardViewGetHoroscope"
-                        app:cardBackgroundColor="#993fee">
-
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-
-                            <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="80dp"
-                                android:layout_marginTop="10dp"
-                                android:padding="4dp"
-                                android:src="@drawable/ic_horoscope"
-                                app:tint="@color/white" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="5dp"
-                                android:text="@string/horoscope"
-                                android:textAlignment="center"
-                                android:textColor="@color/white" />
-
-
-                        </LinearLayout>
-
-
-                    </com.google.android.material.card.MaterialCardView>
-
-
-                </LinearLayout>
-
-
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:weightSum="2">
-
-
-                    <com.google.android.material.card.MaterialCardView
-                        android:id="@+id/material_card_holidays"
-                        android:layout_width="match_parent"
-                        android:layout_height="120dp"
-                        android:layout_margin="16dp"
-                        android:layout_weight="1"
-                        app:cardElevation="8dp"
-                        app:cardCornerRadius="5dp"
-                        app:cardBackgroundColor="#00c13f">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-
-
-                            <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="80dp"
-                                android:layout_marginTop="10dp"
-                                android:padding="4dp"
-                                android:src="@drawable/ic_holiday"
-                                app:tint="@color/white" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="5dp"
-                                android:text="@string/holidayandfestival"
-                                android:textAlignment="center"
-                                android:textColor="@color/white" />
-
-
-                        </LinearLayout>
-
-
-                    </com.google.android.material.card.MaterialCardView>
-
-
-                    <com.google.android.material.card.MaterialCardView
-                        android:layout_width="match_parent"
-                        android:layout_height="120dp"
-                        android:layout_margin="16dp"
-                        android:layout_weight="1"
-                        app:cardElevation="8dp"
-                        android:id="@+id/cardViewFestivals"
-                        app:cardCornerRadius="5dp"
-                        app:cardBackgroundColor="#ff1e42">
 
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical">
+                            android:orientation="horizontal"
+                            android:weightSum="2">
 
-                            <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="80dp"
-                                android:layout_marginTop="10dp"
-                                android:padding="6dp"
-                                android:src="@drawable/ic_share"
-                                app:tint="@color/white" />
 
-                            <TextView
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/material_card_holidays"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="5dp"
-                                android:text="@string/share"
-                                android:textAlignment="center"
-                                android:textColor="@color/white" />
+                                android:layout_height="120dp"
+                                android:layout_margin="16dp"
+                                android:layout_weight="1"
+                                app:cardBackgroundColor="#00c13f"
+                                app:cardCornerRadius="5dp"
+                                app:cardElevation="8dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+
+                                    <ImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="80dp"
+                                        android:layout_marginTop="10dp"
+                                        android:padding="4dp"
+                                        android:src="@drawable/ic_holiday"
+                                        app:tint="@color/white" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="5dp"
+                                        android:text="@string/holidayandfestival"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/white" />
+
+
+                                </LinearLayout>
+
+
+                            </com.google.android.material.card.MaterialCardView>
+
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:id="@+id/cardViewFestivals"
+                                android:layout_width="match_parent"
+                                android:layout_height="120dp"
+                                android:layout_margin="16dp"
+                                android:layout_weight="1"
+                                app:cardBackgroundColor="#ff1e42"
+                                app:cardCornerRadius="5dp"
+                                app:cardElevation="8dp">
+
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="80dp"
+                                        android:layout_marginTop="10dp"
+                                        android:padding="6dp"
+                                        android:src="@drawable/ic_share"
+                                        app:tint="@color/white" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="5dp"
+                                        android:text="@string/share"
+                                        android:textAlignment="center"
+                                        android:textColor="@color/white" />
+
+
+                                </LinearLayout>
+
+
+                            </com.google.android.material.card.MaterialCardView>
 
 
                         </LinearLayout>
 
 
-                    </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+                </ScrollView>
 
 
-                </LinearLayout>
+            </RelativeLayout>
 
 
+        </LinearLayout>
 
 
-
-
-
-            </LinearLayout>
-        </ScrollView>
-
-
-    </RelativeLayout>
-
+    </androidx.core.widget.NestedScrollView>
     <!-- set Banner ad position in UI layout design -->
-    <com.google.android.gms.ads.AdView
-        xmlns:ads="http://schemas.android.com/apk/res-auto"
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/adView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
         ads:adSize="BANNER"
-        ads:adUnitId="@string/admob_banner_id">
-    </com.google.android.gms.ads.AdView>
-
+        ads:adUnitId="@string/admob_banner_id" />
 </RelativeLayout>

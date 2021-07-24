@@ -63,8 +63,7 @@ class CalendarFragment : BaseFragment(), View.OnClickListener, CoroutineScope {
         "November",
         "December"
     )
-    private val monthNumList =
-        arrayListOf("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11")
+    private val monthNumList = arrayListOf("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11")
     override val coroutineContext: CoroutineContext
         get() = Dispatchers.Main + job
     lateinit var job: Job

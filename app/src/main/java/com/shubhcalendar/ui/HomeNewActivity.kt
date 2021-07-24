@@ -1,6 +1,7 @@
-package com.shubhcalendar.ui
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 package com.shubhcalendar.ui
 
 import android.app.Dialog
+import android.app.Fragment
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
@@ -21,7 +22,6 @@ import com.shubhcalendar.activities.SplashActivity
 import com.shubhcalendar.databinding.ActivityHomeNewBinding
 import com.shubhcalendar.ui.calendar.CalendarFragment
 import com.shubhcalendar.ui.childhelps.LangugageSheet
-import com.shubhcalendar.ui.home.festival.HolidaysFragment
 import com.shubhcalendar.ui.home.HomeFragment
 import com.shubhcalendar.ui.home.festival.FestivalAndHoliday
 import com.shubhcalendar.ui.home.panchangmuhurat.PanchabgMuhurat
@@ -48,11 +48,12 @@ import kotlin.coroutines.CoroutineContext
 class HomeNewActivity : AppCompatActivity(), Navigator.NavigatorListener, View.OnClickListener,
     CoroutineScope {
     private val rootFragmentProvider: List<() -> Fragment> = listOf(
-    //    { CalendarFragment() },     //0
-       // { HolidaysFragment() },     //1
-        { HomeFragment() },{ ProfileFragment() })       //2
-     //   { PanchabgMuhurat() },     //3
-     //   { HoroscopeFragment() })    //4
+        //    { CalendarFragment() },     //0
+        // { HolidaysFragment() },     //1
+        { HomeFragment() }, { ProfileFragment() })       //2
+
+    //   { PanchabgMuhurat() },     //3
+    //   { HoroscopeFragment() })    //4
     val multipleStackNavigator: MultipleStackNavigator =
         MultipleStackNavigator(
             supportFragmentManager,
@@ -79,16 +80,16 @@ class HomeNewActivity : AppCompatActivity(), Navigator.NavigatorListener, View.O
                     multipleStackNavigator.resetCurrentTab(true)
                     return@OnNavigationItemSelectedListener true
                 }
-              /*  R.id.navigationPanchang -> {
+                /*  R.id.navigationPanchang -> {
 
-                    multipleStackNavigator.switchTab(3)
-                    multipleStackNavigator.resetCurrentTab(true)
-                    return@OnNavigationItemSelectedListener true
-                }
-                R.id.navigationHoroscope -> {
-                    multipleStackNavigator.switchTab(4)
-                    return@OnNavigationItemSelectedListener true
-                }*/
+                      multipleStackNavigator.switchTab(3)
+                      multipleStackNavigator.resetCurrentTab(true)
+                      return@OnNavigationItemSelectedListener true
+                  }
+                  R.id.navigationHoroscope -> {
+                      multipleStackNavigator.switchTab(4)
+                      return@OnNavigationItemSelectedListener true
+                  }*/
             }
             false
         }
@@ -131,8 +132,8 @@ class HomeNewActivity : AppCompatActivity(), Navigator.NavigatorListener, View.O
         if (multipleStackNavigator.canGoBack()) {
             multipleStackNavigator.goBack()
         } else {
-                finish()
-            }
+            finish()
+        }
     }
 
     override fun onTabChanged(tabIndex: Int) {
@@ -195,16 +196,14 @@ class HomeNewActivity : AppCompatActivity(), Navigator.NavigatorListener, View.O
                 executor { result, exception ->
                     launch(coroutineContext) {
                         if (result?.responseCode == 200) {
-                            if (result.responseString?.isNotEmpty() == true) {
+                            if (result.responseString?.isNotBlank() == true) {
                                 val getData =
                                     createModelFromClass<DataShowProfile>(result.responseString!!)
                                 if (getData.result == true) {
                                     binding.textViewUserName.text = getData.data?.name
                                     binding.textViewUserEmail.text = getData.data?.email
                                     binding.imageViewUserProfile.load(
-                                        getData.data?.path.plus(
-                                            getData.data?.image
-                                        )
+                                        getData.data?.path.plus(getData.data?.image)
                                     )
                                 }
 
@@ -238,14 +237,20 @@ class HomeNewActivity : AppCompatActivity(), Navigator.NavigatorListener, View.O
 
             }
             binding.rlCalendar -> {
-                multipleStackNavigator.start(CalendarFragment(),TransitionAnimationType.LEFT_TO_RIGHT)
+                multipleStackNavigator.start(
+                    CalendarFragment(),
+                    TransitionAnimationType.LEFT_TO_RIGHT
+                )
                 binding.drawer.closeDrawer(GravityCompat.END)
-               // onTabChanged(0)
+                // onTabChanged(0)
 
             }
 
             binding.rlPanchang -> {
-          multipleStackNavigator.start(PanchabgMuhurat(),TransitionAnimationType.RIGHT_TO_LEFT)
+                multipleStackNavigator.start(
+                    PanchabgMuhurat(),
+                    TransitionAnimationType.RIGHT_TO_LEFT
+                )
                 binding.drawer.closeDrawer(GravityCompat.END)
             }
 
@@ -259,31 +264,31 @@ class HomeNewActivity : AppCompatActivity(), Navigator.NavigatorListener, View.O
             }
 
             binding.rlHoliday -> {
-                multipleStackNavigator.start(FestivalAndHoliday(),TransitionAnimationType.RIGHT_TO_LEFT)
+                multipleStackNavigator.start(
+                    FestivalAndHoliday(),
+                    TransitionAnimationType.RIGHT_TO_LEFT
+                )
                 binding.drawer.closeDrawer(GravityCompat.END)
 
             }
-
-
             binding.rlNotification -> {
-           startActivity<NotificationActivity>()
+                startActivity<NotificationActivity>()
                 binding.drawer.closeDrawer(GravityCompat.END)
-
             }
             binding.ivCross -> {
                 binding.drawer.closeDrawer(GravityCompat.END)
             }
 
             binding.cardViewProfile -> {
-              /*  multipleStackNavigator.start(
-                    ProfileFragment(),
-                    TransitionAnimationType.RIGHT_TO_LEFT
-                )*/
+                /*  multipleStackNavigator.start(
+                      ProfileFragment(),
+                      TransitionAnimationType.RIGHT_TO_LEFT
+                  )*/
 
-                multipleStackNavigator?.reset(1)
-               Handler().postDelayed({
-                   multipleStackNavigator?.switchTab(1)
-               },500)
+                multipleStackNavigator.reset(1)
+                Handler().postDelayed({
+                    multipleStackNavigator.switchTab(1)
+                }, 500)
                 binding.drawer.closeDrawer(GravityCompat.END)
             }
 

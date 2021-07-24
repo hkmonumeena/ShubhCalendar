@@ -47,16 +47,13 @@ class HoroscopeFragment : BaseFragment(), View.OnClickListener {
         binding.cardViewArrow.setOnClickListener(this)
     }
 
-
     override fun onClick(v: View?) {
         when (v) {
             binding.relativeLayoutOpenMenu -> {
                 (activity as HomeNewActivity).drawer.openDrawer(GravityCompat.END)
             }
             binding.cardViewProfile -> {
-                multipleStackNavigator?.start(
-                    ProfileFragment()
-                )
+                multipleStackNavigator?.start(ProfileFragment())
             }
             binding.rlDismiss -> {
                 if (multipleStackNavigator?.canGoBack() == true) {
@@ -70,21 +67,12 @@ class HoroscopeFragment : BaseFragment(), View.OnClickListener {
             binding.editTextDob -> {
                 showDatePickerDialog()
             }
-
-
             binding.cardViewArrow -> {
-                val getFieldWithValiidation =
-                    isValidate(binding.editTextName).isValidate(binding.editTextDob)
-                        .getValidatedFields()
-                if (getFieldWithValiidation) {
-                    multipleStackNavigator?.start(
-                        RashiActivity()
-                    )
-                }
+                val getFieldWithValiidation = isValidate(binding.editTextName).isValidate(binding.editTextDob).getValidatedFields()
+                if (getFieldWithValiidation) { multipleStackNavigator?.start(RashiActivity()) }
             }
         }
     }
-
 
     fun showDatePickerDialog() {
         val cal = Calendar.getInstance()
@@ -94,14 +82,11 @@ class HoroscopeFragment : BaseFragment(), View.OnClickListener {
         datePicker = DatePickerHelper(requireActivity(), true)
         datePicker.showDialog(d, m, y, object : DatePickerHelper.Callback {
             override fun onDateSelected(dayofMonth: Int, month: Int, year: Int) {
-                val dayStr =
-                    if (dayofMonth < 10) "0${dayofMonth}" else "${dayofMonth}"
+                val dayStr = if (dayofMonth < 10) "0${dayofMonth}" else "${dayofMonth}"
                 val mon = month + 1
                 val monthStr = if (mon < 10) "0${mon}" else "${mon}"
                 binding.editTextDob.setText("${dayStr}-${monthStr}-${year}")
             }
         })
     }
-
-
 }
